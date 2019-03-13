@@ -76,7 +76,7 @@ public class BossFight implements Action {
             sb.append("Boss has slain them all!");
             boss.levelUp();
         } else {
-            sb.append(String.format("%s  has been slain by:", boss.getName()));
+            sb.append("Boss has been slain by: ");
             participants.sort(Comparator.comparing(Targetable::getName));
 
             for (Targetable participant : participants.subList(1, participants.size())) {
