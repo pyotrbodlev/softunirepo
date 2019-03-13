@@ -7,7 +7,7 @@ import java.util.List;
 
 public class OneVsOne implements Action {
 
-    List<Targetable> participants;
+    private List<Targetable> participants;
 
     public String executeAction(List<Targetable> participants) {
 
@@ -15,24 +15,33 @@ public class OneVsOne implements Action {
 
         String error = "There should be exactly 2 participants for OneVsOne!";
 
+        if (participants.size() != 2) {
+            return error;
+        }
+
         StringBuilder sb = new StringBuilder();
 
         Targetable firstHero = participants.get(0);
         Targetable secondHero = participants.get(1);
 
-        while (firstHero.isAlive()){
+        while (true) {
+            if (!firstHero.isAlive() || !secondHero.isAlive()){
+                break;
+            }
+
             sb.append(firstHero.attack(secondHero)).append(System.lineSeparator());
+
             if (secondHero.isAlive()) {
                 sb.append(secondHero.attack(firstHero)).append(System.lineSeparator());
-            }else {
+            } else {
                 break;
             }
         }
 
-        if (firstHero.isAlive()){
-            sb.append(String.format("%s is victorious!%s%s", firstHero.getName(), System.lineSeparator(),firstHero.toString()));
-        }else {
-            sb.append(String.format("%s is victorious!%s%s", firstHero.getName(), System.lineSeparator(),firstHero.toString()));
+        if (firstHero.isAlive()) {
+            sb.append(String.format("%s is victorious!%s%s", firstHero.getName(), System.lineSeparator(), firstHero.toString()));
+        } else {
+            sb.append(String.format("%s is victorious!%s%s", secondHero.getName(), System.lineSeparator(), secondHero.toString()));
         }
 
         return sb.toString();
