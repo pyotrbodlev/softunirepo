@@ -2,6 +2,7 @@ package app.models.actions;
 
 import app.contracts.Action;
 import app.contracts.Targetable;
+import app.models.Config;
 
 import java.util.Comparator;
 import java.util.List;
@@ -56,14 +57,17 @@ public class BossFight implements Action {
                 break;
             }
 
-            boss.takeDamage(player.getDamage());
+            boss.attack(player);
+            player.attack(boss);
 
-            if (boss.isAlive()) {
-                player.takeDamage(boss.getDamage());
-            } else {
-                boss.giveReward(player);
-                break;
-            }
+//            boss.takeDamage(player.getDamage());
+//
+//            if (boss.isAlive()) {
+//                player.takeDamage(boss.getDamage());
+//            } else {
+//                boss.giveReward(player);
+//                break;
+//            }
 
             i++;
         }
@@ -77,6 +81,7 @@ public class BossFight implements Action {
 
             for (Targetable participant : participants.subList(1, participants.size())) {
                 participant.levelUp();
+                participant.receiveReward(Config.BOSS_INDIVIDUAL_REWARD);
                 sb.append(System.lineSeparator());
                 sb.append(participant.toString());
             }

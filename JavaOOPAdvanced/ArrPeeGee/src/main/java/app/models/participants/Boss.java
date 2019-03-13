@@ -101,7 +101,7 @@ public class Boss implements Targetable {
 
     @Override
     public boolean isAlive() {
-        this.isAlive = this.health > 0;
+        this.isAlive = this.getHealth() > 0;
         return this.isAlive;
     }
 

@@ -42,7 +42,10 @@ public abstract class BaseHero implements Hero {
 
         String result = this.getName() + " attacked!";
         if (!target.isAlive()) {
-            this.levelUp();
+
+            if (!target.getClass().getSimpleName().equals("Boss")) {
+                this.levelUp();
+            }
             target.giveReward(this);
             result += String.format(" %s has been slain by %s.", target.getName(), this.getName());
         }
@@ -119,7 +122,7 @@ public abstract class BaseHero implements Hero {
     }
 
     public boolean isAlive() {
-        this.isAlive = this.health > 0;
+        this.isAlive = this.getHealth() > 0;
         return this.isAlive;
     }
 
