@@ -10,13 +10,13 @@ import java.util.*;
 public class ModuleContainer implements Container {
 
     private int moduleCapacity;
-    private LinkedList<Module> modulesByInput;
+    private List<Module> modulesByInput;
     private Map<Integer, EnergyModule> energyModules;
     private Map<Integer, AbsorbingModule> absorbingModules;
 
     public ModuleContainer(int moduleCapacity) {
         this.moduleCapacity = moduleCapacity;
-        this.modulesByInput = new LinkedList<>();
+        this.modulesByInput = new ArrayList<>();
         this.energyModules = new LinkedHashMap<>();
         this.absorbingModules = new LinkedHashMap<>();
     }
@@ -31,7 +31,7 @@ public class ModuleContainer implements Container {
         }
 
         this.energyModules.put(energyModule.getId(), energyModule);
-        this.modulesByInput.addLast(energyModule);
+        this.modulesByInput.add(energyModule);
     }
 
     public void addAbsorbingModule(AbsorbingModule absorbingModule) {
@@ -44,7 +44,7 @@ public class ModuleContainer implements Container {
         }
 
         this.absorbingModules.put(absorbingModule.getId(), absorbingModule);
-        this.modulesByInput.addLast(absorbingModule);
+        this.modulesByInput.add(absorbingModule);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class ModuleContainer implements Container {
     }
 
     private void removeOldestModule() {
-        int removeId = this.modulesByInput.removeFirst().getId();
+        int removeId = this.modulesByInput.remove(0).getId();
 
         this.energyModules.remove(removeId);
 

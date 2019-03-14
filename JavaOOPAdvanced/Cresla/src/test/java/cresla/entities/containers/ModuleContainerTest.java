@@ -4,9 +4,12 @@ import cresla.interfaces.AbsorbingModule;
 import cresla.interfaces.Container;
 import cresla.interfaces.EnergyModule;
 import org.junit.Assert;
+import org.junit.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Map;
 
 public class ModuleContainerTest {
@@ -14,7 +17,7 @@ public class ModuleContainerTest {
 
     @org.junit.Before
     public void setUp() throws Exception {
-        this.container = new ModuleContainer(10);
+        this.container = new ModuleContainer(2);
     }
 
     @org.junit.Test
@@ -28,6 +31,7 @@ public class ModuleContainerTest {
 
         Assert.assertEquals(1, list.size());
     }
+
 
     @org.junit.Test
     public void addAbsorbingModule() throws NoSuchFieldException, IllegalAccessException {
@@ -79,5 +83,28 @@ public class ModuleContainerTest {
         long actual = this.container.getTotalHeatAbsorbing();
 
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void removeOldestModule() throws NoSuchFieldException, IllegalAccessException {
+        EnergyModule energyModule = Mockito.mock(EnergyModule.class);
+        Mockito.when(energyModule.getId()).thenReturn(1);
+        AbsorbingModule absorbingModule = Mockito.mock(AbsorbingModule.class);
+        Mockito.when(absorbingModule.getId()).thenReturn(2);
+        AbsorbingModule absorbingModule1 =Mockito.mock(AbsorbingModule.class);
+        Mockito.when(absorbingModule1.getId()).thenReturn(3);
+        AbsorbingModule absorbingModule2 =Mockito.mock(AbsorbingModule.class);
+        Mockito.when(absorbingModule2.getId()).thenReturn(4);
+
+        this.container.addEnergyModule(energyModule);
+        this.container.addAbsorbingModule(absorbingModule);
+        this.container.addAbsorbingModule(absorbingModule1);
+        this.container.addAbsorbingModule(absorbingModule2);
+
+        Field modulesByInput = ModuleContainer.class.getDeclaredField("modulesByInput");
+        modulesByInput.setAccessible(true);
+        List<?> list = (List<?>) modulesByInput.get(this.container);
+
+        Assert.assertEquals(2, list.size());
     }
 }
