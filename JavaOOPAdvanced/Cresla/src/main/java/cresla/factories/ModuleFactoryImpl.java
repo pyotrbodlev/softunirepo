@@ -1,13 +1,16 @@
 package cresla.factories;
 
 import cresla.interfaces.Module;
+import cresla.interfaces.ModuleFactory;
+
 import java.lang.reflect.InvocationTargetException;
 
-public class ModuleFactory {
+public class ModuleFactoryImpl implements ModuleFactory {
 
     private static final String MODULE_PATH = "cresla.entities.modules.";
 
-    public static Module create(String type, int additionalParameter) {
+    @Override
+    public Module create(String type, int additionalParameter) {
 
         Module module = null;
 

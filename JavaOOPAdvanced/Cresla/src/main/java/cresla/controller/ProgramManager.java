@@ -1,22 +1,24 @@
 package cresla.controller;
 
 import cresla.constants.Text;
-import cresla.factories.ModuleFactory;
-import cresla.factories.ReactorFactory;
 import cresla.interfaces.*;
 import cresla.interfaces.Module;
 
-import java.util.LinkedHashMap;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ProgramManager implements Manager {
     private Map<Integer, Reactor> reactorMap;
     private Map<Integer, Module> moduleMap;
+    private ModuleFactory moduleFactory;
+    private ReactorFactory reactorFactory;
 
-    public ProgramManager() {
-        this.reactorMap = new LinkedHashMap<>();
-        this.moduleMap = new LinkedHashMap<>();
+    public ProgramManager(ModuleFactory moduleFactory, ReactorFactory reactorFactory) {
+        this.reactorMap = new HashMap<>();
+        this.moduleMap = new HashMap<>();
+        this.moduleFactory = moduleFactory;
+        this.reactorFactory = reactorFactory;
     }
 
     @Override
@@ -25,7 +27,7 @@ public class ProgramManager implements Manager {
         int additionalParameter = Integer.parseInt(arguments.get(2));
         int moduleCapacity = Integer.parseInt(arguments.get(3));
 
-        Reactor reactor = ReactorFactory.create(type, additionalParameter, moduleCapacity);
+        Reactor reactor = reactorFactory.create(type, additionalParameter, moduleCapacity);
 
         if (reactor != null) {
             this.reactorMap.put(reactor.getId(), reactor);
@@ -42,7 +44,7 @@ public class ProgramManager implements Manager {
         String type = arguments.get(2);
         int additionalParameter = Integer.parseInt(arguments.get(3));
 
-        Module module = ModuleFactory.create(type, additionalParameter);
+        Module module = moduleFactory.create(type, additionalParameter);
 
         if ("CryogenRod".equals(type)) {
             this.reactorMap.get(reactorId).addEnergyModule((EnergyModule) module);
@@ -59,7 +61,7 @@ public class ProgramManager implements Manager {
     public String reportCommand(List<String> arguments) {
         int id = Integer.parseInt(arguments.get(1));
 
-        if (reactorMap.containsKey(id)){
+        if (reactorMap.containsKey(id)) {
             return reactorMap.get(id).toString();
         } else {
             return moduleMap.get(id).toString();
@@ -82,7 +84,7 @@ public class ProgramManager implements Manager {
         long totalHeatAbsorbing;
 
         for (Reactor reactor : reactorMap.values()) {
-            if (reactor.getClass().getSimpleName().equals("CryoReactor")){
+            if (reactor.getClass().getSimpleName().equals("CryoReactor")) {
                 cryoReactorsCount++;
             } else {
                 heatReactorsCount++;
@@ -90,7 +92,7 @@ public class ProgramManager implements Manager {
         }
 
         for (Module module : moduleMap.values()) {
-            if (module.getClass().getSimpleName().equals("CryogenRod")){
+            if (module.getClass().getSimpleName().equals("CryogenRod")) {
                 energyModulesCount++;
             } else {
                 absorbingModulesCount++;
