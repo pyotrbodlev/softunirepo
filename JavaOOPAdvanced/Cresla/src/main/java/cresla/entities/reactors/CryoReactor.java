@@ -15,7 +15,10 @@ public class CryoReactor extends AbstractReactor {
 
     @Override
     public long getTotalEnergyOutput() {
-        return super.getTotalEnergyOutput() * this.cryoProductionIndex;
+        long result = super.getTotalEnergyOutput() * this.cryoProductionIndex;
+
+        return result > this.getTotalHeatAbsorbing() ? 0 : result;
+
     }
 
 }

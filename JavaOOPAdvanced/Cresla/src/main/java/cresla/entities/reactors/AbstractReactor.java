@@ -1,6 +1,5 @@
 package cresla.entities.reactors;
 
-import cresla.constants.Text;
 import cresla.entities.IDCreator;
 import cresla.entities.containers.ModuleContainer;
 import cresla.interfaces.AbsorbingModule;
@@ -23,7 +22,8 @@ public abstract class AbstractReactor implements Reactor {
 
     @Override
     public long getTotalEnergyOutput() {
-        return this.container.getTotalEnergyOutput() > this.getTotalHeatAbsorbing() ? 0 : this.container.getTotalEnergyOutput();
+        long total = this.container.getTotalEnergyOutput();
+        return total > this.getTotalHeatAbsorbing() ? 0 : this.container.getTotalEnergyOutput();
     }
 
     @Override
