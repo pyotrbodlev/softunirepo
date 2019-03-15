@@ -21,7 +21,6 @@ public class ProgramManager implements Manager {
         this.reactorFactory = reactorFactory;
     }
 
-    //TODO check if-else (try to submit in judge without if-else)
     @Override
     public String reactorCommand(List<String> arguments) {
         String type = arguments.get(1);
@@ -30,12 +29,9 @@ public class ProgramManager implements Manager {
 
         Reactor reactor = reactorFactory.create(type, additionalParameter, moduleCapacity);
 
-        if (reactor != null) {
-            this.reactorMap.put(reactor.getId(), reactor);
-            return String.format(Text.REACTOR_CREATED_SUCCESS, type, reactor.getId());
-        } else {
-            return Text.REACTOR_CREATED_ERROR;
-        }
+        this.reactorMap.put(reactor.getId(), reactor);
+        return String.format(Text.REACTOR_CREATED_SUCCESS, type, reactor.getId());
+
     }
 
     @Override
