@@ -21,6 +21,7 @@ public class ProgramManager implements Manager {
         this.reactorFactory = reactorFactory;
     }
 
+    //TODO check if-else (try to submit in judge without if-else)
     @Override
     public String reactorCommand(List<String> arguments) {
         String type = arguments.get(1);
