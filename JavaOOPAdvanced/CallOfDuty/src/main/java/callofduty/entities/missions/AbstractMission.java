@@ -1,10 +1,6 @@
 package callofduty.entities.missions;
 
-import callofduty.controller.MissionManagerImpl;
 import callofduty.interfaces.Mission;
-import callofduty.interfaces.MissionManager;
-
-import java.lang.reflect.Field;
 
 public abstract class AbstractMission implements Mission {
     private String id;
