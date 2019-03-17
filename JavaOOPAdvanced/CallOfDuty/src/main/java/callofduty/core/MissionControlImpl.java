@@ -9,7 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class MissionControlImpl implements MissionControl {
-    private static final Integer MISSION_ID_MAXIMUM_LENGTH = 6;
+    private static final Integer MISSION_ID_MAXIMUM_LENGTH = 8;
 
     private static final Double MISSION_RATING_MINIMUM_VALUE = 0D;
 

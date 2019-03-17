@@ -18,10 +18,28 @@ public class MissionControlImplTest {
     public void generateMission() throws NoSuchFieldException {
         Mission first_mission = missionControl.generateMission("First Mission", 10d, 1000001D);
         Mission second_mission = missionControl.generateMission("Second Mission", 12d, 1000001D);
-        Mission third_mission = missionControl.generateMission("Third Mission", 12d, 12d);
-        Mission fourth_mission = missionControl.generateMission("Fourth Mission", 12d, 12d);
 
-        Assert.assertEquals("EscortMission", fourth_mission.getClass().getSimpleName());
+        Assert.assertEquals("HuntMission", second_mission.getClass().getSimpleName());
+    }
+
+    @Test
+    public void testCreateLongID(){
+        Mission first_mission = missionControl.generateMission("1234567890", 10d, 1000001D);
+        Assert.assertEquals(8, first_mission.getId().length());
+    }
+
+    @Test
+    public void testCreateMissionWithLessBounty(){
+        Mission first_mission = missionControl.generateMission("First Mission", Double.MAX_VALUE, -1d);
+
+        Assert.assertEquals(0, first_mission.getBounty(), 0.1);
+    }
+
+    @Test
+    public void testCreateMissionWithLessRating(){
+        Mission first_mission = missionControl.generateMission("First Mission", -123d, Double.MAX_VALUE);
+
+        Assert.assertEquals(0, first_mission.getRating(), 0.1);
     }
 
     @Test
