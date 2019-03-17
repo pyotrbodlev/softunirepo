@@ -1,4 +1,4 @@
-package callofduty.entities.agents;
+package callofduty.domain.agents;
 
 import callofduty.annotations.Inject;
 import callofduty.interfaces.Agent;

@@ -1,4 +1,4 @@
-package callofduty.entities.missions;
+package callofduty.domain.missions;
 
 public class HuntMission extends AbstractMission {
     public HuntMission(String id, Double rating, Double bounty) {

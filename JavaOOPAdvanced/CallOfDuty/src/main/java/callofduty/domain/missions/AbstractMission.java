@@ -1,4 +1,4 @@
-package callofduty.entities.missions;
+package callofduty.domain.missions;
 
 import callofduty.interfaces.Mission;
 

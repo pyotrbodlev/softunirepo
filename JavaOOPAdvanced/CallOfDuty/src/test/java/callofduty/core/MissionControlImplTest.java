@@ -56,4 +56,8 @@ public class MissionControlImplTest {
         Assert.assertEquals(75D, first_mission.getRating(), 0.1);
     }
 
+    public void test(){
+
+    }
+
 }

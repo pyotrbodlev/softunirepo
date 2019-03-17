@@ -33,9 +33,9 @@ public class MissionControlImpl implements MissionControl {
     private void initMissionClasses() {
         try {
             this.missionClasses = new LinkedHashMap<>() {{
-                put("EscortMission", Class.forName("callofduty.entities.missions.EscortMission"));
-                put("HuntMission", Class.forName("callofduty.entities.missions.HuntMission"));
-                put("SurveillanceMission", Class.forName("callofduty.entities.missions.SurveillanceMission"));
+                put("EscortMission", Class.forName("callofduty.domain.missions.EscortMission"));
+                put("HuntMission", Class.forName("callofduty.domain.missions.HuntMission"));
+                put("SurveillanceMission", Class.forName("callofduty.domain.missions.SurveillanceMission"));
             }};
         } catch (ClassNotFoundException ignored) {
             ;

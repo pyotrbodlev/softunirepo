@@ -1,4 +1,4 @@
-package callofduty.entities.agents;
+package callofduty.domain.agents;
 
 public class Novice extends AbstractAgent {
     private static final double AGENT_START_RATING = 0;

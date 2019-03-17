@@ -1,4 +1,4 @@
-package callofduty.entities.missions;
+package callofduty.domain.missions;
 
 public class EscortMission extends AbstractMission {
     public EscortMission(String id, Double rating, Double bounty) {

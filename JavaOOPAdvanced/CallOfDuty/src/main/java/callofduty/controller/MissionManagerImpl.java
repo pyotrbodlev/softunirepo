@@ -1,8 +1,8 @@
 package callofduty.controller;
 
 import callofduty.constants.Text;
-import callofduty.entities.agents.Master;
-import callofduty.entities.agents.Novice;
+import callofduty.domain.agents.Master;
+import callofduty.domain.agents.Novice;
 import callofduty.interfaces.*;
 
 import java.lang.reflect.Field;

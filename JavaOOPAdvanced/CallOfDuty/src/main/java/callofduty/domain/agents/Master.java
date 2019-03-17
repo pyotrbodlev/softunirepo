@@ -1,4 +1,4 @@
-package callofduty.entities.agents;
+package callofduty.domain.agents;
 
 import callofduty.interfaces.BountyAgent;
 import callofduty.interfaces.Mission;
