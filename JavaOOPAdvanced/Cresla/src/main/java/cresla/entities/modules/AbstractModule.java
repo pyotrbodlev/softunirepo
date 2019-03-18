@@ -1,6 +1,6 @@
 package cresla.entities.modules;
 
-import cresla.entities.IDCreator;
+import cresla.entities.IdCreator;
 import cresla.interfaces.Module;
 
 public abstract class AbstractModule implements Module {
@@ -8,7 +8,7 @@ public abstract class AbstractModule implements Module {
     private int id;
 
     protected AbstractModule() {
-        this.id = ++IDCreator.id;
+        this.id = ++IdCreator.id;
     }
 
     @Override
