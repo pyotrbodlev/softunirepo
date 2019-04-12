@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1ed76c57-e5e3-40eb-9cee-a5564408e437" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Cresla/.idea/Cresla.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/constants/ResultConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/core/Engine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/entities/heroes/Assassin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/entities/heroes/Barbarian.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/entities/heroes/BaseHero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/entities/heroes/Wizard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/entities/items/BaseItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/entities/items/CommonItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/entities/items/RecipeItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/entities/miscellaneous/HeroInventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/entities/miscellaneous/ItemCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/enums/HeroType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/interfaces/Hero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/interfaces/InputReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/interfaces/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/interfaces/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/interfaces/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/interfaces/OutputWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/interfaces/Recipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/interfaces/Runable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/io/ConsoleReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/io/ConsoleWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HELL/src/hell/manager/ProgramManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaOOPprinciples/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaOOPprinciples/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaOOPprinciples/src/Superhero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Panzer.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/constants/Text.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/Assembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/AttackModifyingPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/BattleOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/DefenseModifyingPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/HitPointsModifyingPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/InputReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/Modelable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/OutputWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/Part.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/contracts/Vehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/core/PanzerBattleOperator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/core/PanzerManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/factories/PartFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/factories/VehicleFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/io/ConsoleReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/io/ConsoleWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/models/miscellaneous/VehicleAssembler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/models/parts/AbstractPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/models/parts/ArsenalPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/models/parts/EndurancePart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/models/parts/ShellPart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/models/vehicles/AbstractVehicle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/models/vehicles/Revenger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/panzer/models/vehicles/Vanguard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Cresla/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Cresla/.idea/misc.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/panzer/core/PanzerManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="623">
+              <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#383#384#0" expanded="true" />
+                <element signature="e#410#411#0" expanded="true" />
+                <element signature="e#476#477#0" expanded="true" />
+                <element signature="e#503#504#0" expanded="true" />
+                <element signature="e#572#573#0" expanded="true" />
+                <element signature="e#599#600#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/panzer/factories/PartFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/panzer/models/parts/EndurancePart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#412#413#0" expanded="true" />
+                <element signature="e#464#465#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/panzer/models/parts/ShellPart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/panzer/models/parts/AbstractPart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="12" column="97" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="97" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/panzer/models/parts/ArsenalPart.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/panzer/constants/Text.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/panzer/factories/VehicleFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/panzer/models/vehicles/AbstractVehicle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="21" column="112" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="112" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1429#1430#0" expanded="true" />
+                <element signature="e#1497#1498#0" expanded="true" />
+                <element signature="e#1552#1553#0" expanded="true" />
+                <element signature="e#1621#1622#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/panzer/core/PanzerBattleOperator.java" />
+        <option value="$PROJECT_DIR$/src/panzer/models/miscellaneous/vehicles/AbstractVehicle.java" />
+        <option value="$PROJECT_DIR$/src/panzer/models/vehicles/Vanguard.java" />
+        <option value="$PROJECT_DIR$/src/panzer/models/vehicles/Revenger.java" />
+        <option value="$PROJECT_DIR$/src/panzer/models/vehicles/AbstractVehicle.java" />
+        <option value="$PROJECT_DIR$/src/panzer/models/parts/ArsenalPart.java" />
+        <option value="$PROJECT_DIR$/src/panzer/models/parts/AbstractPart.java" />
+        <option value="$PROJECT_DIR$/src/panzer/models/miscellaneous/VehicleAssembler.java" />
+        <option value="$PROJECT_DIR$/src/panzer/io/ConsoleReader.java" />
+        <option value="$PROJECT_DIR$/src/panzer/io/ConsoleWriter.java" />
+        <option value="$PROJECT_DIR$/src/panzer/factories/VehicleFactory.java" />
+        <option value="$PROJECT_DIR$/src/panzer/models/parts/EndurancePart.java" />
+        <option value="$PROJECT_DIR$/src/panzer/models/parts/ShellPart.java" />
+        <option value="$PROJECT_DIR$/src/panzer/factories/PartFactory.java" />
+        <option value="$PROJECT_DIR$/src/panzer/constants/Text.java" />
+        <option value="$PROJECT_DIR$/src/panzer/core/PanzerManager.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="574" />
+    <option name="y" value="42" />
+    <option name="width" value="1139" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Panzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panzer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="panzer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="constants" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="contracts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="factories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Panzer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="panzer" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="parts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ed76c57-e5e3-40eb-9cee-a5564408e437" name="Default Changelist" comment="" />
+      <created>1555061128864</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555061128864</updated>
+      <workItem from="1555061131530" duration="4506000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="4506000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/panzer/models/vehicles/Revenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#654#655#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/models/vehicles/Vanguard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#139#140#0" expanded="true" />
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+            <element signature="e#275#276#0" expanded="true" />
+            <element signature="e#335#336#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/models/parts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/models/miscellaneous/VehicleAssembler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="e#1995#1996#0" expanded="true" />
+            <element signature="e#2066#2067#0" expanded="true" />
+            <element signature="e#2128#2129#0" expanded="true" />
+            <element signature="e#2196#2197#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/Assembler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/AttackModifyingPart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/DefenseModifyingPart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/BattleOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/HitPointsModifyingPart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/InputReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/Modelable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/OutputWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/Part.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/contracts/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/core/PanzerBattleOperator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/io/ConsoleReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/io/ConsoleWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#165#166#0" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#261#262#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/models/vehicles/AbstractVehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="21" column="112" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="112" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1429#1430#0" expanded="true" />
+            <element signature="e#1497#1498#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1621#1622#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/models/parts/ShellPart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/models/parts/AbstractPart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="97" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/models/parts/ArsenalPart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/factories/VehicleFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/models/parts/EndurancePart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#412#413#0" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/factories/PartFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/constants/Text.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/panzer/core/PanzerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="60" column="48" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#383#384#0" expanded="true" />
+            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#476#477#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
