@@ -1,6 +1,6 @@
 package cresla.entities.reactors;
 
-import cresla.entities.IDCreator;
+import cresla.entities.IdCreator;
 import cresla.entities.containers.ModuleContainer;
 import cresla.interfaces.AbsorbingModule;
 import cresla.interfaces.Container;
@@ -16,7 +16,7 @@ public abstract class AbstractReactor implements Reactor {
     private Container container;
 
     protected AbstractReactor(Container container) {
-        this.id = ++IDCreator.id;
+        this.id = ++IdCreator.id;
         this.container = container;
     }
 
@@ -57,7 +57,6 @@ public abstract class AbstractReactor implements Reactor {
     public int getId() {
         return this.id;
     }
-
 
     @Override
     public String toString() {
