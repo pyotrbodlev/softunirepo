@@ -5,12 +5,15 @@ import panzer.contracts.DefenseModifyingPart;
 import java.math.BigDecimal;
 
 public class ShellPart extends AbstractPart implements DefenseModifyingPart {
-    public ShellPart(String model, double weight, BigDecimal price, int additionalParameter) {
-        super(model, weight, price, additionalParameter);
+    private int defenseModifier;
+
+    public ShellPart(String model, double weight, BigDecimal price, int defenseModifier) {
+        super(model, weight, price);
+        this.defenseModifier = defenseModifier;
     }
 
     @Override
     public int getDefenseModifier() {
-        return this.getAdditionalParameter();
+        return this.defenseModifier;
     }
 }

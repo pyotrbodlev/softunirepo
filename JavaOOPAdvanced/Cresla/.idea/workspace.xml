@@ -2,9 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c4ba84e-d3ed-47b0-ac55-3005fbc90ddb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Cresla.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaDBApps/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaDBApps/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaDBApps/src/main/java/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaDBApps/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaOOPprinciples/.idea/libraries/mysql_connector_java_8_0_15.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Panzer/src/panzer/constants/Commands.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Panzer/src/panzer/core/Engine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Panzer/test/panzer/models/miscellaneous/VehicleAssemblerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaOOPprinciples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaOOPprinciples/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaOOPprinciples/JavaOOPprinciples.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaOOPprinciples/JavaOOPprinciples.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaOOPprinciples/out/production/JavaOOPprinciples/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaOOPprinciples/out/production/JavaOOPprinciples/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaOOPprinciples/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaOOPprinciples/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/Panzer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/Panzer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/constants/Text.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/contracts/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/contracts/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/core/PanzerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/core/PanzerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/models/parts/AbstractPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/models/parts/AbstractPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/models/parts/ArsenalPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/models/parts/ArsenalPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/models/parts/EndurancePart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/models/parts/EndurancePart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/models/parts/ShellPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/models/parts/ShellPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/models/vehicles/AbstractVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/models/vehicles/AbstractVehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/models/vehicles/Revenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/models/vehicles/Revenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Panzer/src/panzer/models/vehicles/Vanguard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Panzer/src/panzer/models/vehicles/Vanguard.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,20 +38,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cresla/constants/Text.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cresla/core/Engine.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cresla/entities/modules/AbstractModule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+            <state relative-caret-position="396">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#212#213#0" expanded="true" />
+                <element signature="e#252#253#0" expanded="true" />
+                <element signature="e#292#293#0" expanded="true" />
+                <element signature="e#322#323#0" expanded="true" />
+                <element signature="e#368#369#0" expanded="true" />
+                <element signature="e#469#470#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,6 +146,44 @@
               <item name="cresla" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Cresla" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cresla" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cresla" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cresla" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cresla" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cresla" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cresla" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cresla" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cresla" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+              <item name="reactors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Cresla" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Cresla" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="cresla" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -137,9 +197,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -165,6 +226,7 @@
       <updated>1552662155164</updated>
       <workItem from="1552662156284" duration="26000" />
       <workItem from="1554624720433" duration="88000" />
+      <workItem from="1555231568322" duration="474000" />
     </task>
     <task id="LOCAL-00001" summary="Re-commit Cresla sturcture">
       <created>1552662377886</created>
@@ -184,13 +246,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257000" />
+    <option name="totallyTimeSpent" value="731000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -229,27 +291,68 @@
     <option name="LAST_COMMIT_MESSAGE" value="Refactor TODO" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cresla/controller/ProgramManager.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cresla/core/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="216">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/cresla/controller/ProgramManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cresla/interfaces/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cresla/entities/reactors/AbstractReactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cresla/entities/reactors/CryoReactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cresla/entities/reactors/HeatReactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cresla/constants/Text.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cresla/core/Engine.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cresla/entities/modules/AbstractModule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        <state relative-caret-position="396">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+            <element signature="e#322#323#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -310,7 +413,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

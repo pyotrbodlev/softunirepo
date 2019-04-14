@@ -3,7 +3,7 @@ package panzer.contracts;
 import java.util.List;
 
 public interface Manager {
-    String addVehicle(List<String> arguments) throws ClassNotFoundException, NoSuchMethodException;
+    String addVehicle(List<String> arguments);
 
     String addPart(List<String> arguments);
 
@@ -11,5 +11,5 @@ public interface Manager {
 
     String battle(List<String> arguments);
 
-    String terminate(List<String> arguments);
+    String terminate(List<String> arguments) throws NoSuchFieldException, IllegalAccessException;
 }

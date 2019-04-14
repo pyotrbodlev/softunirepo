@@ -16,18 +16,19 @@ public class Main {
 
                 ("SELECT * FROM employees WHERE salary > ?");
 
-        String salary = "1200";
+        String salaryWanted = "1200";
 
-        stmt.setDouble(1, Double.parseDouble(salary));
+        stmt.setDouble(1, Double.parseDouble(salaryWanted));
 
         ResultSet rs = stmt.executeQuery();
 
         while (rs.next()) {
+            String firstName = rs.getString("first_name");
+            String lastName = rs.getString("last_name");
+            double salary = rs.getDouble("salary");
+            Employee employee = new Employee(firstName, lastName, salary);
 
-            System.out.printf("%s %s%n",
-
-                    rs.getString("first_name"),
-                    rs.getString("last_name"));
+            System.out.println(employee.toString());
         }
     }
 }
