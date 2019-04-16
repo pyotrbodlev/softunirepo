@@ -1,6 +1,7 @@
 package app.main;
 
 import app.core.Engine;
+import app.managers.MinionManager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,8 +17,9 @@ public class Applocation {
 
         Connection connection =
                 DriverManager.getConnection("jdbc:mysql://localhost:3306/minions_db", properties);
+        MinionManager minionManager = new MinionManager(connection);
 
-        Engine engine = new Engine(connection);
+        Engine engine = new Engine(minionManager);
 
         engine.run();
     }
