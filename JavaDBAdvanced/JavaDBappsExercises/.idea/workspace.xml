@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dad668ec-747b-4460-8868-4caf53115287" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/core/Engine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/core/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/core/Engine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/main/Applocation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/main/Applocation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/managers/MinionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/managers/MinionManager.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -86,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="139" column="58" lean-forward="true" selection-start-line="139" selection-start-column="58" selection-end-line="139" selection-end-column="58" />
+            <state relative-caret-position="504">
+              <caret line="100" column="47" selection-start-line="100" selection-start-column="47" selection-end-line="100" selection-end-column="47" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#280#281#0" expanded="true" />
@@ -96,6 +91,11 @@
                 <element signature="method#executeVillainsName#0;class#MinionManager#0" />
                 <element signature="docComment;method#executeMinionsNames#0;class#MinionManager#0" />
                 <element signature="method#executeMinionsNames#0;class#MinionManager#0" />
+                <element signature="method#addMinionToDB#0;class#MinionManager#0" />
+                <element signature="method#addMinionAndVillainToMappingTable#0;class#MinionManager#0" />
+                <element signature="method#getMinionIDByName#0;class#MinionManager#0" />
+                <element signature="method#getTownIDbyName#0;class#MinionManager#0" />
+                <element signature="method#getVillainIDByName#0;class#MinionManager#0" />
               </folding>
             </state>
           </provider>
@@ -104,20 +104,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/core/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="630">
               <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8ca21736-cc2c-4572-b54f-f536a757a45a/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -242,7 +233,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="database.console.LAST_STATE" value="true" />
+    <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -292,7 +283,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555409689949</updated>
-      <workItem from="1555409692645" duration="7734000" />
+      <workItem from="1555409692645" duration="8151000" />
     </task>
     <task id="LOCAL-00001" summary="Java DB Advanced - Exercises: Introduction to DB Apps">
       <created>1555414632288</created>
@@ -301,11 +292,25 @@
       <option name="project" value="LOCAL" />
       <updated>1555414632288</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Java DB Advanced - Exercises: Introduction to DB Apps">
+      <created>1555418847274</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555418847274</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Java DB Advanced - Exercises: Introduction to DB Apps">
+      <created>1555418868589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555418868589</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7734000" />
+    <option name="totallyTimeSpent" value="8151000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -328,7 +333,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -411,13 +416,13 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8ca21736-cc2c-4572-b54f-f536a757a45a/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/core/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="630">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -427,8 +432,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="139" column="58" lean-forward="true" selection-start-line="139" selection-start-column="58" selection-end-line="139" selection-end-column="58" />
+        <state relative-caret-position="504">
+          <caret line="100" column="47" selection-start-line="100" selection-start-column="47" selection-end-line="100" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#280#281#0" expanded="true" />
@@ -437,6 +442,11 @@
             <element signature="method#executeVillainsName#0;class#MinionManager#0" />
             <element signature="docComment;method#executeMinionsNames#0;class#MinionManager#0" />
             <element signature="method#executeMinionsNames#0;class#MinionManager#0" />
+            <element signature="method#addMinionToDB#0;class#MinionManager#0" />
+            <element signature="method#addMinionAndVillainToMappingTable#0;class#MinionManager#0" />
+            <element signature="method#getMinionIDByName#0;class#MinionManager#0" />
+            <element signature="method#getTownIDbyName#0;class#MinionManager#0" />
+            <element signature="method#getVillainIDByName#0;class#MinionManager#0" />
           </folding>
         </state>
       </provider>

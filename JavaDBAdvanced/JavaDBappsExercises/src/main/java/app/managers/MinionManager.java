@@ -96,10 +96,9 @@ public class MinionManager {
      *
      * Exercise N4 - Add Minion
      *
-     * @param minionArgs
-     * @param villainName
+     * @param minionArgs Agruments with information of a minion
+     * @param villainName Name of the villain
      * @return String lines of executed results
-     * @throws SQLException
      */
     public String addMinionToDB(String minionArgs, String villainName) throws SQLException {
         StringBuilder resultStr = new StringBuilder();
