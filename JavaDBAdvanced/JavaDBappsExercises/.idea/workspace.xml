@@ -1,40 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="dad668ec-747b-4460-8868-4caf53115287" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/common/OutputMessages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/core/Engine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/core/MachinesManagerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/core/interfaces/MachineFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/core/interfaces/MachinesManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/core/interfaces/PilotFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/entities/BaseMachine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/entities/FighterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/entities/PilotImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/entities/TankImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/entities/interfaces/Fighter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/entities/interfaces/Machine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/entities/interfaces/Pilot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/entities/interfaces/Tank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/factories/MachineFactoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/factories/PilotFactoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaOOPExam/src/io/ConsoleWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Cresla/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/Cresla/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Cresla/src/main/java/test/MainTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaDBApps/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaDBApps/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaDBApps/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/JavaDBApps/src/main/java/entities/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/parts/AbstractPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/parts/AbstractPart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/parts/ArsenalPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/parts/ArsenalPart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/parts/EndurancePart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/parts/EndurancePart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/parts/ShellPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/parts/ShellPart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/vehicles/AbstractVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/vehicles/AbstractVehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/vehicles/Revenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/vehicles/Revenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/vehicles/Vanguard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaOOPAdvanced/Panzer/src/panzer/models/vehicles/Vanguard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/core/Engine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/core/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/core/Engine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/main/Applocation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/main/Applocation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/managers/MinionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/managers/MinionManager.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -78,6 +55,13 @@
         <item name="minions_db: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="minions: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL-HomeServer" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="minions_db: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="towns: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -87,11 +71,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/main/Applocation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state relative-caret-position="414">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="139" column="58" lean-forward="true" selection-start-line="139" selection-start-column="58" selection-end-line="139" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#280#281#0" expanded="true" />
+                <element signature="e#324#325#0" expanded="true" />
+                <element signature="docComment;method#executeVillainsName#0;class#MinionManager#0" />
+                <element signature="method#executeVillainsName#0;class#MinionManager#0" />
+                <element signature="docComment;method#executeMinionsNames#0;class#MinionManager#0" />
+                <element signature="method#executeMinionsNames#0;class#MinionManager#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/app/core/Engine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,23 +114,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8ca21736-cc2c-4572-b54f-f536a757a45a/console.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/app/core/Engine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#172#173#0" expanded="true" />
-                <element signature="e#216#217#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="144">
+              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -137,10 +138,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/app/main/Applocation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/app/core/Engine.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8ca21736-cc2c-4572-b54f-f536a757a45a/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/core/Engine.java" />
-        <option value="$PROJECT_DIR$/src/main/java/app/main/Applocation.java" />
       </list>
     </option>
   </component>
@@ -151,7 +152,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="574" />
     <option name="y" value="42" />
     <option name="width" value="1139" />
@@ -181,6 +182,53 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="javadbapps" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaDBappsExercises" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javadbapps" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaDBappsExercises" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javadbapps" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaDBappsExercises" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javadbapps" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaDBappsExercises" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javadbapps" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaDBappsExercises" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="managers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javadbapps" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JavaDBappsExercises" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -191,9 +239,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="database.console.LAST_STATE" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -243,15 +292,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555409689949</updated>
-      <workItem from="1555409692645" duration="806000" />
+      <workItem from="1555409692645" duration="7734000" />
     </task>
+    <task id="LOCAL-00001" summary="Java DB Advanced - Exercises: Introduction to DB Apps">
+      <created>1555414632288</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555414632288</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="806000" />
+    <option name="totallyTimeSpent" value="7734000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -259,7 +316,7 @@
       <window_info id="Capture Tool" />
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16204691" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" weight="0.32936078" />
       <window_info anchor="bottom" id="Terminal" />
@@ -270,15 +327,15 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Database" weight="0.12153518" />
+      <window_info anchor="right" id="Database" visible="true" weight="0.15671642" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -289,29 +346,27 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Java DB Advanced - Exercises: Introduction to DB Apps" />
+    <option name="LAST_COMMIT_MESSAGE" value="Java DB Advanced - Exercises: Introduction to DB Apps" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/app/main/Applocation.java</url>
+          <line>23</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8ca21736-cc2c-4572-b54f-f536a757a45a/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/core/Engine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#172#173#0" expanded="true" />
-            <element signature="e#216#217#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -322,19 +377,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java">
+    <entry file="das://8ca21736-cc2c-4572-b54f-f536a757a45a/schema/minions_db/table/villains">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.sql/java/sql/PreparedStatement.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        <state relative-caret-position="352">
+          <caret line="86" column="62" lean-forward="true" selection-start-line="86" selection-start-column="62" selection-end-line="86" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/8.0.15/mysql-connector-java-8.0.15.jar!/com/mysql/cj/jdbc/ClientPreparedStatement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="775" selection-start-line="775" selection-end-line="775" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/app/main/Applocation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="414">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8ca21736-cc2c-4572-b54f-f536a757a45a/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/core/Engine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/managers/MinionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="139" column="58" lean-forward="true" selection-start-line="139" selection-start-column="58" selection-end-line="139" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#324#325#0" expanded="true" />
+            <element signature="docComment;method#executeVillainsName#0;class#MinionManager#0" />
+            <element signature="method#executeVillainsName#0;class#MinionManager#0" />
+            <element signature="docComment;method#executeMinionsNames#0;class#MinionManager#0" />
+            <element signature="method#executeMinionsNames#0;class#MinionManager#0" />
           </folding>
         </state>
       </provider>
