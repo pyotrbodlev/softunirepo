@@ -5,15 +5,20 @@ import panzer.contracts.AttackModifyingPart;
 import java.math.BigDecimal;
 
 public class ArsenalPart extends AbstractPart implements AttackModifyingPart {
-    private int attackModifier;
+    private int attack;
 
-    public ArsenalPart(String model, double weight, BigDecimal price, int attackModifier) {
+    public ArsenalPart(String model, double weight, BigDecimal price, int attack) {
         super(model, weight, price);
-        this.attackModifier = attackModifier;
+        this.attack = attack;
     }
 
     @Override
     public int getAttackModifier() {
-        return this.attackModifier;
+        return this.attack;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + System.lineSeparator() + String.format("+%d %s", this.getAttackModifier(), "Attack");
     }
 }

@@ -9,7 +9,7 @@ public abstract class AbstractPart implements Part {
     private double weight;
     private BigDecimal price;
 
-    AbstractPart(String model, double weight, BigDecimal price) {
+    protected AbstractPart(String model, double weight, BigDecimal price) {
         this.model = model;
         this.weight = weight;
         this.price = price;
@@ -28,5 +28,10 @@ public abstract class AbstractPart implements Part {
     @Override
     public String getModel() {
         return this.model;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s Part - %s", this.getClass().getSimpleName(), this.getModel());
     }
 }
