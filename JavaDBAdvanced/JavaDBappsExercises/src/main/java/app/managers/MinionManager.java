@@ -211,7 +211,7 @@ public class MinionManager {
 
 
     /**
-     *  Exercises N5 - Change Town Names Casing
+     * Exercise N5 - Change Town Names Casing
      * @param country String of a given country;
      * @return On the first line returns number of changed towns. On the next line returns names of changed town names.
      */
