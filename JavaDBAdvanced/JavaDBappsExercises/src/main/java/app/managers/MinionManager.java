@@ -13,6 +13,64 @@ public class MinionManager {
         this.connection = connection;
     }
 
+    private void addMinionAndVillainToMappingTable(int minionID, int villainId) throws SQLException {
+        String query = "INSERT INTO minions_villains(minion_id, villain_id) VALUES (?, ?)";
+        PreparedStatement preparedStatement = this.connection.prepareStatement(query);
+
+        preparedStatement.setInt(1, minionID);
+        preparedStatement.setInt(2, villainId);
+
+        preparedStatement.executeUpdate();
+    }
+
+    private int getMinionIDByName(String minionName) throws SQLException {
+        String query = String.format("SELECT id FROM minions WHERE name LIKE '%s'", minionName);
+
+        PreparedStatement preparedStatement = this.connection.prepareStatement(query);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        int id = 0;
+
+        while (resultSet.next()){
+            id =  resultSet.getInt(1);
+        }
+
+        return id;
+    }
+
+    private int getTownIDbyName(String town) throws SQLException {
+        String query = String.format("SELECT id FROM towns WHERE name LIKE '%s'", town);
+
+        PreparedStatement preparedStatement = this.connection.prepareStatement(query);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        int id = 0;
+
+        if (resultSet.next()){
+            id =  resultSet.getInt(1);
+        }
+
+        return id;
+    }
+
+    private int getVillainIDByName(String villainName) throws SQLException {
+        String query = String.format("SELECT id FROM villains WHERE name LIKE '%s'", villainName);
+
+        PreparedStatement preparedStatement = this.connection.prepareStatement(query);
+
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        int id = 0;
+
+        if (resultSet.next()){
+            id =  resultSet.getInt(1);
+        }
+
+        return id;
+    }
+
     /**
      * Exercises N2 - Get Villains’ Names
      *
@@ -93,7 +151,6 @@ public class MinionManager {
     }
 
     /**
-     *
      * Exercise N4 - Add Minion
      *
      * @param minionArgs Agruments with information of a minion
@@ -152,63 +209,101 @@ public class MinionManager {
         return resultStr.toString();
     }
 
-    private void addMinionAndVillainToMappingTable(int minionID, int villainId) throws SQLException {
-        String query = "INSERT INTO minions_villains(minion_id, villain_id) VALUES (?, ?)";
-        PreparedStatement preparedStatement = this.connection.prepareStatement(query);
 
-        preparedStatement.setInt(1, minionID);
-        preparedStatement.setInt(2, villainId);
-
-        preparedStatement.executeUpdate();
-    }
-
-    private int getMinionIDByName(String minionName) throws SQLException {
-        String query = String.format("SELECT id FROM minions WHERE name LIKE '%s'", minionName);
+    /**
+     *  Exercises N5 - Change Town Names Casing
+     * @param country String of a given country;
+     * @return On the first line returns number of changed towns. On the next line returns names of changed town names.
+     */
+    public String changeTownNamesToUppercase(String country) throws SQLException {
+        String query = String.format("SELECT name FROM towns WHERE country LIKE '%s'", country);
 
         PreparedStatement preparedStatement = this.connection.prepareStatement(query);
 
         ResultSet resultSet = preparedStatement.executeQuery();
-
-        int id = 0;
+        List<String> towns = new ArrayList<>();
 
         while (resultSet.next()){
-            id =  resultSet.getInt(1);
+            towns.add(resultSet.getString("name"));
         }
 
-        return id;
+        if (towns.isEmpty()){
+            return "No town names were affected.";
+        } else {
+            return String.format("%d town names were affected.", towns.size()) + System.lineSeparator() + towns.toString().toUpperCase();
+        }
     }
 
-    private int getTownIDbyName(String town) throws SQLException {
-        String query = String.format("SELECT id FROM towns WHERE name LIKE '%s'", town);
+    /**
+     * Exercise N6 - *Remove Villain
+     * @param villainName Name of the villaint that need to remove.
+     * @return result String with info of removed villain and count of released minions.
+     */
+    public String removeVillain(String villainName) throws SQLException {
+        int villainIDByName = this.getVillainIDByName(villainName);
 
-        PreparedStatement preparedStatement = this.connection.prepareStatement(query);
+        if (villainIDByName == 0){
+            return "No such villain was found";
+        }
+
+        String getCountOfMinionsOfAVillainQuery = "SELECT COUNT(minion_id) FROM minions_villains WHERE villain_id = ? GROUP BY villain_id";
+
+        PreparedStatement preparedStatement = this.connection.prepareStatement(getCountOfMinionsOfAVillainQuery);
+
+        preparedStatement.setInt(1, villainIDByName);
 
         ResultSet resultSet = preparedStatement.executeQuery();
 
-        int id = 0;
+        int minionsCount = 0;
 
-        if (resultSet.next()){
-            id =  resultSet.getInt(1);
+        while (resultSet.next()){
+            minionsCount = resultSet.getInt(1);
         }
 
-        return id;
+        String removeVillainFromMinionVillainsTable = String.format("DELETE FROM minions_villains WHERE villain_id = %d", villainIDByName);
+
+        PreparedStatement preparedStatement1 = this.connection.prepareStatement(removeVillainFromMinionVillainsTable);
+
+        preparedStatement1.executeUpdate();
+
+        String removeVillainQuery = String.format("DELETE FROM villains WHERE id = %d", villainIDByName);
+
+        PreparedStatement preparedStatement2 = this.connection.prepareStatement(removeVillainQuery);
+        preparedStatement2.executeUpdate();
+
+        return String.format("%s was deleted", villainName) + System.lineSeparator() + String.format("%d minions released", minionsCount);
+
     }
 
-    private int getVillainIDByName(String villainName) throws SQLException {
-        String query = String.format("SELECT id FROM villains WHERE name LIKE '%s'", villainName);
+    /**
+     * Exercise N9 - Increase Age Stored Procedure
+     * @param minionID id of a minion that need to be updated;
+     * @return result String with minion name and current age;
+     */
+    public String increaseAgeStoredProcedure(int minionID) throws SQLException {
+        String query = "CALL usp_get_older(?)";
 
         PreparedStatement preparedStatement = this.connection.prepareStatement(query);
+        preparedStatement.setInt(1, minionID);
+        preparedStatement.executeUpdate();
 
-        ResultSet resultSet = preparedStatement.executeQuery();
+        String executeMinionNameAndAgeQuery = "SELECT name, age from minions WHERE id = ?";
 
-        int id = 0;
+        PreparedStatement preparedStatement1 = this.connection.prepareStatement(executeMinionNameAndAgeQuery);
+        preparedStatement1.setInt(1, minionID);
+        ResultSet resultSet = preparedStatement1.executeQuery();
+        String minionName = null;
+        int minionAge = 0;
 
-        if (resultSet.next()){
-            id =  resultSet.getInt(1);
+        while (resultSet.next()){
+            minionName = resultSet.getString(1);
+            minionAge = resultSet.getInt(2);
         }
 
-        return id;
+        if (minionName == null){
+            return "No minion was found";
+        } else {
+            return String.format("%s %d", minionName, minionAge);
+        }
     }
-
-
 }

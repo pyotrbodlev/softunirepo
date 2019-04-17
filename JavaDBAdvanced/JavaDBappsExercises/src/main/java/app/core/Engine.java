@@ -24,12 +24,10 @@ public class Engine implements Runnable {
     public void run() {
         try {
             Scanner scanner = new Scanner(System.in);
-            System.out.print("Minion: ");
-            String minionArgs = scanner.nextLine();
-            System.out.println("Villain: ");
-            String villainName = scanner.nextLine();
 
-            System.out.println(this.manager.addMinionToDB(minionArgs, villainName));
+            int minionId = Integer.parseInt(scanner.nextLine());
+
+            System.out.println(this.manager.increaseAgeStoredProcedure(minionId));
 
         } catch (SQLException e) {
             e.printStackTrace();
