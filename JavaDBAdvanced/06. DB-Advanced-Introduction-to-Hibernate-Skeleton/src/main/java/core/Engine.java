@@ -2,12 +2,14 @@ package core;
 
 import entities.Address;
 import entities.Employee;
+import entities.Project;
 import entities.Town;
 
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.Scanner;
 
 public class Engine {
     private final EntityManager entityManager;
@@ -17,7 +19,13 @@ public class Engine {
     }
 
     public void run() {
-        this.getEmployeesCountByAddress();
+        Scanner scanner = new Scanner(System.in);
+
+        int id = scanner.nextInt();
+
+        this.test(id);
+
+        this.entityManager.close();
     }
 
     /**
@@ -68,9 +76,10 @@ public class Engine {
 
     /**
      * Creates new address with text "Vitoshka 15" if not exist
+     *
      * @return address
      */
-    private Address createNewAddress(){
+    private Address createNewAddress() {
         Town sofia = this.entityManager.createQuery("FROM Town WHERE name = 'Sofia'", Town.class).getSingleResult();
 
         Address address = new Address();
@@ -78,7 +87,7 @@ public class Engine {
         address.setText("Vitoshka 15");
         try {
             return this.entityManager.createQuery("FROM Address where text LIKE 'Vitoshka 15'", Address.class).getSingleResult();
-        } catch (NoResultException nre){
+        } catch (NoResultException nre) {
             this.entityManager.persist(address);
 
             return address;
@@ -88,7 +97,7 @@ public class Engine {
     /**
      * Problem 7 - Addresses with Employee Count
      */
-    private void getEmployeesCountByAddress(){
+    private void getEmployeesCountByAddress() {
         List<Address> resultList = this.entityManager.createQuery("FROM Address ORDER BY employees.size desc, town.id asc", Address.class)
                 .setMaxResults(10)
                 .getResultList();
@@ -98,4 +107,31 @@ public class Engine {
         });
     }
 
+    /**
+     * Problem 8 - Get Employee with Project
+     */
+    private void getEmployeesWithAllProjects(int id) {
+        try {
+            Employee employee = this.entityManager.createQuery("FROM Employee WHERE id = ?", Employee.class)
+                    .setParameter(0, id)
+                    .getSingleResult();
+
+            System.out.printf("%s %s - %s%n", employee.getFirstName(), employee.getLastName(), employee.getJobTitle());
+
+            for (Project project : employee.getProjects()) {
+                System.out.printf(" %s", project.getName());
+            }
+
+        } catch (NoResultException nre) {
+            System.out.println(nre.getMessage());
+        }
+    }
+
+    private void test(int id){
+        Project project = this.entityManager.createQuery("from Project where id = :expected", Project.class)
+                .setParameter("expected", id)
+                .getSingleResult();
+
+        System.out.println(project.getEndDate());
+    }
 }

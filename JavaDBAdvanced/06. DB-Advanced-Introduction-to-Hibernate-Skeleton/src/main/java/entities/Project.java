@@ -1,5 +1,7 @@
 package entities;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Set;
@@ -43,6 +45,7 @@ public class Project {
         this.description = description;
     }
 
+    @Type(type = "timestamp")
     @Column(name = "start_date")
     public Timestamp getStartDate() {
         return startDate;
@@ -52,6 +55,7 @@ public class Project {
         this.startDate = startDate;
     }
 
+    @Type(type = "timestamp")
     @Column(name = "end_date")
     public Timestamp getEndDate() {
         return endDate;
