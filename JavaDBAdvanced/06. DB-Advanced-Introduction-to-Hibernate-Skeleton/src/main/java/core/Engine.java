@@ -23,7 +23,7 @@ public class Engine {
 
         int id = scanner.nextInt();
 
-        this.test(id);
+        this.getEmployeesWithAllProjects(id);
 
         this.entityManager.close();
     }
@@ -110,6 +110,7 @@ public class Engine {
     /**
      * Problem 8 - Get Employee with Project
      */
+    //TODO try to configure with this code - jdbc:mysql://yourHostName:3306/soft_uni?useUnicode=true&useFastDateParsing=false&characterEncoding=UTF-8
     private void getEmployeesWithAllProjects(int id) {
         try {
             Employee employee = this.entityManager.createQuery("FROM Employee WHERE id = ?", Employee.class)
@@ -119,7 +120,7 @@ public class Engine {
             System.out.printf("%s %s - %s%n", employee.getFirstName(), employee.getLastName(), employee.getJobTitle());
 
             for (Project project : employee.getProjects()) {
-                System.out.printf(" %s", project.getName());
+                System.out.printf(" %s%n", project.getName());
             }
 
         } catch (NoResultException nre) {
