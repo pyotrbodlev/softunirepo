@@ -8,6 +8,7 @@ import entities.Town;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import java.math.BigDecimal;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,9 +22,7 @@ public class Engine {
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
-        int id = scanner.nextInt();
-
-        this.getEmployeesWithAllProjects(id);
+        this.getLastTenProjects();
 
         this.entityManager.close();
     }
@@ -134,5 +133,27 @@ public class Engine {
                 .getSingleResult();
 
         System.out.println(project.getEndDate());
+    }
+
+    /**
+     * Problem 9 - Find Latest 10 Projects
+     */
+    private void getLastTenProjects(){
+        List<Project> resultList = this.entityManager.createQuery("from Project ORDER BY startDate desc", Project.class)
+                .setMaxResults(10)
+                .getResultList();
+
+        //Project name: All-Purpose Bike Stand
+        // 	Project Description: Research, design and development of …
+        // 	Project Start Date:2005-09-01 00:00:00.0
+        // 	Project End Date: null
+        resultList.stream()
+                .sorted(Comparator.comparing(Project::getName))
+                .forEach(p -> {
+            System.out.printf("Project name: %s%n", p.getName());
+            System.out.printf(" Project Description: %s%n", p.getDescription());
+            System.out.printf(" Project Start Date:%s%n", p.getStartDate());
+            System.out.printf(" Project End Date: %s%n", p.getEndDate());
+        });
     }
 }

@@ -2,45 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="933eebbb-065d-4d5e-87c0-29159f6bcea0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/introduction-to-hibernate.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cc50ce84-9c9f-4ce6-8814-5a6cdb54820e.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_jsr250_api_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_el_el_api_2_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_enterprise_cdi_api_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_inject_javax_inject_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_2_11.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_geronimo_specs_geronimo_jta_1_1_spec_1_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_3_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_interceptor_jboss_interceptors_api_1_1_spec_1_0_0_Beta1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/core/Engine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Department.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Town.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Town.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JavaDBappsExercises/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaDBappsExercises/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -88,11 +51,10 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/447ed75a-5a56-4dff-890c-8bd33664c411/console.sql">
           <provider selected="true" editor-type-id="text-editor" />
@@ -101,18 +63,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/core/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
+            <state relative-caret-position="216">
+              <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
-                <element signature="e#0#82#0" expanded="true" />
-                <element signature="e#0#83#0" expanded="true" />
-                <element signature="e#0#45#0" expanded="true" />
-                <element signature="e#0#30#0" expanded="true" />
-                <element signature="e#0#42#0" expanded="true" />
-                <element signature="e#0#54#0" expanded="true" />
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#0#33#0" expanded="true" />
+                <element signature="docComment;method#getEmployeesWithSalaryOver50000#0;class#Engine#0" />
+                <element signature="method#getEmployeesWithSalaryOver50000#0;class#Engine#0" />
+                <element signature="docComment;method#getEmployeesFromDepartments#0;class#Engine#0" />
+                <element signature="method#getEmployeesFromDepartments#0;class#Engine#0" />
+                <element signature="docComment;method#addingNewAddress#0;class#Engine#0" />
+                <element signature="method#addingNewAddress#0;class#Engine#0" />
+                <element signature="e#1840#2245#0" />
+                <element signature="e#2276#2347#0" />
+                <element signature="docComment;method#createNewAddress#0;class#Engine#0" />
+                <element signature="method#createNewAddress#0;class#Engine#0" />
+                <element signature="e#2749#2890#0" />
+                <element signature="e#2921#3010#0" />
+                <element signature="docComment;method#getEmployeesCountByAddress#0;class#Engine#0" />
+                <element signature="method#getEmployeesCountByAddress#0;class#Engine#0" />
+                <element signature="e#3367#3502#0" />
+                <element signature="docComment;method#getEmployeesWithAllProjects#0;class#Engine#0" />
+                <element signature="method#getEmployeesWithAllProjects#0;class#Engine#0" />
+                <element signature="e#3790#4252#0" />
+                <element signature="e#4163#4241#1" />
+                <element signature="e#4283#4344#0" />
+                <element signature="method#test#0;class#Engine#0" />
+                <element signature="e#0#36#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/app/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="198">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+            <state relative-caret-position="360">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -181,7 +156,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,7 +217,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,30 +275,34 @@
       <option name="presentableId" value="Default" />
       <updated>1556034437370</updated>
       <workItem from="1556034440215" duration="1447000" />
+      <workItem from="1556039319921" duration="300000" />
+      <workItem from="1556041463284" duration="242000" />
     </task>
+    <task id="LOCAL-00001" summary="Added new TODO message">
+      <created>1556039453882</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556039453882</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1447000" />
+    <option name="totallyTimeSpent" value="1989000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Persistence" side_tool="true" />
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info id="UI Designer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15138593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Java Enterprise" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Persistence" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
@@ -331,26 +310,43 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="CDI" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Database" visible="true" weight="0.1401919" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="CDI" order="6" />
+      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.1401919" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added new TODO message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new TODO message" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/447ed75a-5a56-4dff-890c-8bd33664c411/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/app/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+        <state relative-caret-position="198">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -361,33 +357,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/app/Application.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/447ed75a-5a56-4dff-890c-8bd33664c411/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="121" column="40" selection-start-line="121" selection-start-column="40" selection-end-line="121" selection-end-column="40" />
+        <state relative-caret-position="216">
+          <caret line="23" column="34" lean-forward="true" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
-            <element signature="e#0#82#0" expanded="true" />
-            <element signature="e#0#83#0" expanded="true" />
-            <element signature="e#0#45#0" expanded="true" />
-            <element signature="e#0#30#0" expanded="true" />
-            <element signature="e#0#42#0" expanded="true" />
-            <element signature="e#0#54#0" expanded="true" />
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="docComment;method#getEmployeesWithSalaryOver50000#0;class#Engine#0" />
+            <element signature="method#getEmployeesWithSalaryOver50000#0;class#Engine#0" />
+            <element signature="docComment;method#getEmployeesFromDepartments#0;class#Engine#0" />
+            <element signature="method#getEmployeesFromDepartments#0;class#Engine#0" />
+            <element signature="docComment;method#addingNewAddress#0;class#Engine#0" />
+            <element signature="method#addingNewAddress#0;class#Engine#0" />
+            <element signature="e#1840#2245#0" />
+            <element signature="e#2276#2347#0" />
+            <element signature="docComment;method#createNewAddress#0;class#Engine#0" />
+            <element signature="method#createNewAddress#0;class#Engine#0" />
+            <element signature="e#2749#2890#0" />
+            <element signature="e#2921#3010#0" />
+            <element signature="docComment;method#getEmployeesCountByAddress#0;class#Engine#0" />
+            <element signature="method#getEmployeesCountByAddress#0;class#Engine#0" />
+            <element signature="e#3367#3502#0" />
+            <element signature="docComment;method#getEmployeesWithAllProjects#0;class#Engine#0" />
+            <element signature="method#getEmployeesWithAllProjects#0;class#Engine#0" />
+            <element signature="e#3790#4252#0" />
+            <element signature="e#4163#4241#1" />
+            <element signature="e#4283#4344#0" />
+            <element signature="method#test#0;class#Engine#0" />
+            <element signature="e#0#36#1" expanded="true" />
           </folding>
         </state>
       </provider>
