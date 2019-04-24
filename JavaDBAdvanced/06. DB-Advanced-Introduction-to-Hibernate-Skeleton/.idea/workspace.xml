@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="933eebbb-065d-4d5e-87c0-29159f6bcea0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/introduction-to-hibernate.iml" beforeDir="false" afterPath="$PROJECT_DIR$/introduction-to-hibernate.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/Engine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/core/Engine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/core/Engine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Department.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/entities/Town.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/entities/Town.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,33 +51,28 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/core/Engine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="239" column="8" selection-start-line="239" selection-start-column="8" selection-end-line="239" selection-end-column="8" />
+            <state relative-caret-position="195">
+              <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
               <folding>
-                <element signature="docComment;method#getEmployeesWithSalaryOver50000#0;class#Engine#0" />
-                <element signature="method#getEmployeesWithSalaryOver50000#0;class#Engine#0" />
-                <element signature="e#0#38#0" expanded="true" />
                 <element signature="docComment;method#getEmployeesFromDepartments#0;class#Engine#0" />
                 <element signature="method#getEmployeesFromDepartments#0;class#Engine#0" />
                 <element signature="e#0#82#0" expanded="true" />
-                <element signature="e#0#83#0" expanded="true" />
                 <element signature="docComment;method#addingNewAddress#0;class#Engine#0" />
                 <element signature="method#addingNewAddress#0;class#Engine#0" />
-                <element signature="e#0#45#0" expanded="true" />
+                <element signature="e#0#45#1" expanded="true" />
                 <element signature="docComment;method#createNewAddress#0;class#Engine#0" />
                 <element signature="method#createNewAddress#0;class#Engine#0" />
-                <element signature="e#0#30#0" expanded="true" />
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="e#0#30#1" expanded="true" />
+                <element signature="e#0#42#1" expanded="true" />
                 <element signature="docComment;method#getEmployeesCountByAddress#0;class#Engine#0" />
                 <element signature="method#getEmployeesCountByAddress#0;class#Engine#0" />
-                <element signature="e#0#54#0" expanded="true" />
+                <element signature="e#0#54#1" expanded="true" />
                 <element signature="docComment;method#getEmployeesWithAllProjects#0;class#Engine#0" />
                 <element signature="method#getEmployeesWithAllProjects#0;class#Engine#0" />
-                <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#0#34#1" expanded="true" />
                 <element signature="docComment;method#getLastTenProjects#0;class#Engine#0" />
                 <element signature="method#getLastTenProjects#0;class#Engine#0" />
-                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#0#36#1" expanded="true" />
                 <element signature="docComment;method#increaseSalaryToEmployees#0;class#Engine#0" />
                 <element signature="method#increaseSalaryToEmployees#0;class#Engine#0" />
                 <element signature="e#0#110#1" expanded="true" />
@@ -102,6 +83,8 @@
                 <element signature="docComment;method#findEmployeeByName#0;class#Engine#0" />
                 <element signature="method#findEmployeeByName#0;class#Engine#0" />
                 <element signature="e#0#56#1" expanded="true" />
+                <element signature="docComment;method#maxSalaryOfDepartment#0;class#Engine#0" />
+                <element signature="method#maxSalaryOfDepartment#0;class#Engine#0" />
               </folding>
             </state>
           </provider>
@@ -140,8 +123,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -202,6 +183,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,7 +246,8 @@
       <workItem from="1556039319921" duration="300000" />
       <workItem from="1556041463284" duration="242000" />
       <workItem from="1556086316219" duration="563000" />
-      <workItem from="1556097746211" duration="7089000" />
+      <workItem from="1556097746211" duration="7401000" />
+      <workItem from="1556116177643" duration="756000" />
     </task>
     <task id="LOCAL-00001" summary="Added new TODO message">
       <created>1556039453882</created>
@@ -272,17 +256,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556039453882</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Solved Exercise Introduction to Hibernate">
+      <created>1556096073666</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1556096073666</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9641000" />
+    <option name="totallyTimeSpent" value="10724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="875" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15566714" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15781923" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -293,7 +284,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5254692" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3994638" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -322,7 +313,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added new TODO message" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new TODO message" />
+    <MESSAGE value="Solved Exercise Introduction to Hibernate" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved Exercise Introduction to Hibernate" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/447ed75a-5a56-4dff-890c-8bd33664c411/console.sql" />
@@ -425,33 +417,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/core/Engine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="239" column="8" selection-start-line="239" selection-start-column="8" selection-end-line="239" selection-end-column="8" />
+        <state relative-caret-position="195">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
           <folding>
-            <element signature="docComment;method#getEmployeesWithSalaryOver50000#0;class#Engine#0" />
-            <element signature="method#getEmployeesWithSalaryOver50000#0;class#Engine#0" />
-            <element signature="e#0#38#0" expanded="true" />
             <element signature="docComment;method#getEmployeesFromDepartments#0;class#Engine#0" />
             <element signature="method#getEmployeesFromDepartments#0;class#Engine#0" />
             <element signature="e#0#82#0" expanded="true" />
-            <element signature="e#0#83#0" expanded="true" />
             <element signature="docComment;method#addingNewAddress#0;class#Engine#0" />
             <element signature="method#addingNewAddress#0;class#Engine#0" />
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#45#1" expanded="true" />
             <element signature="docComment;method#createNewAddress#0;class#Engine#0" />
             <element signature="method#createNewAddress#0;class#Engine#0" />
-            <element signature="e#0#30#0" expanded="true" />
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#30#1" expanded="true" />
+            <element signature="e#0#42#1" expanded="true" />
             <element signature="docComment;method#getEmployeesCountByAddress#0;class#Engine#0" />
             <element signature="method#getEmployeesCountByAddress#0;class#Engine#0" />
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#54#1" expanded="true" />
             <element signature="docComment;method#getEmployeesWithAllProjects#0;class#Engine#0" />
             <element signature="method#getEmployeesWithAllProjects#0;class#Engine#0" />
-            <element signature="e#0#26#0" expanded="true" />
             <element signature="e#0#34#1" expanded="true" />
             <element signature="docComment;method#getLastTenProjects#0;class#Engine#0" />
             <element signature="method#getLastTenProjects#0;class#Engine#0" />
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#0#36#1" expanded="true" />
             <element signature="docComment;method#increaseSalaryToEmployees#0;class#Engine#0" />
             <element signature="method#increaseSalaryToEmployees#0;class#Engine#0" />
             <element signature="e#0#110#1" expanded="true" />
@@ -462,6 +449,8 @@
             <element signature="docComment;method#findEmployeeByName#0;class#Engine#0" />
             <element signature="method#findEmployeeByName#0;class#Engine#0" />
             <element signature="e#0#56#1" expanded="true" />
+            <element signature="docComment;method#maxSalaryOfDepartment#0;class#Engine#0" />
+            <element signature="method#maxSalaryOfDepartment#0;class#Engine#0" />
           </folding>
         </state>
       </provider>

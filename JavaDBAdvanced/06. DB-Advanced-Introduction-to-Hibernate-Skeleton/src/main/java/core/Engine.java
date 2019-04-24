@@ -25,20 +25,36 @@ public class Engine {
     public void run() {
         Scanner scanner = new Scanner(System.in);
 
-        this.maxSalaryOfDepartment();
+        this.getEmployeesWithSalaryOver50000();
         this.entityManager.close();
     }
 
     /**
      * Problem 4 - Employees with Salary Over 50 000
+     *
+     * Here im using two methods for executing query.
+     * First with JPA CriteriaBuilder and without HQL.
+     * Second with HQL query.
+     *
+     * ResultList is the same.
      */
     private void getEmployeesWithSalaryOver50000() {
-        String query = "FROM Employee WHERE salary > :expected";
+        CriteriaBuilder criteriaBuilder = this.entityManager.getCriteriaBuilder();
 
-        List<Employee> resultList = this.entityManager.createQuery(query, Employee.class)
-                .setParameter("expected", BigDecimal.valueOf(50000))
-                .getResultList();
+        CriteriaQuery<Employee> query = criteriaBuilder.createQuery(Employee.class);
 
+        Root<Employee> from = query.from(Employee.class);
+
+        query.select(from).where(criteriaBuilder.greaterThan(from.get("salary"), 50000));
+
+        List<Employee> resultList = this.entityManager.createQuery(query).getResultList();
+
+//        String query = "FROM Employee WHERE salary > :expected";
+//
+//        List<Employee> resultList = this.entityManager.createQuery(query, Employee.class)
+//                .setParameter("expected", BigDecimal.valueOf(50000))
+//                .getResultList();
+//
         resultList.forEach(e -> System.out.println(e.getFirstName()));
     }
 
