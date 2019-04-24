@@ -5,7 +5,7 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <datasource-mapping>
-          <factory-entry name="PersistenceUnit" />
+          <factory-entry name="PersistenceUnit" value="28cf942a-c2b8-4075-ae80-368906fe7ac8" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
