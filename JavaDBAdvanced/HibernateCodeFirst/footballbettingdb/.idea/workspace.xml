@@ -2,83 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee736e19-3287-4f1c-9368-610d9987679d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/footballbettingdb.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hibernate-code-first.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/core/Engine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Bet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Competition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/CompetitionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Continent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/ResultPrediction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Round.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Town.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/entities/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fbdb/app/enums/Prediction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/hibernatecodefirst.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/src/main/java/gringotts/app/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/src/main/java/gringotts/app/core/Engine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/src/main/java/gringotts/app/entities/WizardDeposits.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirst/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/hibernatecodefirstsalesdb.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/src/main/java/salesdb/app/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/src/main/java/salesdb/app/core/Engine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/src/main/java/salesdb/app/entites/Customer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/src/main/java/salesdb/app/entites/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/src/main/java/salesdb/app/entites/Sale.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/src/main/java/salesdb/app/entites/StoreLocation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstsalesdb/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/.idea/dataSources/308eb05c-badc-425a-a352-637b50b9791a.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/hibernatecodefirstuniveristysystem.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/src/main/java/univeristy_system/app/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/src/main/java/univeristy_system/app/core/Engine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/src/main/java/univeristy_system/app/entities/Course.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/src/main/java/univeristy_system/app/entities/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/src/main/java/univeristy_system/app/entities/Student.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/src/main/java/univeristy_system/app/entities/Teacher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/src/main/java/univeristy_system/app/utils/Idable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/target/classes/META-INF/persistence.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/target/classes/univeristy_system/app/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/target/classes/univeristy_system/app/core/Engine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/target/classes/univeristy_system/app/entities/Course.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/target/classes/univeristy_system/app/entities/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/target/classes/univeristy_system/app/entities/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/target/classes/univeristy_system/app/entities/Teacher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../hibernatecodefirstuniveristysystem/target/classes/univeristy_system/app/utils/Idable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -276,10 +200,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/fbdb/app/entities/PlayerStatistics.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/fbdb/app/entities/PlayerStatistic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+            <state relative-caret-position="150">
+              <caret line="22" column="58" lean-forward="true" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+              <folding>
+                <element signature="e#426#427#0" expanded="true" />
+                <element signature="e#451#452#0" expanded="true" />
+                <element signature="e#484#485#0" expanded="true" />
+                <element signature="e#512#513#0" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#364#365#0" expanded="true" />
+                <element signature="e#402#403#0" expanded="true" />
+                <element signature="e#434#435#0" expanded="true" />
+                <element signature="e#467#468#0" expanded="true" />
+                <element signature="e#496#497#0" expanded="true" />
+                <element signature="e#540#541#0" expanded="true" />
+                <element signature="e#576#577#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+                <element signature="e#645#646#0" expanded="true" />
+                <element signature="e#696#697#0" expanded="true" />
+                <element signature="e#742#743#0" expanded="true" />
+                <element signature="e#779#780#0" expanded="true" />
+                <element signature="e#815#816#0" expanded="true" />
+                <element signature="e#870#871#0" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#967#968#0" expanded="true" />
+                <element signature="e#1013#1014#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -356,6 +304,8 @@
         <option value="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Team.java" />
         <option value="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/fbdb/app/entities/Game.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fbdb/app/entities/PlayerStatistics.java" />
+        <option value="$PROJECT_DIR$/src/main/java/fbdb/app/entities/PlayerStatistic.java" />
       </list>
     </option>
   </component>
@@ -500,19 +450,33 @@
       <option name="presentableId" value="Default" />
       <updated>1556284048058</updated>
       <workItem from="1556284051436" duration="23000" />
-      <workItem from="1556284142380" duration="6283000" />
+      <workItem from="1556284142380" duration="6693000" />
     </task>
+    <task id="LOCAL-00001" summary="Added new solution for Hibernate Code First Exercises - Football Betting DB">
+      <created>1556290471993</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556290471993</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added new solution for Hibernate Code First Exercises - Football Betting DB">
+      <created>1556290832115</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1556290832115</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6306000" />
+    <option name="totallyTimeSpent" value="6716000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="875" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Persistence" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25322813" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25322813" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -548,6 +512,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added new solution for Hibernate Code First Exercises - Football Betting DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new solution for Hibernate Code First Exercises - Football Betting DB" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4945897a-4cd3-4a7d-b91f-964ce3a202a1/console.sql">
@@ -927,10 +895,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/fbdb/app/entities/PlayerStatistics.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/fbdb/app/entities/PlayerStatistic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
+        <state relative-caret-position="150">
+          <caret line="22" column="58" lean-forward="true" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
+          <folding>
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#512#513#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+            <element signature="e#467#468#0" expanded="true" />
+            <element signature="e#496#497#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#576#577#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#645#646#0" expanded="true" />
+            <element signature="e#696#697#0" expanded="true" />
+            <element signature="e#742#743#0" expanded="true" />
+            <element signature="e#779#780#0" expanded="true" />
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#870#871#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#967#968#0" expanded="true" />
+            <element signature="e#1013#1014#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
