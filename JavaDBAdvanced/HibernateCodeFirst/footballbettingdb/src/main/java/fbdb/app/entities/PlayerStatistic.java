@@ -3,44 +3,21 @@ package fbdb.app.entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "player_statistics")
+@Table( name = "player_statistics")
 public class PlayerStatistic {
     //Game, Player, Scored Goals, Player Assists, Played Minutes During Game, (PK = Game + Player)
-    private int id;
-    private Game game;
-    private Player player;
+    private StatisticID id;
     private int scoredGoals;
     private int playerAssists;
     private int playedMinutesDuringGame;
 
-
-    @Id
-    public int getId() {
+    @EmbeddedId
+    public StatisticID getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = this.game.getId() + this.player.getId();
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "game_id", referencedColumnName = "id")
-    public Game getGame() {
-        return game;
-    }
-
-    public void setGame(Game game) {
-        this.game = game;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "player_id", referencedColumnName = "id")
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
+    public void setId(StatisticID id) {
+        this.id = id;
     }
 
     @Column
