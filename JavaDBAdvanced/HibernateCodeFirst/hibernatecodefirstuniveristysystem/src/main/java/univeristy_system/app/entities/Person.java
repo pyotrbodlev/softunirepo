@@ -1,12 +1,12 @@
 package univeristy_system.app.entities;
 
-import univeristy_system.app.utils.Idable;
+import univeristy_system.app.utils.BaseEntity;
 
 import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Person extends Idable {
+public abstract class Person extends BaseEntity {
     private String firstName;
     private String lastName;
     private String phoneNumber;

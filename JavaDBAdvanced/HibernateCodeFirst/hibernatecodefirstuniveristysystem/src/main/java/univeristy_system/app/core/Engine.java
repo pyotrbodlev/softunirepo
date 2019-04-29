@@ -47,4 +47,11 @@ public class Engine implements Runnable {
         this.entityManager.find(Course.class, 3).getStudents().forEach(s -> System.out.println(s.getFirstName() + " " + s.getLastName()));
 
     }
+
+    public void test(){
+        this.entityManager.find(Student.class, 1).getCourses().forEach(c -> System.out.println(c.getName()));
+
+        this.entityManager.find(Course.class, 3).getStudents().forEach(s -> System.out.println(s.getFirstName() + " " + s.getLastName()));
+
+    }
 }

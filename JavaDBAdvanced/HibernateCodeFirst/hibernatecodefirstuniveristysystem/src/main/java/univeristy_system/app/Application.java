@@ -16,7 +16,7 @@ public class Application {
 
         Engine engine = new Engine(em);
 
-        engine.run();
+        engine.test();
 
     }
 }

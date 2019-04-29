@@ -1,8 +1,7 @@
 package univeristy_system.app.entities;
 
-import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.Type;
-import univeristy_system.app.utils.Idable;
+import univeristy_system.app.utils.BaseEntity;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -11,7 +10,7 @@ import java.util.Set;
 @Entity
 @Table(name = "courses")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Course extends Idable {
+public class Course extends BaseEntity {
     //name, description, start date, end date, credits
     private String name;
     private String description;
