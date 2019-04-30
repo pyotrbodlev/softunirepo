@@ -56,8 +56,16 @@ public class MissionControlImplTest {
         Assert.assertEquals(75D, first_mission.getRating(), 0.1);
     }
 
-    public void test(){
+    @Test
+    public void testGenerateMission_generateThirdMission_shouldReturnSurveillanceMissionType() {
+        Mission first_mission = missionControl.generateMission("First Mission", Double.MAX_VALUE, Double.MAX_VALUE);
+        Mission second_mission = missionControl.generateMission("First Mission", Double.MAX_VALUE, Double.MAX_VALUE);
+        Mission third_mission = missionControl.generateMission("First Mission", Double.MAX_VALUE, Double.MAX_VALUE);
 
+        String expectedType = "SurveillanceMission";
+        String actualType = third_mission.getClass().getSimpleName();
+
+        Assert.assertEquals("MissionControl class, generateMission() method does not work properly.", expectedType, actualType);
     }
 
 }

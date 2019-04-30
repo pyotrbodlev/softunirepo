@@ -6,7 +6,6 @@ import callofduty.domain.agents.Novice;
 import callofduty.interfaces.*;
 
 import java.lang.reflect.Field;
-import java.util.ArrayDeque;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -77,7 +76,7 @@ public class MissionManagerImpl implements MissionManager {
         try {
             Field completedMissions = currentAgent.getClass().getSuperclass().getDeclaredField("completedMissions");
             completedMissions.setAccessible(true);
-            ArrayDeque<?> list = (ArrayDeque<?>) completedMissions.get(currentAgent);
+            List<?> list = (List<?>) completedMissions.get(currentAgent);
             return list.size() >= 3;
         } catch (NoSuchFieldException | IllegalAccessException ignored) {
             return false;
@@ -115,7 +114,7 @@ public class MissionManagerImpl implements MissionManager {
             try {
                 Field completedMissions = agent.getClass().getSuperclass().getDeclaredField("completedMissions");
                 completedMissions.setAccessible(true);
-                ArrayDeque<?> listCompletedMissions = (ArrayDeque<?>) completedMissions.get(agent);
+                List<?> listCompletedMissions = (List<?>) completedMissions.get(agent);
                 if (listCompletedMissions.contains(mission)) {
                     return false;
                 }
@@ -177,7 +176,7 @@ public class MissionManagerImpl implements MissionManager {
             try {
                 Field completedMissions = agent.getClass().getSuperclass().getDeclaredField("completedMissions");
                 completedMissions.setAccessible(true);
-                ArrayDeque<?> listCompletedMissions = (ArrayDeque<?>) completedMissions.get(agent);
+                List<?> listCompletedMissions = (List<?>) completedMissions.get(agent);
                 count += listCompletedMissions.size();
             } catch (NoSuchFieldException | IllegalAccessException ignored) {
                 ;

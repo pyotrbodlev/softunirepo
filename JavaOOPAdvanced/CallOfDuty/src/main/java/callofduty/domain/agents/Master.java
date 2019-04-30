@@ -3,35 +3,40 @@ package callofduty.domain.agents;
 import callofduty.interfaces.BountyAgent;
 import callofduty.interfaces.Mission;
 
-public class Master extends AbstractAgent implements BountyAgent {
-    private double bounty;
+import java.util.List;
 
-    public Master(String id, String name, double rating) {
-        super(id, name, rating);
+public class Master extends BaseAgent implements BountyAgent {
+    private static final Double MASTER_AGENT_BASE_BOUNTY = 0D;
+
+    private Double bounty;
+
+    public Master(String id, String name, Double rating) {
+        super(id, name);
+        this.setRating(rating);
+        this.setBounty(MASTER_AGENT_BASE_BOUNTY);
     }
 
     @Override
+    protected void achieveBonuses() {
+        for (Mission acceptedMission : this.getAssignedMissions()) {
+            this.setRating(this.getRating() + acceptedMission.getRating());
+            this.setBounty(this.getBounty() + acceptedMission.getBounty());
+        }
+    }
+
     public Double getBounty() {
         return this.bounty;
     }
 
-    @Override
-    public void completeMissions() {
-        while (!super.getOpenedMissions().isEmpty()) {
-            Mission currentMission = this.getOpenedMissions().pop();
-            setRating(currentMission.getRating());
-            setBounty(currentMission.getBounty());
-            this.getCompletedMissions().push(currentMission);
-        }
-    }
-
-    private void setBounty(double bounty) {
-        this.bounty += bounty;
+    private void setBounty(Double bounty) {
+        this.bounty = bounty;
     }
 
     @Override
     public String toString() {
-        return super.toString() + System.lineSeparator() +
-                String.format("Bounty Earned: $%.2f", this.getBounty());
+        return
+                super.toString()
+                        + System.lineSeparator()
+                        + String.format("Bounty Earned: $%.2f", this.getBounty());
     }
 }
