@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="soft_uni@localhost" uuid="447ed75a-5a56-4dff-890c-8bd33664c411">
-      <database-info product="MySQL" version="8.0.15" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)" dbms="MYSQL" exact-version="8.0.15" exact-driver-version="8.0">
+    <data-source name="soft_uni@localhost" uuid="28cf942a-c2b8-4075-ae80-368906fe7ac8">
+      <database-info product="MySQL" version="5.7.25-0ubuntu0.18.04.2" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.4.1" dbms="MYSQL" exact-version="5.7.25" exact-driver-version="2.4">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
-      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
       <introspection-schemas>*:@</introspection-schemas>
