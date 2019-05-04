@@ -51,7 +51,8 @@ public class Book {
         this.description = description;
     }
 
-    @Column(columnDefinition = "INT(11)")
+    @Enumerated(value = EnumType.ORDINAL)
+    @Column(name = "edition_type")
     public EditionType getEditionType() {
         return editionType;
     }
@@ -87,7 +88,8 @@ public class Book {
         this.releaseDate = releaseDate;
     }
 
-    @Column(columnDefinition = "INT(11)")
+    @Enumerated(value = EnumType.ORDINAL)
+    @Column(name = "age_restriction")
     public AgeRestriction getAgeRestriction() {
         return ageRestriction;
     }

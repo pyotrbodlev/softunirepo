@@ -24,6 +24,7 @@ import java.util.*;
 
 @Component
 public class Engine implements CommandLineRunner {
+    private static final String FILES_PATH = "C:\\Users\\disel\\IdeaProjects\\springdataintro\\src\\main\\resources\\";
 
     @Autowired
     private AuthorRepository authorRepository;
@@ -43,9 +44,9 @@ public class Engine implements CommandLineRunner {
     public void seedDatabase() throws IOException, ParseException {
         Random random = new Random();
 
-        BufferedReader booksReader = new BufferedReader(new FileReader(new File("C:\\Users\\disel\\IdeaProjects\\springdataintro\\src\\main\\resources\\books.txt")));
-        BufferedReader authorsReader = new BufferedReader(new FileReader(new File("C:\\Users\\disel\\IdeaProjects\\springdataintro\\src\\main\\resources\\authors.txt")));
-        BufferedReader categoriesReader = new BufferedReader(new FileReader(new File("C:\\Users\\disel\\IdeaProjects\\springdataintro\\src\\main\\resources\\categories.txt")));
+        BufferedReader booksReader = new BufferedReader(new FileReader(new File(FILES_PATH + "books.txt")));
+        BufferedReader authorsReader = new BufferedReader(new FileReader(new File(FILES_PATH + "authors.txt")));
+        BufferedReader categoriesReader = new BufferedReader(new FileReader(new File(FILES_PATH + "categories.txt")));
 
 
         List<Author> authors = new ArrayList<>();
