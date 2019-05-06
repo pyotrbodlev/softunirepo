@@ -25,8 +25,6 @@ import java.util.*;
 
 @Component
 public class BookshopController implements CommandLineRunner {
-    private static final String FILES_PATH = "C:\\Users\\admin\\Documents\\GitHub\\softunirepo\\JavaDBAdvanced\\springdataintro\\src\\main\\resources\\";
-
     private AuthorService authorService;
 
     private CategoryService categoryService;
@@ -42,7 +40,7 @@ public class BookshopController implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        this.bookService.getAllBooksAfter2000();
+        this.bookService.getBookOfTheAuthor("George", "Powell").forEach(b -> System.out.println(b.getTitle() + " " + b.getReleaseDate() + " " + b.getCopies()));
     }
 
     private void seedDatabase() throws IOException, ParseException {

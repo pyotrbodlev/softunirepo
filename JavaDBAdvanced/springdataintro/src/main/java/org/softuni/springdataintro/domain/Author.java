@@ -39,7 +39,7 @@ public class Author {
         this.lastName = lastName;
     }
 
-    @OneToMany(targetEntity = Book.class, mappedBy = "author")
+    @OneToMany(mappedBy = "author", targetEntity = Book.class, fetch = FetchType.EAGER)
     public Set<Book> getBooks() {
         return books;
     }

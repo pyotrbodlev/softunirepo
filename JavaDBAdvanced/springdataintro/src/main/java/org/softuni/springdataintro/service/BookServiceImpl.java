@@ -99,4 +99,16 @@ public class BookServiceImpl implements BookService {
             System.out.println(book.getTitle());
         }
     }
+
+    /**
+     * Problem N4 - Get all books from author, ordered by their release date (descending), then by book title (ascending). Print the book's title, release date and copies.
+     * @param firstName of the author
+     * @param lastName of the author
+     * @return list this author's books
+     */
+    @Override
+    public List<Book> getBookOfTheAuthor(String firstName, String lastName){
+        Author author = this.authorRepository.findAllByFirstNameAndLastName(firstName, lastName);
+        return this.bookRepository.findAllByAuthorOrderByReleaseDateDescTitleAsc(author);
+    }
 }

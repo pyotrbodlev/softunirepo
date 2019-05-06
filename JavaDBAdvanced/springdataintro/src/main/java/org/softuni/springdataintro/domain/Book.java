@@ -98,7 +98,7 @@ public class Book {
         this.ageRestriction = ageRestriction;
     }
 
-    @ManyToOne(targetEntity = Author.class)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id", referencedColumnName = "id")
     public Author getAuthor() {
         return author;
@@ -108,7 +108,7 @@ public class Book {
         this.author = author;
     }
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "books_categories",
             joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),

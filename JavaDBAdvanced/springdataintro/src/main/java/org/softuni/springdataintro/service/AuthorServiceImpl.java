@@ -7,7 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class AuthorServiceImpl implements AuthorService {
@@ -37,5 +41,32 @@ public class AuthorServiceImpl implements AuthorService {
             author.setLastName(lastName);
             authorRepository.saveAndFlush(author);
         }
+    }
+
+    /**
+     * Problem N2 - Get all authors with at least one book with release date before 1990. Print their first name and last name.
+     * @return list with authors.
+     */
+    @Override
+    public List<Author> getAuthorsWithBookBefore() {
+
+        return this.authorRepository.findAll()
+                .stream().filter(a -> {
+                    int size = (int) a.getBooks().stream().filter(b -> {
+                        try {
+                            return b.getReleaseDate().before(new SimpleDateFormat("yyyy").parse("1990"));
+                        } catch (ParseException e) {
+                            System.out.println(e.getMessage());
+                        }
+                        return false;
+                    }).count();
+
+                    return size >= 1;
+                }).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Author> getAuthorsOrderdByBooksCount(){
+        return this.authorRepository.findAll().stream().sorted(Comparator.comparing(a -> a.getBooks().size(), Comparator.reverseOrder())).collect(Collectors.toList());
     }
 }

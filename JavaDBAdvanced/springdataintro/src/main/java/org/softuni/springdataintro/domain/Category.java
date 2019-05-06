@@ -29,7 +29,7 @@ public class Category {
         this.name = name;
     }
 
-    @ManyToMany(targetEntity = Book.class, mappedBy = "categories")
+    @ManyToMany(targetEntity = Book.class, mappedBy = "categories", fetch = FetchType.EAGER)
     public Set<Book> getBooks() {
         return books;
     }
