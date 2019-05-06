@@ -17,6 +17,6 @@ public class UsersController implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        this.userService.getFriendsOf(2);
+       this.userService.getUsersWithEmailProvider("gmail.com").forEach(e -> System.out.println(e.getFullName()));
     }
 }

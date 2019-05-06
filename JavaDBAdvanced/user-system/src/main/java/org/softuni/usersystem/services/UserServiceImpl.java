@@ -5,6 +5,7 @@ import org.softuni.usersystem.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -42,5 +43,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void getFriendsOf(int id){
         this.userRepository.findById(id).get().getFriendsOf().forEach(System.out::println);
+    }
+
+    @Override
+    public List<User> getUsersWithEmailProvider(String provider){
+        return this.userRepository.findAllByEmailEndingWith(provider);
     }
 }
