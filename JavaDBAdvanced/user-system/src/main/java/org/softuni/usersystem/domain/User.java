@@ -20,6 +20,7 @@ public class User {
     private String firstName;
     private String lastName;
     private Set<User> friends;
+    private Set<User> friendsOf;
 
     public User() {
     }
@@ -64,7 +65,7 @@ public class User {
     }
 
     @Column(nullable = false)
-    @Email(regexp = "\\w+@\\w+")
+    @Email(regexp = "[A-Za-z0-9]+@\\w+\\.\\w+")
     public String getEmail() {
         return email;
     }
@@ -141,10 +142,11 @@ public class User {
         return this.firstName + " " + this.lastName;
     }
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "friends",
-            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id")
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "friend_id")}
     )
     public Set<User> getFriends() {
         return friends;
@@ -152,5 +154,14 @@ public class User {
 
     public void setFriends(Set<User> friends) {
         this.friends = friends;
+    }
+
+    @ManyToMany(mappedBy = "friends", cascade = CascadeType.ALL, targetEntity = User.class, fetch = FetchType.EAGER)
+    public Set<User> getFriendsOf() {
+        return friendsOf;
+    }
+
+    public void setFriendsOf(Set<User> friendsOf) {
+        this.friendsOf = friendsOf;
     }
 }
