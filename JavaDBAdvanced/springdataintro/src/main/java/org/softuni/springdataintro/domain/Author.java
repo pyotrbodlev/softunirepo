@@ -1,4 +1,4 @@
-package org.softuni.springdataintro.entities;
+package org.softuni.springdataintro.domain;
 
 import javax.persistence.*;
 import java.util.Set;

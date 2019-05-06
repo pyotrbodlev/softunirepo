@@ -1,4 +1,4 @@
-package org.softuni.springdataintro.entities.enums;
+package org.softuni.springdataintro.domain.enums;
 
 public enum AgeRestriction {
     MINOR, TEEN, ADULT

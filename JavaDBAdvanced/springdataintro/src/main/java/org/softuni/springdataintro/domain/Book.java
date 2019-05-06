@@ -1,7 +1,7 @@
-package org.softuni.springdataintro.entities;
+package org.softuni.springdataintro.domain;
 
-import org.softuni.springdataintro.entities.enums.EditionType;
-import org.softuni.springdataintro.entities.enums.AgeRestriction;
+import org.softuni.springdataintro.domain.enums.EditionType;
+import org.softuni.springdataintro.domain.enums.AgeRestriction;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
