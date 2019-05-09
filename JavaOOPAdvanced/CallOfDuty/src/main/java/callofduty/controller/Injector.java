@@ -8,8 +8,8 @@ public class Injector {
 
     public static void inject(Agent currentAgent, Agent newAgent) {
         try {
-            Field openedMissions = currentAgent.getClass().getSuperclass().getDeclaredField("openedMissions");
-            Field openedMissions1 = newAgent.getClass().getSuperclass().getDeclaredField("openedMissions");
+            Field openedMissions = currentAgent.getClass().getSuperclass().getDeclaredField("assignedMissions");
+            Field openedMissions1 = newAgent.getClass().getSuperclass().getDeclaredField("assignedMissions");
             openedMissions1.setAccessible(true);
             openedMissions.setAccessible(true);
             openedMissions1.set(newAgent, openedMissions.get(currentAgent));
