@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity(name = "authors")
+@NamedStoredProcedureQuery(name = "getAuthorsBookCount",
+        procedureName = "p_get_authors_book_count",
+        parameters = {@StoredProcedureParameter(name = "full_name", mode = ParameterMode.IN, type = String.class)})
 public class Author extends BaseEntity {
 
     private String firstName;
@@ -32,7 +35,7 @@ public class Author extends BaseEntity {
     }
 
     @Transient
-    public String getFullName(){
+    public String getFullName() {
         return this.getFirstName() + " " + this.getLastName();
     }
 

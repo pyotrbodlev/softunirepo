@@ -35,4 +35,7 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
     List<Book> findAllByTitleLongerThan(@Param("length") int length);
 
     List<ReducedBook> findAllByTitleEquals(String title);
+
+    List<Book> findAllByCopiesLessThan(int copies);
+
 }

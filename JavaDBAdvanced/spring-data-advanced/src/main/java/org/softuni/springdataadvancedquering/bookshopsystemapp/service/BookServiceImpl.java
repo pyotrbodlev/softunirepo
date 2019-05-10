@@ -4,6 +4,7 @@ import org.softuni.springdataadvancedquering.bookshopsystemapp.domain.entities.*
 import org.softuni.springdataadvancedquering.bookshopsystemapp.repository.AuthorRepository;
 import org.softuni.springdataadvancedquering.bookshopsystemapp.repository.BookRepository;
 import org.softuni.springdataadvancedquering.bookshopsystemapp.repository.CategoryRepository;
+import org.softuni.springdataadvancedquering.bookshopsystemapp.util.FileLoader;
 import org.softuni.springdataadvancedquering.bookshopsystemapp.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +15,8 @@ import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.*;
 import java.util.logging.SimpleFormatter;
 import java.util.stream.Collectors;
 
@@ -46,7 +45,7 @@ public class BookServiceImpl implements BookService {
             return;
         }
 
-        String[] booksFileContent = this.fileUtil.getFileContent(BOOKS_FILE_PATH);
+        String[] booksFileContent = this.fileUtil.getFileContent(FileLoader.getFilePath(Book.class));
         for (String line : booksFileContent) {
             String[] lineParams = line.split("\\s+");
 
@@ -249,6 +248,7 @@ public class BookServiceImpl implements BookService {
      * 11. Reduced Book
      * Write a program that prints information (title, edition type, age restriction and price) for a book by given title.
      * When retrieving the book information select only those fields and do NOT include any other information in the returned result.
+     *
      * @param title of the book
      * @return collection of result String
      */
@@ -261,7 +261,58 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public List<String> getAllTitles(){
+    public List<String> getAllTitles() {
         return this.bookRepository.findAll().stream().map(Book::getTitle).collect(Collectors.toList());
     }
+
+    /**
+     * 12. * Increase Book Copies
+     * Write a program that increases the copies of all books released after a given date with a given number. Print the total amount of book copies that were added.
+     *
+     * @param date
+     * @param copies
+     * @return total copies were added
+     */
+    @Override
+    public int increaseBookCopiesAfterDate(String date, int copies) {
+        DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+                // case insensitive to parse JAN and FEB
+                .parseCaseInsensitive()
+                // add pattern
+                .appendPattern("dd MMM yyyy")
+                // create formatter (use English Locale to parse month names)
+                .toFormatter(Locale.ENGLISH);
+
+        LocalDate localDate = LocalDate.parse(date, formatter);
+
+        List<Book> books = this.bookRepository.findAllByReleaseDateAfter(localDate);
+
+        books.forEach(b -> b.setCopies(b.getCopies() + copies));
+
+        this.bookRepository.saveAll(books);
+
+        return books.size() * copies;
+    }
+
+    /**
+     * 13. * Remove Books
+     * Write a program that removes from the database those books, which copies are lower than a given number.
+     * Print the number of books that were deleted from the database.
+     * @param number of minimum copies
+     * @return number of books removed
+     */
+    @Override
+    public int deleteBooksWithCopiesLessThan(int number) {
+        List<Book> books = this.bookRepository.findAllByCopiesLessThan(number);
+        int size = books.size();
+
+        for (Book book : books) {
+            if (book != null) {
+                this.bookRepository.delete(book);
+                books.remove(book);
+            }
+        }
+        return size;
+    }
+
 }

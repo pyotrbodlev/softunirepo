@@ -32,4 +32,8 @@ public interface BookService {
     List<String> getAllBooksByTitle(String title);
 
     List<String> getAllTitles();
+
+    int increaseBookCopiesAfterDate(String date, int copies);
+
+    int deleteBooksWithCopiesLessThan(int number);
 }
