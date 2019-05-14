@@ -2,10 +2,9 @@ package softuni.gamestore.domain.dtos;
 
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
-import java.net.URL;
 import java.time.LocalDate;
 
-public class GameNewDto {
+public class GameRegisterDto {
     private String title;
     private BigDecimal price;
     private double size;
@@ -14,10 +13,10 @@ public class GameNewDto {
     private String description;
     private LocalDate releaseDate;
 
-    public GameNewDto() {
+    public GameRegisterDto() {
     }
 
-    public GameNewDto(String title, BigDecimal price, double size, String trailer, String thumbnailURL, String description, LocalDate releaseDate) {
+    public GameRegisterDto(String title, BigDecimal price, double size, String trailer, String thumbnailURL, String description, LocalDate releaseDate) {
         this.title = title;
         this.price = price;
         this.size = size;
@@ -28,8 +27,8 @@ public class GameNewDto {
     }
 
     @NotNull
-    @Pattern(regexp = "[A-Z].*")
-    @Size(min = 3, max = 100)
+    @Pattern(regexp = "[A-Z].*", message = "Title must start with capital letter.")
+    @Size(min = 3, max = 100, message = "Title length must be between 3 and 100 symbols.")
     public String getTitle() {
         return title;
     }

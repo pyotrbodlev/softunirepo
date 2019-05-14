@@ -3,6 +3,7 @@ package softuni.gamestore.services;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import softuni.gamestore.domain.dtos.UserActiveDto;
 import softuni.gamestore.domain.dtos.UserLoginDto;
 import softuni.gamestore.domain.dtos.UserRegistrationDto;
 import softuni.gamestore.domain.entities.Role;
@@ -41,6 +42,10 @@ public class UserServiceImpl implements UserService {
             return sb.toString().trim();
         }
 
+        if (this.userRepository.findByEmailAndPassword(userRegistrationDto.getEmail(), userRegistrationDto.getPassword()) != null) {
+            return "This user is already registered";
+        }
+
         User user = this.modelMapper.map(userRegistrationDto, User.class);
 
         if (this.userRepository.count() == 0) {
@@ -55,7 +60,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User loginUser(UserLoginDto userLoginDto) {
-        return this.userRepository.findByEmailAndPassword(userLoginDto.getEmail(), userLoginDto.getPassword());
+    public UserActiveDto loginUser(UserLoginDto userLoginDto) {
+        User user = this.userRepository.findByEmailAndPassword(userLoginDto.getEmail(), userLoginDto.getPassword());
+
+        if (user != null) {
+           return this.modelMapper.map(user, UserActiveDto.class);
+        } else {
+            return null;
+        }
+
     }
 }

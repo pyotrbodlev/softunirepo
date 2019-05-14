@@ -2,9 +2,7 @@ package softuni.gamestore.web;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
-import softuni.gamestore.domain.dtos.GameNewDto;
-import softuni.gamestore.domain.dtos.UserLoginDto;
-import softuni.gamestore.domain.dtos.UserRegistrationDto;
+import softuni.gamestore.domain.dtos.*;
 import softuni.gamestore.domain.entities.User;
 import softuni.gamestore.services.GameService;
 import softuni.gamestore.services.UserService;
@@ -12,11 +10,13 @@ import softuni.gamestore.services.UserService;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 @Controller
 public class GameStoreController implements CommandLineRunner {
-    private User activeUser;
+    private UserActiveDto activeUser;
     private UserService userService;
     private GameService gameService;
     private Scanner scanner;
@@ -49,7 +49,13 @@ public class GameStoreController implements CommandLineRunner {
                 case "LoginUser":
                     email = tokens[1];
                     password = tokens[2];
-                    User loginUser = this.userService.loginUser(new UserLoginDto(email, password));
+
+                    if(this.activeUser != null){
+                        System.out.println("You must logout before login");
+                        continue;
+                    }
+
+                    UserActiveDto loginUser = this.userService.loginUser(new UserLoginDto(email, password));
 
                     if (loginUser != null) {
                         this.activeUser = loginUser;
@@ -69,19 +75,46 @@ public class GameStoreController implements CommandLineRunner {
                     break;
                 case "AddGame":
                     String title = tokens[1];
-                    BigDecimal price = BigDecimal.valueOf(Long.parseLong(tokens[2]));
+                    BigDecimal price = BigDecimal.valueOf(Double.parseDouble(tokens[2]));
                     double size = Double.parseDouble(tokens[3]);
                     String trailer = tokens[4];
                     String thumbnailUrl = tokens[5];
                     String description = tokens[6];
-                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-mm-yyyy");
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
                     LocalDate localDate = LocalDate.parse(tokens[7], formatter);
 
-                    GameNewDto gameNewDto = new GameNewDto(title, price, size, trailer, thumbnailUrl, description, localDate);
+                    GameRegisterDto gameRegisterDto = new GameRegisterDto(title, price, size, trailer, thumbnailUrl, description, localDate);
 
-                    System.out.println(this.gameService.addGame(gameNewDto, this.activeUser));
+                    System.out.println(this.gameService.addGame(gameRegisterDto, this.activeUser));
                     break;
+                case "EditGame":
+                    title = tokens[1];
+                    Map<String, String> params = getParams(tokens);
+
+                    GameEditDto gameEditDto = new GameEditDto(title, params);
+
+                    System.out.println(this.gameService.editGame(gameEditDto, this.activeUser));
+                    break;
+                case "DeleteGame":
+                    title = tokens[1];
+
+                    System.out.println(this.gameService.deleteGame(new GameDeleteDto(title), this.activeUser));
+                    break;
+                case "AllGame":
+                    System.out.println(this.activeUser);
             }
         }
+    }
+
+    private Map<String, String> getParams(String[] tokens) {
+        Map<String, String> params = new HashMap<>();
+
+        for (int i = 2; i < tokens.length; i++) {
+            String[] miniTokens = tokens[i].split("=");
+            String key = miniTokens[0];
+            String value = miniTokens[1];
+            params.put(key, value);
+        }
+        return params;
     }
 }
