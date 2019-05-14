@@ -1,6 +1,7 @@
 package org.softuni.springdataadvancedquering.bookshopsystemapp.service;
 
 import org.softuni.springdataadvancedquering.bookshopsystemapp.domain.entities.Category;
+import org.softuni.springdataadvancedquering.bookshopsystemapp.util.FileLoader;
 import org.softuni.springdataadvancedquering.bookshopsystemapp.util.FileUtil;
 import org.softuni.springdataadvancedquering.bookshopsystemapp.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
             return;
         }
 
-        String[] categoriesFileContent = this.fileUtil.getFileContent(CATEGORIES_FILE_PATH);
+        String[] categoriesFileContent = this.fileUtil.getFileContent(FileLoader.getFilePath(Category.class));
         for (String line : categoriesFileContent) {
             Category category = new Category();
             category.setName(line);

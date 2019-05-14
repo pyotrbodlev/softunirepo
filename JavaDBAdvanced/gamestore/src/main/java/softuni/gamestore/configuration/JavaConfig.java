@@ -1,19 +1,20 @@
-package org.softuni.springdataadvancedquering.bookshopsystemapp.config;
+package softuni.gamestore.configuration;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import javax.persistence.EntityManager;
-import java.sql.Connection;
-import java.sql.ConnectionBuilder;
 import java.util.Scanner;
 
 @Configuration
-public class JavaProjectConfig {
-
+public class JavaConfig {
     @Bean
     public Scanner scanner() {
         return new Scanner(System.in);
     }
 
+    @Bean
+    public ModelMapper modelMapper(){
+        return new ModelMapper();
+    }
 }

@@ -27,7 +27,6 @@ public class BookshopController implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        String title = scanner.nextLine();
-        this.bookService.getAllBooksByTitle(title).forEach(System.out::println);
+        System.out.println(this.authorService.getBookCount("Jeffrey Snyder"));
     }
 }
