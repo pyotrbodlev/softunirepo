@@ -22,7 +22,8 @@ public class WizardDeposits {
     private Date depositExpirationDate;
     private boolean isDepositExpired;
 
-    public WizardDeposits() {}
+    public WizardDeposits() {
+    }
 
     public WizardDeposits(String firstName, String lastName, int age) {
         setFirstName(firstName);

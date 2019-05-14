@@ -31,11 +31,11 @@ public class Engine {
 
     /**
      * Problem 4 - Employees with Salary Over 50 000
-     *
+     * <p>
      * Here im using two methods for executing query.
      * First with JPA CriteriaBuilder and without HQL.
      * Second with HQL query.
-     *
+     * <p>
      * ResultList is the same.
      */
     private void getEmployeesWithSalaryOver50000() {

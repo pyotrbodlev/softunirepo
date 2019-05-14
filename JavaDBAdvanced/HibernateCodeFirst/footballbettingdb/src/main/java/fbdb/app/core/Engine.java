@@ -11,7 +11,7 @@ public class Engine {
         this.entityManager = entityManager;
     }
 
-    public void run(){
+    public void run() {
         this.entityManager.getTransaction().begin();
 
         PlayerStatistic ps = new PlayerStatistic();

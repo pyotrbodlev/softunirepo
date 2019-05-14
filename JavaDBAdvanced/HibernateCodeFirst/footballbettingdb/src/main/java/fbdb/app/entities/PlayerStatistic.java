@@ -3,7 +3,7 @@ package fbdb.app.entities;
 import javax.persistence.*;
 
 @Entity
-@Table( name = "player_statistics")
+@Table(name = "player_statistics")
 public class PlayerStatistic {
     //Game, Player, Scored Goals, Player Assists, Played Minutes During Game, (PK = Game + Player)
     private StatisticID id;

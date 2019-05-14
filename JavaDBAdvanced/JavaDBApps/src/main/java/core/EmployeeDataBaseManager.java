@@ -17,7 +17,7 @@ public class EmployeeDataBaseManager extends JdbcDataBaseManager<Employee> {
     public List<Employee> toList(ResultSet executeQuery) throws SQLException {
         List<Employee> list = new ArrayList<>();
 
-        while (executeQuery.next()){
+        while (executeQuery.next()) {
             String firstName = executeQuery.getString("first_name");
             String lastName = executeQuery.getString("last_name");
             double salary = executeQuery.getDouble("salary");

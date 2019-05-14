@@ -13,7 +13,8 @@ public class Sale {
     private StoreLocation storeLocation;
     private Date date;
 
-    public Sale() {}
+    public Sale() {
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

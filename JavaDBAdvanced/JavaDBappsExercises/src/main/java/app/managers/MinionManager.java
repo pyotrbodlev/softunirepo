@@ -32,8 +32,8 @@ public class MinionManager {
 
         int id = 0;
 
-        while (resultSet.next()){
-            id =  resultSet.getInt(1);
+        while (resultSet.next()) {
+            id = resultSet.getInt(1);
         }
 
         return id;
@@ -48,8 +48,8 @@ public class MinionManager {
 
         int id = 0;
 
-        if (resultSet.next()){
-            id =  resultSet.getInt(1);
+        if (resultSet.next()) {
+            id = resultSet.getInt(1);
         }
 
         return id;
@@ -64,8 +64,8 @@ public class MinionManager {
 
         int id = 0;
 
-        if (resultSet.next()){
-            id =  resultSet.getInt(1);
+        if (resultSet.next()) {
+            id = resultSet.getInt(1);
         }
 
         return id;
@@ -153,7 +153,7 @@ public class MinionManager {
     /**
      * Exercise N4 - Add Minion
      *
-     * @param minionArgs Agruments with information of a minion
+     * @param minionArgs  Agruments with information of a minion
      * @param villainName Name of the villain
      * @return String lines of executed results
      */
@@ -169,7 +169,7 @@ public class MinionManager {
 
         PreparedStatement preparedStatement = this.connection.prepareStatement(findTownByTownNameQuery);
 
-        if (!preparedStatement.executeQuery().next()){
+        if (!preparedStatement.executeQuery().next()) {
             String addTownToTownsSchemaQuery = String.format("INSERT INTO towns(name) VALUES ('%s')", town);
 
             PreparedStatement preparedStatement1 = this.connection.prepareStatement(addTownToTownsSchemaQuery);
@@ -182,7 +182,7 @@ public class MinionManager {
 
         PreparedStatement villainsStmt = this.connection.prepareStatement(findVillainByNameQuery);
 
-        if (!villainsStmt.executeQuery().next()){
+        if (!villainsStmt.executeQuery().next()) {
             String addVillainQuery = String.format("INSERT INTO villains(name, evilness_factor) VALUES ('%s', 'evil')", villainName);
 
             PreparedStatement preparedStatement1 = this.connection.prepareStatement(addVillainQuery);
@@ -212,6 +212,7 @@ public class MinionManager {
 
     /**
      * Exercise N5 - Change Town Names Casing
+     *
      * @param country String of a given country;
      * @return On the first line returns number of changed towns. On the next line returns names of changed town names.
      */
@@ -223,11 +224,11 @@ public class MinionManager {
         ResultSet resultSet = preparedStatement.executeQuery();
         List<String> towns = new ArrayList<>();
 
-        while (resultSet.next()){
+        while (resultSet.next()) {
             towns.add(resultSet.getString("name"));
         }
 
-        if (towns.isEmpty()){
+        if (towns.isEmpty()) {
             return "No town names were affected.";
         } else {
             return String.format("%d town names were affected.", towns.size()) + System.lineSeparator() + towns.toString().toUpperCase();
@@ -236,13 +237,14 @@ public class MinionManager {
 
     /**
      * Exercise N6 - *Remove Villain
+     *
      * @param villainName Name of the villaint that need to remove.
      * @return result String with info of removed villain and count of released minions.
      */
     public String removeVillain(String villainName) throws SQLException {
         int villainIDByName = this.getVillainIDByName(villainName);
 
-        if (villainIDByName == 0){
+        if (villainIDByName == 0) {
             return "No such villain was found";
         }
 
@@ -256,7 +258,7 @@ public class MinionManager {
 
         int minionsCount = 0;
 
-        while (resultSet.next()){
+        while (resultSet.next()) {
             minionsCount = resultSet.getInt(1);
         }
 
@@ -277,6 +279,7 @@ public class MinionManager {
 
     /**
      * Exercise N9 - Increase Age Stored Procedure
+     *
      * @param minionID id of a minion that need to be updated;
      * @return result String with minion name and current age;
      */
@@ -295,12 +298,12 @@ public class MinionManager {
         String minionName = null;
         int minionAge = 0;
 
-        while (resultSet.next()){
+        while (resultSet.next()) {
             minionName = resultSet.getString(1);
             minionAge = resultSet.getInt(2);
         }
 
-        if (minionName == null){
+        if (minionName == null) {
             return "No minion was found";
         } else {
             return String.format("%s %d", minionName, minionAge);

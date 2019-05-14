@@ -8,8 +8,8 @@
     <persistence-unit name="PersistenceUnit">
         <properties>
             <property name="hibernate.connection.url"
-                      value="jdbc:mysql://localhost:3306/gringotts?useSSL=false&amp;useUnicode=true&amp;serverTimezone=UTC&amp;useFastDateParsing=false&amp;characterEncoding=UTF-8" />
-            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+                      value="jdbc:mysql://localhost:3306/gringotts?useSSL=false&amp;useUnicode=true&amp;serverTimezone=UTC&amp;useFastDateParsing=false&amp;characterEncoding=UTF-8"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.connection.username" value="root"/>
             <property name="hibernate.connection.password" value=""/>
@@ -19,8 +19,8 @@
     <persistence-unit name="salesDB">
         <properties>
             <property name="hibernate.connection.url"
-                      value="jdbc:mysql://localhost:3306/sales?useSSL=false&amp;useUnicode=true&amp;serverTimezone=UTC&amp;useFastDateParsing=false&amp;characterEncoding=UTF-8" />
-            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+                      value="jdbc:mysql://localhost:3306/sales?useSSL=false&amp;useUnicode=true&amp;serverTimezone=UTC&amp;useFastDateParsing=false&amp;characterEncoding=UTF-8"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.connection.username" value="root"/>
             <property name="hibernate.connection.password" value=""/>
