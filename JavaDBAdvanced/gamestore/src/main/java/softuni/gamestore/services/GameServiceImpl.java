@@ -13,6 +13,7 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import java.math.BigDecimal;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -148,7 +149,7 @@ public class GameServiceImpl implements GameService {
 
         Game game = this.gameRepository.findByTitle(gameDeleteDto.getTitle()).orElse(null);
 
-        if (game == null){
+        if (game == null) {
             return "No such game in store";
         }
 
@@ -157,5 +158,28 @@ public class GameServiceImpl implements GameService {
         return "Deleted " + game.getTitle();
     }
 
+    @Override
+    public String getAllGames() {
+        return this.gameRepository.findAll()
+                .stream()
+                .map(g -> modelMapper.map(g, GameSimpleViewDto.class))
+                .map(sg -> String.format("%s %s", sg.getTitle(), sg.getPrice()))
+                .collect(Collectors.joining(System.lineSeparator()));
+    }
 
+    @Override
+    public String getDetailedInfo(String title) {
+        Game game = this.gameRepository.findByTitle(title).orElse(null);
+
+        if (game == null){
+            return "No such game in Database";
+        }
+
+        GameDetailedViewDto gameDetailedViewDto = this.modelMapper.map(game, GameDetailedViewDto.class);
+
+        return String.format("Title: %s", gameDetailedViewDto.getTitle()) + System.lineSeparator() +
+                String.format("Price: %s", gameDetailedViewDto.getPrice()) + System.lineSeparator() +
+                String.format("Description: %s", gameDetailedViewDto.getDescription()) + System.lineSeparator() +
+                String.format("Release date: %s", gameDetailedViewDto.getReleaseDate());
+    }
 }

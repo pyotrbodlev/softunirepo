@@ -3,8 +3,8 @@ package softuni.gamestore.web;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 import softuni.gamestore.domain.dtos.*;
-import softuni.gamestore.domain.entities.User;
 import softuni.gamestore.services.GameService;
+import softuni.gamestore.services.OrderService;
 import softuni.gamestore.services.UserService;
 
 import java.math.BigDecimal;
@@ -19,11 +19,13 @@ public class GameStoreController implements CommandLineRunner {
     private UserActiveDto activeUser;
     private UserService userService;
     private GameService gameService;
+    private OrderService orderService;
     private Scanner scanner;
 
-    public GameStoreController(UserService userService, GameService gameService, Scanner scanner) {
+    public GameStoreController(UserService userService, GameService gameService, OrderService orderService, Scanner scanner) {
         this.userService = userService;
         this.gameService = gameService;
+        this.orderService = orderService;
         this.scanner = scanner;
     }
 
@@ -50,7 +52,7 @@ public class GameStoreController implements CommandLineRunner {
                     email = tokens[1];
                     password = tokens[2];
 
-                    if(this.activeUser != null){
+                    if (this.activeUser != null) {
                         System.out.println("You must logout before login");
                         continue;
                     }
@@ -97,11 +99,29 @@ public class GameStoreController implements CommandLineRunner {
                     break;
                 case "DeleteGame":
                     title = tokens[1];
-
                     System.out.println(this.gameService.deleteGame(new GameDeleteDto(title), this.activeUser));
                     break;
                 case "AllGame":
-                    System.out.println(this.activeUser);
+                    System.out.println(this.gameService.getAllGames());
+                    break;
+                case "DetailGame":
+                    title = tokens[1];
+                    System.out.println(this.gameService.getDetailedInfo(title));
+                    break;
+                case "OwnedGame":
+                    this.activeUser.getOwnedGames().forEach(System.out::println);
+                    break;
+                case "AddItem":
+                    title = tokens[1];
+                    System.out.println(this.orderService.addOrder(this.activeUser, title));
+                    break;
+                case "RemoveItem":
+                    title = tokens[1];
+                    System.out.println(this.orderService.removeGameFromOrder(this.activeUser, title));
+                    break;
+                case "BuyItem":
+                    System.out.println(this.orderService.buyItems(this.activeUser));
+                    break;
             }
         }
     }
@@ -117,4 +137,5 @@ public class GameStoreController implements CommandLineRunner {
         }
         return params;
     }
+
 }

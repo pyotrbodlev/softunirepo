@@ -19,4 +19,7 @@ public interface GameService {
 
     String deleteGame(GameDeleteDto gameDeleteDto);
 
+    String getAllGames();
+
+    String getDetailedInfo(String title);
 }

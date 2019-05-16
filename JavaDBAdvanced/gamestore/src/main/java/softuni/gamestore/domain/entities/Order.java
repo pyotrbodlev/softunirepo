@@ -1,5 +1,8 @@
 package softuni.gamestore.domain.entities;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,6 +11,7 @@ import java.util.List;
 public class Order extends BaseEntity {
     private User user;
     private List<Game> games;
+    private Status status;
 
     public Order() {
     }
@@ -28,11 +32,22 @@ public class Order extends BaseEntity {
             joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "game_id", referencedColumnName = "id")
     )
+    @LazyCollection(LazyCollectionOption.FALSE)
     public List<Game> getGames() {
         return games;
     }
 
     public void setGames(List<Game> games) {
         this.games = games;
+    }
+
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

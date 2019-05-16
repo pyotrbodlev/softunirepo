@@ -44,7 +44,7 @@ public class User extends BaseEntity {
         this.fullName = fullName;
     }
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_games",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
