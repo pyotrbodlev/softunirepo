@@ -41,7 +41,6 @@ public class UserActiveDto {
         this.fullName = fullName;
     }
 
-
     public List<String> getOwnedGames() {
         return ownedGames;
     }

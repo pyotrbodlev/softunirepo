@@ -33,7 +33,7 @@ public class UserRegistrationDto {
 
     @NotNull
     @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).+$", message = "Password must contain at least 1 uppercase, 1 lowercase letter and 1 digit.")
-    @Size(min = 6)
+    @Size(min = 6, message = "Password must be minimum 6 symbols")
     public String getPassword() {
         return password;
     }

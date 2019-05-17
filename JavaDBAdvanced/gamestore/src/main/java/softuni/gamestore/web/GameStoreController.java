@@ -3,6 +3,7 @@ package softuni.gamestore.web;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
 import softuni.gamestore.domain.dtos.*;
+import softuni.gamestore.parsers.CustomParserJson;
 import softuni.gamestore.services.GameService;
 import softuni.gamestore.services.OrderService;
 import softuni.gamestore.services.UserService;
@@ -20,12 +21,14 @@ public class GameStoreController implements CommandLineRunner {
     private UserService userService;
     private GameService gameService;
     private OrderService orderService;
+    private CustomParserJson parserJson;
     private Scanner scanner;
 
-    public GameStoreController(UserService userService, GameService gameService, OrderService orderService, Scanner scanner) {
+    public GameStoreController(UserService userService, GameService gameService, OrderService orderService, CustomParserJson parserJson, Scanner scanner) {
         this.userService = userService;
         this.gameService = gameService;
         this.orderService = orderService;
+        this.parserJson = parserJson;
         this.scanner = scanner;
     }
 
@@ -121,6 +124,11 @@ public class GameStoreController implements CommandLineRunner {
                     break;
                 case "BuyItem":
                     System.out.println(this.orderService.buyItems(this.activeUser));
+                    break;
+                case "SeedUsers":
+                    this.parserJson.parseToUserRegistrationDtos().forEach(ur -> {
+                        System.out.println(this.userService.registerUser(ur));
+                    });
                     break;
             }
         }

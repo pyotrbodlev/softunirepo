@@ -1,0 +1,20 @@
+[
+  {
+    "email": "pesho123@pesho.com",
+    "password": "Pesho123",
+    "confirmPassword": "Pesho123",
+    "fullName": "Pesho Peshov"
+  },
+  {
+    "email": "vanya@vanya.com",
+    "password": "kjqwejU1234",
+    "confirmPassword": "kjqwejU1234",
+    "fullName": "Ivan Ivanov"
+  },
+  {
+    "email": "peshka.peshov@i.bg",
+    "password": "lkqjweiuqP1234",
+    "confirmPassword": "lkqjweiuqP1234",
+    "fullName": "Pepi Pepov"
+  }
+]
