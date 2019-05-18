@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import softuni.productshop.domain.dtos.CategorySeedDto;
 import softuni.productshop.domain.dtos.ProductSeedDto;
 import softuni.productshop.domain.dtos.UserSeedDto;
+import softuni.productshop.domain.entities.Category;
+import softuni.productshop.domain.entities.Product;
 import softuni.productshop.parsers.JsonParser;
 import softuni.productshop.service.CategoryService;
 import softuni.productshop.service.ProductService;
@@ -14,6 +16,7 @@ import softuni.productshop.service.UserService;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.Random;
 
 @Component
 public class ProductShopController implements CommandLineRunner {
@@ -55,9 +58,21 @@ public class ProductShopController implements CommandLineRunner {
         Arrays.stream(categorySeedDtos).forEach(categorySeedDto -> System.out.println(this.categoryService.saveCategory(categorySeedDto)));
     }
 
+    public void feelCategorisProducts(){
+        Random random = new Random();
+
+        for (int i = 0; i < 30; i++) {
+            Category category = this.categoryService.getCategory(random.nextInt(this.categoryService.size()));
+            Product product = this.productService.getProduct(random.nextInt(this.productService.size()));
+
+            this.categoryService.addProductToCategory(category, product);
+        }
+
+    }
+
     @Override
     public void run(String... args) throws Exception {
-        this.soldProducts();
+        this.categoriesByProductCount();
     }
 
     /**
@@ -74,4 +89,11 @@ public class ProductShopController implements CommandLineRunner {
         this.userService.usersWithSoldProducts().stream().map(u -> this.jsonParser.toJson(u)).forEach(System.out::println);
     }
 
+    /**
+     * Query 3 - Categories By Products Count
+     */
+    public void categoriesByProductCount(){
+        this.categoryService.getCategoriesByProductCount().stream().map(c -> this.jsonParser.toJson(c))
+                .forEach(System.out::println);
+    }
 }

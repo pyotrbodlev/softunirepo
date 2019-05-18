@@ -1,5 +1,8 @@
 package softuni.productshop.domain.entities;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,7 +24,7 @@ public class Category extends BaseEntity {
         this.name = name;
     }
 
-    @ManyToMany(targetEntity = Product.class)
+    @ManyToMany(targetEntity = Product.class, fetch = FetchType.EAGER)
     @JoinTable(
             name = "categories_products",
             joinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id"),

@@ -45,14 +45,6 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
-    /**
-     * Query 1 - Products In Range
-     * Get all products in a specified price range (e.g. 500 to 1000), which have no buyer.
-     * Order them by price (from lowest to highest).
-     * Select only the product name, price and the full name of the seller. Export the result to JSON.
-     *
-     * @return JSON string with result set
-     */
     @Override
     public List<ProductSimpleViewDto> productsInRange() {
         return this.productRepository
@@ -65,4 +57,16 @@ public class ProductServiceImpl implements ProductService {
                 })
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public Product getProduct(Integer id){
+        return this.productRepository.getById(id);
+    }
+
+    @Override
+    public int size(){
+        return (int) this.productRepository.count();
+    }
+
+
 }

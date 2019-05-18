@@ -15,4 +15,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 
     @Query("SELECT p FROM Product  p WHERE p.buyer NOT LIKE NULL")
     List<Product> findAllWhereBuyerNotNull();
+
+    Product getById(Integer id);
 }

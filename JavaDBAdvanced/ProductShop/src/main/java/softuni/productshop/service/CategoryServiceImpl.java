@@ -2,24 +2,24 @@ package softuni.productshop.service;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+import softuni.productshop.domain.dtos.CategoryByProductsDto;
 import softuni.productshop.domain.dtos.CategorySeedDto;
-import softuni.productshop.domain.dtos.UserSeedDto;
 import softuni.productshop.domain.entities.Category;
-import softuni.productshop.domain.entities.User;
-import softuni.productshop.parsers.JsonParser;
+import softuni.productshop.domain.entities.Product;
 import softuni.productshop.repositories.CategoryRepository;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class CategoryServiceImpl implements CategoryService{
+public class CategoryServiceImpl implements CategoryService {
     private CategoryRepository categoryRepository;
     private ModelMapper modelMapper;
 
@@ -46,5 +46,50 @@ public class CategoryServiceImpl implements CategoryService{
 
     }
 
+    @Override
+    public List<CategoryByProductsDto> getCategoriesByProductCount() {
+        return this.categoryRepository.findAllOrderByProductsCount()
+                .stream()
+                .map(c -> {
+                    CategoryByProductsDto dto = this.modelMapper.map(c, CategoryByProductsDto.class);
+                    dto.setCategory(c.getName());
+                    dto.setProductCount(c.getProducts().size());
 
+                    List<Product> products = c.getProducts();
+
+                    BigDecimal totalPrice = products.stream()
+                            .map(Product::getPrice)
+                            .reduce(BigDecimal::add)
+                            .orElse(BigDecimal.ZERO);
+
+                    dto.setAveragePrice(totalPrice
+                            .divide(BigDecimal.valueOf(products.size()), 2, RoundingMode.HALF_UP));
+                    dto.setTotalRevenue(totalPrice);
+
+                    return dto;
+                }).collect(Collectors.toList());
+    }
+
+    @Override
+    public Category getCategory(Integer id) {
+        return this.categoryRepository.getById(id);
+    }
+
+    @Override
+    public int size() {
+        return (int) this.categoryRepository.count();
+    }
+
+    @Override
+    public String addProductToCategory(Category category, Product product) {
+        if (category.getProducts() == null){
+            category.setProducts(new ArrayList<>());
+        }
+
+        category.getProducts().add(product);
+
+        this.categoryRepository.save(category);
+
+        return String.format("To %s was added %s category", product.getName(), category.getName());
+    }
 }
