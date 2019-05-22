@@ -3,9 +3,7 @@ package softuni.productshop.service;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import softuni.productshop.domain.dtos.ProductWithBuyerDto;
-import softuni.productshop.domain.dtos.UserSeedDto;
-import softuni.productshop.domain.dtos.UserSellerDto;
+import softuni.productshop.domain.dtos.*;
 import softuni.productshop.domain.entities.User;
 import softuni.productshop.parsers.JsonParser;
 import softuni.productshop.repositories.UserRepository;
@@ -65,4 +63,29 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public UsersAndProducts usersAndProducts(){
+        List<User> byProductsToSellIsNotNull = this.userRepository.findByProductsToSellIsNotEmpty();
+
+        List<UserWithProductDto> collect = byProductsToSellIsNotNull.stream()
+                .filter(u -> u.getProductsToSell().stream().anyMatch(p -> p.getBuyer() != null))
+                .map(u -> {
+                    UserWithProductDto userWithProductDto = this.modelMapper.map(u, UserWithProductDto.class);
+                    List<ProductSeedDto> productWithBuyerDtos = u.getProductsToSell().stream().filter(p -> p.getBuyer() != null).map(p -> this.modelMapper.map(p, ProductSeedDto.class)).collect(Collectors.toList());
+                    userWithProductDto.setSoldProducts(productWithBuyerDtos);
+                    return userWithProductDto;
+                })
+                .collect(Collectors.toList());
+
+        UsersAndProducts usersAndProducts = new UsersAndProducts();
+        usersAndProducts.setUsers(collect);
+        usersAndProducts.setSize(collect.size());
+
+        return usersAndProducts;
+    }
+
+    @Override
+    public User getUser(Integer id){
+        return this.userRepository.findById(id).orElse(null);
+    }
 }

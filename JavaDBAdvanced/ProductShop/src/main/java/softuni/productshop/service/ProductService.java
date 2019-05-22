@@ -14,4 +14,6 @@ public interface ProductService {
     Product getProduct(Integer id);
 
     int size();
+
+    void saveAndFlush(Product product);
 }

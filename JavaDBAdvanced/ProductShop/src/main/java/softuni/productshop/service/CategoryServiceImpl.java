@@ -50,6 +50,7 @@ public class CategoryServiceImpl implements CategoryService {
     public List<CategoryByProductsDto> getCategoriesByProductCount() {
         return this.categoryRepository.findAllOrderByProductsCount()
                 .stream()
+                .filter(c -> c.getProducts().size() > 0)
                 .map(c -> {
                     CategoryByProductsDto dto = this.modelMapper.map(c, CategoryByProductsDto.class);
                     dto.setCategory(c.getName());
@@ -82,6 +83,10 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public String addProductToCategory(Category category, Product product) {
+        if(category == null || product == null){
+            return "False category or product";
+        }
+
         if (category.getProducts() == null){
             category.setProducts(new ArrayList<>());
         }

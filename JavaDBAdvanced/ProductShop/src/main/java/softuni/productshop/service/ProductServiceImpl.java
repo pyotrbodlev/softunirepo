@@ -68,5 +68,8 @@ public class ProductServiceImpl implements ProductService {
         return (int) this.productRepository.count();
     }
 
-
+    @Override
+    public void saveAndFlush(Product product){
+        this.productRepository.saveAndFlush(product);
+    }
 }

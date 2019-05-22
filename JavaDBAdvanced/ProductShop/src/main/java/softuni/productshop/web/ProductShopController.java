@@ -8,6 +8,7 @@ import softuni.productshop.domain.dtos.ProductSeedDto;
 import softuni.productshop.domain.dtos.UserSeedDto;
 import softuni.productshop.domain.entities.Category;
 import softuni.productshop.domain.entities.Product;
+import softuni.productshop.domain.entities.User;
 import softuni.productshop.parsers.JsonParser;
 import softuni.productshop.service.CategoryService;
 import softuni.productshop.service.ProductService;
@@ -15,7 +16,9 @@ import softuni.productshop.service.UserService;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 @Component
@@ -58,21 +61,36 @@ public class ProductShopController implements CommandLineRunner {
         Arrays.stream(categorySeedDtos).forEach(categorySeedDto -> System.out.println(this.categoryService.saveCategory(categorySeedDto)));
     }
 
-    public void feelCategorisProducts(){
+    public void feelCategoriesProducts(){
         Random random = new Random();
 
         for (int i = 0; i < 30; i++) {
-            Category category = this.categoryService.getCategory(random.nextInt(this.categoryService.size()));
-            Product product = this.productService.getProduct(random.nextInt(this.productService.size()));
+            Category category = this.categoryService.getCategory(random.nextInt(this.categoryService.size() - 1));
+            Product product = this.productService.getProduct(random.nextInt(this.productService.size() - 1));
 
-            this.categoryService.addProductToCategory(category, product);
+            System.out.println(this.categoryService.addProductToCategory(category, product));
         }
 
     }
 
+    public void setBuyerAndSellerToProduct(){
+        Random random = new Random();
+
+        for (int i = 1; i <= 200; i++) {
+            Product product = this.productService.getProduct(i);
+            User buyer = this.userService.getUser(random.nextInt(55) + 1);
+            User seller = this.userService.getUser(random.nextInt(33) + 20);
+
+            product.setBuyer(buyer);
+            product.setSeller(seller);
+
+            this.productService.saveAndFlush(product);
+        }
+    }
+
     @Override
     public void run(String... args) throws Exception {
-        this.categoriesByProductCount();
+        this.userAndProducts();
     }
 
     /**
@@ -96,4 +114,12 @@ public class ProductShopController implements CommandLineRunner {
         this.categoryService.getCategoriesByProductCount().stream().map(c -> this.jsonParser.toJson(c))
                 .forEach(System.out::println);
     }
+
+    /**
+     * Query 4 - Users and Products
+     */
+    public void userAndProducts(){
+        System.out.println(this.jsonParser.toJson(this.userService.usersAndProducts()));
+    }
+
 }
