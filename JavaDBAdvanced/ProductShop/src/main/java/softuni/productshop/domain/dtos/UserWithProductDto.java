@@ -1,11 +1,20 @@
 package softuni.productshop.domain.dtos;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlRootElement(name = "user")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class UserWithProductDto {
     private String firstName;
     private String lastName;
     private int age;
+
+    @XmlElement(name = "count")
+    private int soldProductsCount;
+
+    @XmlElement(name = "product")
+    @XmlElementWrapper(name = "sold-products")
     private List<ProductSeedDto> soldProducts;
 
     public UserWithProductDto() {
@@ -48,5 +57,13 @@ public class UserWithProductDto {
 
     public void setSoldProducts(List<ProductSeedDto> soldProducts) {
         this.soldProducts = soldProducts;
+    }
+
+    public int getSoldProductsCount() {
+        return soldProductsCount;
+    }
+
+    public void setSoldProductsCount(int soldProductsCount) {
+        this.soldProductsCount = soldProductsCount;
     }
 }

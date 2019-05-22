@@ -73,6 +73,7 @@ public class UserServiceImpl implements UserService {
                     UserWithProductDto userWithProductDto = this.modelMapper.map(u, UserWithProductDto.class);
                     List<ProductSeedDto> productWithBuyerDtos = u.getProductsToSell().stream().filter(p -> p.getBuyer() != null).map(p -> this.modelMapper.map(p, ProductSeedDto.class)).collect(Collectors.toList());
                     userWithProductDto.setSoldProducts(productWithBuyerDtos);
+                    userWithProductDto.setSoldProductsCount(productWithBuyerDtos.size());
                     return userWithProductDto;
                 })
                 .collect(Collectors.toList());

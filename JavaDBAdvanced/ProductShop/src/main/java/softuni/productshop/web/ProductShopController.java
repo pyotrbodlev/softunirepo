@@ -6,19 +6,20 @@ import org.springframework.stereotype.Component;
 import softuni.productshop.domain.dtos.CategorySeedDto;
 import softuni.productshop.domain.dtos.ProductSeedDto;
 import softuni.productshop.domain.dtos.UserSeedDto;
+import softuni.productshop.domain.dtos.UsersAndProducts;
 import softuni.productshop.domain.entities.Category;
 import softuni.productshop.domain.entities.Product;
 import softuni.productshop.domain.entities.User;
 import softuni.productshop.parsers.JsonParser;
+import softuni.productshop.parsers.XmlParser;
 import softuni.productshop.service.CategoryService;
 import softuni.productshop.service.ProductService;
 import softuni.productshop.service.UserService;
 
+import javax.xml.bind.JAXBException;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Random;
 
 @Component
@@ -28,13 +29,15 @@ public class ProductShopController implements CommandLineRunner {
     private CategoryService categoryService;
     private ProductService productService;
     private JsonParser jsonParser;
+    private XmlParser xmlParser;
 
     @Autowired
-    public ProductShopController(UserService userService, CategoryService categoryService, ProductService productService, JsonParser jsonParser) {
+    public ProductShopController(UserService userService, CategoryService categoryService, ProductService productService, JsonParser jsonParser, XmlParser xmlParser) {
         this.userService = userService;
         this.categoryService = categoryService;
         this.productService = productService;
         this.jsonParser = jsonParser;
+        this.xmlParser = xmlParser;
     }
 
     public void seedUsers() throws FileNotFoundException {
@@ -118,8 +121,8 @@ public class ProductShopController implements CommandLineRunner {
     /**
      * Query 4 - Users and Products
      */
-    public void userAndProducts(){
-        System.out.println(this.jsonParser.toJson(this.userService.usersAndProducts()));
+    public void userAndProducts() throws JAXBException {
+        System.out.println(this.xmlParser.toXml(this.userService.usersAndProducts(), UsersAndProducts.class));
     }
 
 }

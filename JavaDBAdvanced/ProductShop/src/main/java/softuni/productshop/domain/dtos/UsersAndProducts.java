@@ -1,9 +1,16 @@
 package softuni.productshop.domain.dtos;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class UsersAndProducts {
+    @XmlAttribute
     private int size;
+
+    @XmlElement(name = "user")
+    @XmlElementWrapper(name = "users")
     private List<UserWithProductDto> users;
 
     public int getSize() {
