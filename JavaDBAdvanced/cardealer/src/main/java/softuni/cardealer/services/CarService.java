@@ -7,4 +7,6 @@ public interface CarService {
     String saveCar(CarRegisterDto dto);
 
     Car getCar(Integer id);
+
+    int getCarCount();
 }

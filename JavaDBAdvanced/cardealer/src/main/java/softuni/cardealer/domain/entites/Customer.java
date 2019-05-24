@@ -1,17 +1,20 @@
 package softuni.cardealer.domain.entites;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "customers")
 public class Customer extends BaseEntity {
     private String name;
-    private LocalDate birthDate;
+    private LocalDateTime birthDate;
     private boolean isYoungDriver;
     private List<Car> cars;
 
@@ -28,11 +31,11 @@ public class Customer extends BaseEntity {
     }
 
     @Column(name = "birth_date")
-    public LocalDate getBirthDate() {
+    public LocalDateTime getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(LocalDateTime birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -46,6 +49,7 @@ public class Customer extends BaseEntity {
     }
 
     @OneToMany(targetEntity = Sale.class, mappedBy = "customer")
+    @LazyCollection(LazyCollectionOption.FALSE)
     public List<Car> getCars() {
         return cars;
     }

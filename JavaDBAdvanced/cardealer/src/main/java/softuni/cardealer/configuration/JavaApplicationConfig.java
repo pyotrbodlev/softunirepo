@@ -6,6 +6,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.time.LocalDateTime;
+
 @Configuration
 public class JavaApplicationConfig {
 
@@ -16,6 +18,6 @@ public class JavaApplicationConfig {
 
     @Bean
     public Gson gson() {
-        return new GsonBuilder().setPrettyPrinting().create();
+        return new GsonBuilder().setPrettyPrinting().registerTypeAdapter(LocalDateTime.class, new LocalDateTimeJsonConverter()).create();
     }
 }

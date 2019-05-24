@@ -50,4 +50,9 @@ public class CarServiceImpl implements CarService {
     public Car getCar(Integer id){
         return this.carRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public int getCarCount(){
+        return (int) this.carRepository.count();
+    }
 }
