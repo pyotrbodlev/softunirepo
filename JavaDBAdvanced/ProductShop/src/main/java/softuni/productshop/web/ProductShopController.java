@@ -93,7 +93,7 @@ public class ProductShopController implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        this.userAndProducts();
+       this.userAndProducts();
     }
 
     /**
