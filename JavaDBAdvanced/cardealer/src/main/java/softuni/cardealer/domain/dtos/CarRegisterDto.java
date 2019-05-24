@@ -1,24 +1,20 @@
-package softuni.cardealer.domain.entites;
+package softuni.cardealer.domain.dtos;
 
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
+import softuni.cardealer.domain.entites.Part;
 
-import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
-@Entity
-@Table(name = "cars")
-public class Car extends BaseEntity {
-
+public class CarRegisterDto {
     private String make;
     private String model;
     private long travelledDistance;
     private List<Part> parts;
 
-    public Car() {
+    public CarRegisterDto() {
     }
 
-    @Column(name = "make")
+    @NotNull
     public String getMake() {
         return make;
     }
@@ -27,7 +23,7 @@ public class Car extends BaseEntity {
         this.make = make;
     }
 
-    @Column(name = "model")
+    @NotNull
     public String getModel() {
         return model;
     }
@@ -36,7 +32,7 @@ public class Car extends BaseEntity {
         this.model = model;
     }
 
-    @Column(name = "travelled_distance")
+    @NotNull
     public long getTravelledDistance() {
         return travelledDistance;
     }
@@ -45,13 +41,6 @@ public class Car extends BaseEntity {
         this.travelledDistance = travelledDistance;
     }
 
-    @ManyToMany
-    @JoinTable(
-            name = "parts_cars",
-            joinColumns = @JoinColumn(name = "car_id", referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(name = "part_id", referencedColumnName = "id")
-    )
-    @LazyCollection(LazyCollectionOption.FALSE)
     public List<Part> getParts() {
         return parts;
     }

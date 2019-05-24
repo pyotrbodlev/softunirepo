@@ -1,21 +1,20 @@
-package softuni.cardealer.domain.entites;
+package softuni.cardealer.domain.dtos;
 
-import javax.persistence.*;
+import softuni.cardealer.domain.entites.Supplier;
+
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
-import java.util.List;
 
-@Entity
-@Table(name = "parts")
-public class Part extends BaseEntity {
+public class PartRegisterDto {
     private String name;
     private BigDecimal price;
     private int quantity;
     private Supplier supplier;
 
-    public Part() {
+    public PartRegisterDto() {
     }
 
-    @Column(name = "name", nullable = false)
+    @NotNull
     public String getName() {
         return name;
     }
@@ -24,7 +23,7 @@ public class Part extends BaseEntity {
         this.name = name;
     }
 
-    @Column(name = "price")
+    @NotNull
     public BigDecimal getPrice() {
         return price;
     }
@@ -33,7 +32,6 @@ public class Part extends BaseEntity {
         this.price = price;
     }
 
-    @Column(name = "quantity")
     public int getQuantity() {
         return quantity;
     }
@@ -42,8 +40,6 @@ public class Part extends BaseEntity {
         this.quantity = quantity;
     }
 
-    @ManyToOne(targetEntity = Supplier.class)
-    @JoinColumn(name = "supplier_id", referencedColumnName = "id")
     public Supplier getSupplier() {
         return supplier;
     }
@@ -51,6 +47,4 @@ public class Part extends BaseEntity {
     public void setSupplier(Supplier supplier) {
         this.supplier = supplier;
     }
-
-
 }
