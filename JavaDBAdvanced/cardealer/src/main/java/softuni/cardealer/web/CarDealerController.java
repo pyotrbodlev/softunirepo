@@ -10,8 +10,10 @@ import softuni.cardealer.domain.entites.Customer;
 import softuni.cardealer.domain.entites.Part;
 import softuni.cardealer.domain.entites.Supplier;
 import softuni.cardealer.parsers.JsonParser;
+import softuni.cardealer.parsers.XmlParser;
 import softuni.cardealer.services.*;
 
+import javax.xml.bind.JAXBException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -26,15 +28,17 @@ public class CarDealerController implements CommandLineRunner {
     private final CustomerService customerService;
     private final SaleService saleService;
     private final JsonParser jsonParser;
+    private final XmlParser xmlParser;
 
     @Autowired
-    public CarDealerController(SupplierService supplierService, PartService partService, CarService carService, CustomerService customerService, SaleService saleService, JsonParser jsonParser) {
+    public CarDealerController(SupplierService supplierService, PartService partService, CarService carService, CustomerService customerService, SaleService saleService, JsonParser jsonParser, XmlParser xmlParser) {
         this.supplierService = supplierService;
         this.partService = partService;
         this.carService = carService;
         this.customerService = customerService;
         this.saleService = saleService;
         this.jsonParser = jsonParser;
+        this.xmlParser = xmlParser;
     }
 
     private void seedSuppliers() throws FileNotFoundException {
@@ -135,8 +139,67 @@ public class CarDealerController implements CommandLineRunner {
         return discounts.get(i);
     }
 
+    private void seedData() throws FileNotFoundException {
+        this.seedSuppliers();
+        this.seedParts();
+        this.seedCars();
+        this.seedCustomers();
+        for (int i = 0; i < 200; i++) {
+            this.seedSales();
+        }
+    }
+
     @Override
     public void run(String... args) throws Exception {
+        this.getTotalSalesByCustomer();
+    }
 
+    /**
+     * Query 1 – Ordered Customers
+     * @throws JAXBException
+     */
+    public void getAllCustomersOrderByAge() throws JAXBException {
+        ListWithCustomersDto listWithCustomersDto = this.customerService.getListWithCustomersOrderedByBirthDate();
+
+        String s = this.xmlParser.toXml(listWithCustomersDto, ListWithCustomersDto.class);
+
+        System.out.println(s);
+    }
+
+    /**
+     * Query 2 – Cars from make Toyota
+     * @throws JAXBException
+     */
+    public void getToyotaCars() throws JAXBException {
+        ListWithCarsDto listWithCarsDto = this.carService.carsByToyota();
+
+        String s = this.xmlParser.toXml(listWithCarsDto, ListWithCarsDto.class);
+
+        System.out.println(s);
+    }
+
+    /**
+     * Query 3 – Local Suppliers
+     * @throws JAXBException
+     */
+    public void getAllNotImportedSuppliers() throws JAXBException {
+        ListWithSuppliersDto allSuppliersThatDoNotImportParts = this.supplierService.getAllSuppliersThatDoNotImportParts();
+
+        System.out.println(this.xmlParser.toXml(allSuppliersThatDoNotImportParts, ListWithSuppliersDto.class));
+    }
+
+    /**
+     * Query 4 – Cars with Their List of Parts
+     */
+    public void getAllCars() throws JAXBException {
+        ListWithCarsDto cars = this.carService.getAllCarsWithParts();
+
+        System.out.println(this.xmlParser.toXml(cars, ListWithCarsDto.class));
+    }
+
+    public void getTotalSalesByCustomer() throws JAXBException {
+        ListWithCustomerSellDto listWithCustomerSellDto = this.customerService.getListWithCustomerSellDto();
+
+        System.out.println(this.xmlParser.toXml(listWithCustomerSellDto, ListWithCustomerSellDto.class));
     }
 }

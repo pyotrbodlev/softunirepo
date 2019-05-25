@@ -4,14 +4,18 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import softuni.cardealer.configuration.Text;
+import softuni.cardealer.domain.dtos.ListWithSuppliersDto;
 import softuni.cardealer.domain.dtos.SupplierRegisterDto;
+import softuni.cardealer.domain.dtos.SupplierXmlDto;
 import softuni.cardealer.domain.entites.Supplier;
 import softuni.cardealer.repositories.SupplierRepository;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class SupplierServiceImpl implements SupplierService {
@@ -50,5 +54,16 @@ public class SupplierServiceImpl implements SupplierService {
     @Override
     public Supplier getSupplier(Integer id){
         return this.supplierRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public ListWithSuppliersDto getAllSuppliersThatDoNotImportParts(){
+        List<SupplierXmlDto> dtos = this.supplierRepository.findAllNotImporter().stream().map(s -> {
+            SupplierXmlDto dto = this.modelMapper.map(s, SupplierXmlDto.class);
+            dto.setPartsCount(s.getPartList().size());
+            return dto;
+        }).collect(Collectors.toList());
+
+        return new ListWithSuppliersDto(dtos);
     }
 }

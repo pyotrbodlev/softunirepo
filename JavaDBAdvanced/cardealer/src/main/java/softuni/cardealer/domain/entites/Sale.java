@@ -31,7 +31,6 @@ public class Sale extends BaseEntity {
         this.car = car;
     }
 
-
     @ManyToOne(targetEntity = Customer.class)
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     public Customer getCustomer() {

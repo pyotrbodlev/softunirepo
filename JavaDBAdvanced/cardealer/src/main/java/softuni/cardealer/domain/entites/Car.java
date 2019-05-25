@@ -9,7 +9,6 @@ import java.util.List;
 @Entity
 @Table(name = "cars")
 public class Car extends BaseEntity {
-
     private String make;
     private String model;
     private long travelledDistance;
