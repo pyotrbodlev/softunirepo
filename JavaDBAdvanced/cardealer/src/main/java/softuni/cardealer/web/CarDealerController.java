@@ -151,7 +151,7 @@ public class CarDealerController implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        this.getTotalSalesByCustomer();
+        this.getSalesWithAppliedDiscount();
     }
 
     /**
@@ -197,9 +197,22 @@ public class CarDealerController implements CommandLineRunner {
         System.out.println(this.xmlParser.toXml(cars, ListWithCarsDto.class));
     }
 
+    /**
+     * Query 5 – Total Sales by Customer
+     * @throws JAXBException
+     */
     public void getTotalSalesByCustomer() throws JAXBException {
         ListWithCustomerSellDto listWithCustomerSellDto = this.customerService.getListWithCustomerSellDto();
 
         System.out.println(this.xmlParser.toXml(listWithCustomerSellDto, ListWithCustomerSellDto.class));
+    }
+
+    /**
+     * Query 6 – Sales with Applied Discount
+     */
+    public void getSalesWithAppliedDiscount() throws JAXBException {
+        ListWithSalesDto listWithSalesDto = this.saleService.listWithSalesDto();
+
+        System.out.println(this.xmlParser.toXml(listWithSalesDto, ListWithSalesDto.class));
     }
 }
