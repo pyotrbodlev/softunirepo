@@ -61,7 +61,7 @@ public class ImportController extends BaseController {
     }
 
     @PostMapping("/towns")
-    public ModelAndView importTownsConfirm(@RequestParam("towns") String towns) {
+    public ModelAndView importTownsConfirm(@RequestParam("towns") String towns) throws IOException {
         System.out.println(this.townService.importTowns(towns));
 
         return super.redirect("/import/json");

@@ -22,7 +22,7 @@ public class Race extends BaseEntity {
     }
 
     @ManyToOne(targetEntity = District.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "distroct_id", referencedColumnName = "id")
+    @JoinColumn(name = "district_id", referencedColumnName = "id", nullable = false)
     public District getDistrict() {
         return district;
     }
