@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Service
 public class AuthorServiceImpl implements AuthorService {
 
-    private static final String AUTHORS_FILE_PATH = "C:\\Users\\admin\\Documents\\GitHub\\softunirepo\\JavaDBAdvanced\\springdataintro\\src\\main\\resources\\authors.txt";
+    private final String AUTHORS_FILE_PATH = getClass().getClassLoader().getResource("authors.txt").getFile();
 
     private AuthorRepository authorRepository;
     private FileUtil fileUtil;
@@ -66,7 +66,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public List<Author> getAuthorsOrderdByBooksCount(){
-        return this.authorRepository.findAll().stream().sorted(Comparator.comparing(a -> a.getBooks().size(), Comparator.reverseOrder())).collect(Collectors.toList());
+    public List<Author> getAuthorsOrderedByBooksCount(){
+        return this.authorRepository.getAllOrderedByBooksCount();
     }
 }

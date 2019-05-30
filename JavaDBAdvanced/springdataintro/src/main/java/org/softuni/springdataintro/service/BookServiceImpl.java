@@ -23,7 +23,7 @@ import java.util.Set;
 
 @Service
 public class BookServiceImpl implements BookService {
-    private static final String BOOKS_FILE_PATH = "C:\\Users\\admin\\Documents\\GitHub\\softunirepo\\JavaDBAdvanced\\springdataintro\\src\\main\\resources\\books.txt";
+    private final String BOOKS_FILE_PATH = getClass().getClassLoader().getResource("books.txt").getFile();
 
     private BookRepository bookRepository;
     private AuthorRepository authorRepository;

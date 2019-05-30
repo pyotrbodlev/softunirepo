@@ -10,5 +10,6 @@ public interface AuthorService {
 
     List<Author> getAuthorsWithBookBefore();
 
-    List<Author> getAuthorsOrderdByBooksCount();
+    List<Author> getAuthorsOrderedByBooksCount();
+
 }

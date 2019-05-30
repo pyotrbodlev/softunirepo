@@ -11,8 +11,7 @@ import java.util.List;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
-
-    private static final String CATEGORY_FILE_PATH = "C:\\Users\\admin\\Documents\\GitHub\\softunirepo\\JavaDBAdvanced\\springdataintro\\src\\main\\resources\\categories.txt";
+    private final String CATEGORY_FILE_PATH = getClass().getClassLoader().getResource("categories.txt").getFile();
 
     private CategoryRepository categoryRepository;
     private FileUtil fileUtil;
