@@ -16,6 +16,6 @@ public class HomeController implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println(this.clientService.getClientInfo("Hunter Wesgate"));
+        System.out.println(this.clientService.getClientCardInfo("Baxy David"));
     }
 }

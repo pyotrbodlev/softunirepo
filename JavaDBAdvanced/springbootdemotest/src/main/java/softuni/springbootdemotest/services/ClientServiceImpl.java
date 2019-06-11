@@ -21,4 +21,11 @@ public class ClientServiceImpl implements ClientService {
         return String.format("%s %d years old. Bank account number: %s.\nClient has $%s on his account",
                 client.getFullName(), client.getAge(), client.getBankAccount().getAccountNumber(), client.getBankAccount().getBalance());
     }
+
+    @Override
+    public String getClientCardInfo(String fullName){
+        Integer clientCards = this.clientRepository.getClientCards(fullName);
+
+        return String.format("Client %s has %d cards", fullName, clientCards);
+    }
 }
