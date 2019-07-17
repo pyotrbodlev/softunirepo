@@ -1,12 +1,9 @@
 package alararestaurant.domain.entities;
 
-import org.hibernate.annotations.Check;
-
 import javax.persistence.*;
 
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "quantity")}, name = "order_items")
-@Check(constraints = "quantity > 0")
+@Table(name = "order_items")
 public class OrderItem extends BaseEntity {
     private Order order;
     private Item item;
@@ -35,7 +32,7 @@ public class OrderItem extends BaseEntity {
         this.item = item;
     }
 
-    @Column(name = "quantity", nullable = false)
+    @Column(name = "quantity", columnDefinition = "INT(11) CHECK (quantity > 0)")
     public Integer getQuantity() {
         return quantity;
     }

@@ -56,7 +56,7 @@ public class ItemServiceImpl implements ItemService {
             if (this.validationUtil.isValid(itemDto) && this.validationUtil.isValid(categoryImportDto)) {
                 Item item = this.modelMapper.map(itemDto, Item.class);
 
-                if (!this.itemRepository.findByName(item.getName())) {
+                if (this.itemRepository.findByName(item.getName()).orElse(null) == null) {
                     Category category = this.categoryRepository.findByName(categoryImportDto.getName()).orElse(null);
 
                     if (category == null) {
@@ -70,6 +70,8 @@ public class ItemServiceImpl implements ItemService {
                     this.itemRepository.saveAndFlush(item);
 
                     sb.append(String.format(Texts.RECORD_IMPORTED, item.getName())).append(System.lineSeparator());
+                } else {
+                    sb.append(String.format(Texts.DUPLICATED_DATA, item.getName())).append(System.lineSeparator());
                 }
 
             } else {

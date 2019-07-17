@@ -2,7 +2,7 @@ package alararestaurant.domain.dtos;
 
 import com.google.gson.annotations.Expose;
 
-import javax.validation.constraints.Min;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.math.BigDecimal;
@@ -38,7 +38,7 @@ public class ItemImportDto {
     }
 
     @NotNull
-    @Min(0)
+    @DecimalMin(value = "0.01")
     public BigDecimal getPrice() {
         return price;
     }

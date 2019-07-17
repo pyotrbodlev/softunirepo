@@ -5,13 +5,14 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
 @Table(name = "orders")
 public class Order extends BaseEntity {
     private String customer;
-    private LocalDate dateTime;
+    private LocalDateTime dateTime;
     private OrderType type;
     private Employee employee;
     private List<OrderItem> orderItems;
@@ -29,11 +30,11 @@ public class Order extends BaseEntity {
     }
 
     @Column(name = "date_time", nullable = false)
-    public LocalDate getDateTime() {
+    public LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDate dateTime) {
+    public void setDateTime(LocalDateTime dateTime) {
         this.dateTime = dateTime;
     }
 

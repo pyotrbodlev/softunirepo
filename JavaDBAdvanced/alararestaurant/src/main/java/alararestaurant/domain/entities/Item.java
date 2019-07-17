@@ -1,6 +1,5 @@
 package alararestaurant.domain.entities;
 
-import org.hibernate.annotations.Check;
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
@@ -10,8 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Entity
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = "price")}, name = "items")
-@Check(constraints = "price > 0")
+@Table(name = "items")
 public class Item extends BaseEntity {
     private String name;
     private Category category;
@@ -41,7 +39,7 @@ public class Item extends BaseEntity {
         this.category = category;
     }
 
-    @Column(name = "price", nullable = false)
+    @Column(name = "price", columnDefinition = "DECIMAL(19,4) CHECK (price > 0)")
     public BigDecimal getPrice() {
         return price;
     }
