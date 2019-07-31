@@ -1,8 +1,11 @@
 package alararestaurant.config;
 
 import alararestaurant.util.FileUtil;
+import alararestaurant.util.FileUtilImpl;
 import alararestaurant.util.ValidationUtil;
+import alararestaurant.util.ValidationUtilImpl;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,29 +15,21 @@ public class ApplicationBeanConfiguration {
 
     @Bean
     public FileUtil fileUtil() {
-        // TODO : Implement me
-        return null;
-//        return new FileUtilImpl();
+        return new FileUtilImpl();
     }
 
     @Bean
     public Gson gson() {
-        // TODO : Implement me
-        return null;
-//        return new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+       return new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
     }
 
     @Bean
     public ValidationUtil validationUtil() {
-        // TODO : Implement me
-        return null;
-//        return new ValidationUtilImpl();
+        return new ValidationUtilImpl();
     }
 
     @Bean
     public ModelMapper modelMapper() {
-        // TODO : Implement me
-        return null;
-//        return new ModelMapper();
+        return new ModelMapper();
     }
 }
