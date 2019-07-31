@@ -1,0 +1,27 @@
+body {
+    background-color: aliceblue;
+}
+
+div {
+    text-align: center;
+}
+
+hr {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.button-container {
+    position: relative;
+    background: lightgray;
+}
+
+.create {
+    position: absolute;
+    left: 35%;
+}
+
+.all {
+    position: absolute;
+    right: 35%;
+}
