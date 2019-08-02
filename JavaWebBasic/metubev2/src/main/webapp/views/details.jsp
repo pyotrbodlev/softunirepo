@@ -1,4 +1,4 @@
-<%@ page import="app.domain.entities.User" %><%--
+<%@ page import="app.domain.entities.Tube" %><%--
   Created by IntelliJ IDEA.
   User: Peter
   Date: 8/1/2019
@@ -22,23 +22,19 @@
 
 <!-- Begin page content -->
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-    <h1 class="display-4">Welcome <%=((User) request.getSession().getAttribute("loggedUser")).getUsername()%>
+    <h1 class="display-3"><%=((Tube) request.getAttribute("tube")).getTitle()%>
     </h1>
-    <%
-        if (((User) request.getSession().getAttribute("loggedUser")).getTubes() != null &&
-                !((User) request.getSession().getAttribute("loggedUser")).getTubes().isEmpty()) {
-    %>
-    <div class="album py-5 bg-light">
-        <div class="container">
+    <hr/>
 
-            <div class="row">
-                <c:import url="../templates/thumbnail.jsp"/>
-            </div>
-        </div>
+    <div class="embed-responsive embed-responsive-16by9" style="width: 640px; height: 360px">
+        <iframe class="embed-responsive-item"
+                src="https://www.youtube.com/embed/<%=((Tube)request.getAttribute("tube")).getYoutubeId()%>"
+                allowfullscreen></iframe>
+
     </div>
-    <%} else {%>
-    <p>You don't have tubes :(<a href="${pageContext.request.contextPath}/upload">Upload</a> some!</p>
-    <%}%>
+
+    <p style="margin-top: 20px"><%=((Tube) request.getAttribute("tube")).getViews()%> views</p>
+
 </div>
 </body>
 <c:import url="../templates/footer.jsp"/>

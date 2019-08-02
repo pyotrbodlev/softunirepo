@@ -3,6 +3,7 @@ package app.repositories;
 import app.domain.entities.User;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import java.util.List;
 import java.util.Optional;
@@ -21,9 +22,14 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> findById(String id) {
-        return Optional.ofNullable(this.entityManager.createQuery("SELECT u FROM User u WHERE u.id LIKE :id", User.class)
-                .setParameter("id", id)
-                .getSingleResult());
+        try {
+            return Optional.ofNullable(this.entityManager.createQuery("SELECT u FROM User u WHERE u.id LIKE :id", User.class)
+                    .setParameter("id", id)
+                    .getSingleResult());
+
+        } catch (NoResultException nre) {
+            return Optional.empty();
+        }
     }
 
     @Override
@@ -35,9 +41,14 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Optional<User> findByUsername(String username) {
-        return Optional.ofNullable(this.entityManager.createQuery("SELECT u FROM User u WHERE u.username LIKE :username", User.class)
-                .setParameter("username", username)
-                .getSingleResult());
+        try {
+            return Optional.ofNullable(this.entityManager.createQuery("SELECT u FROM User u WHERE u.username LIKE :username", User.class)
+                    .setParameter("username", username)
+                    .getSingleResult());
+
+        } catch (NoResultException nre) {
+            return Optional.empty();
+        }
     }
 
     @Override

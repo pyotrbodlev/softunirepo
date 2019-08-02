@@ -2,11 +2,12 @@ package app.domain.entities;
 
 import javax.persistence.*;
 
-@Table
-@Entity(name = "tubes")
+@Entity
+@Table(name = "tubes")
 public class Tube extends BaseEntity {
     private String title;
     private String author;
+    private String description;
     private String youtubeId;
     private int views;
     private User uploader;
@@ -30,6 +31,15 @@ public class Tube extends BaseEntity {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @Column(name = "description")
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Column(name = "youtube_id")
