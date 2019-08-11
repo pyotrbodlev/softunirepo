@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: peter
+  Date: 08.08.2019
+  Time: 15:14
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="templates/base-layout.xhtml">
+    <ui:define name="main-content">
+        <f:event type="preRenderView" listener="#{userCheckBean.checkAlreadyLoggedIn}"/>
+        <main>
+            <hr class="my-3"/>
+            <h1 class="text-center">Login</h1>
+            <hr class="hr-3"/>
+            <h:form styleClass="mx-auto w-15">
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="username" class="h3 mb-2" value="Username"/>
+                    </div>
+                    <h:inputText styleClass="form-control" id="username" name="username"
+                                 value="#{userLoginBean.userLoginBindingModel.username}"/>
+                </div>
+                <div class="form-group">
+                    <div class="label-holder d-flex justify-content-center">
+                        <h:outputLabel for="password" styleClass="h3 mb-2" value="Password"/>
+                    </div>
+                    <h:inputSecret styleClass="form-control" id="password" name="password"
+                                   value="#{userLoginBean.userLoginBindingModel.password}"/>
+                </div>
+                <div class="button-holder d-flex justify-content-center">
+                    <h:commandButton styleClass="btn btn-info text-white" value="Login"
+                                     action="#{userLoginBean.login()}"/>
+                </div>
+            </h:form>
+            <hr class="my-3"/>
+        </main>
+    </ui:define>
+</ui:composition>
+
+</html>
