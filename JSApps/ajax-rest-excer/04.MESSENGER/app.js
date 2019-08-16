@@ -7,17 +7,23 @@ function attachEvents() {
         document.getElementById('content').value = '';
     }
 
+    const handleResponse = function (response) {
+        return response.json();
+    }
+
+    const handleData = function (data) {
+        return Object.values(data).forEach(value => {
+            const messageText = `${value.author}: ${value.content}\n`;
+            messages.textContent += messageText;
+        });
+    }
+
     const handleRefreshBtn = function () {
         messages.textContent = '';
 
         fetch(url)
-            .then(info => info.json())
-            .then(data => {
-                Object.values(data).forEach(value => {
-                    const messageText = `${value.author}: ${value.content}\n`;
-                    messages.textContent += messageText;
-                })
-            });
+            .then(handleResponse)
+            .then(handleData);
     }
 
     const handleSendAction = function () {
