@@ -81,7 +81,7 @@ form{
     text-align: center;
 }
 
-form button{
+#submit{
     margin: 0 auto;
     display:block;
     margin-top: 1%;
