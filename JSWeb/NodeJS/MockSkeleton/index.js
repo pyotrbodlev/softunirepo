@@ -1,30 +1,15 @@
-const http = require('http')
-const url = require('url')
-const qs = require('querystring')
-const handlers = require('./handlers/handlerBlender')
-const db = require('./config/dataBase')
-const dbTag = require('./config/tagDb')
+const express = require('express')
+const app = express()
+const homeRouter = require('./handlers/homeRouter')
+const memeRouter = require('./handlers/memeRouter')
 const port = 8080
 
-dbTag
-  .load()
-  .then(() => {
-    db.load().then(() => {
-      http
-        .createServer((req, res) => {
-          for (let handler of handlers) {
-            req.pathname = url.parse(req.url).pathname
-            req.querypath = qs.parse(url.parse(req.url).query)
-            let task = handler(req, res)
-            if (task !== true) {
-              break
-            }
-          }
-        })
-        .listen(port)
-      console.log('Im listening on ' + port)
-    })
-  })
-  .catch(() => {
-    console.log('Failed to load DB')
-  })
+app.use(express.static('public'))
+app.use('/public', express.static('public'))
+app.use('/public', express.static(__dirname + '/public'))
+app.use('/', homeRouter)
+app.use('/', memeRouter)
+
+app.listen(port, () => {
+  console.log('Im listening on ' + port)
+})

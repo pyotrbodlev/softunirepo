@@ -1,45 +1,22 @@
-const fs = require('fs')
+const mongoose = require('mongoose')
+const connectionString = 'mongodb://127.0.0.1:27017/memes'
+const Meme = require('../models/memeModel')
 
-let db = []
-let dbPath = './db/db.json'
+mongoose.connect(connectionString)
 
-let load = () => {
-  return new Promise((res, rej) => {
-    fs.readFile(dbPath, (err, data) => {
-      if (err) {
-        console.log(err)
-        return
-      }
-      console.log('loading')
-      db = JSON.parse(data)
-      res()
-    })
-  })
+function saveMeme(title, gender, description) {
+  const meme = new Meme({ title, gender, description, creationDate: Date.now()})
+  meme.save()
 }
 
-let save = () => {
-  return new Promise((res, rej) => {
-    fs.writeFile(dbPath, JSON.stringify(db), err => {
-      if (err) {
-        console.log(err)
-        return
-      }
-      res()
-    })
-  })
+function getMemeById(id) {
+  return Meme.findById(id);
 }
 
-let add = movie => {
-  db.push(movie)
-}
-
-let dbCopy = () => {
-  return db.slice(0)
+function getAll(){
+  return Meme.find()
 }
 
 module.exports = {
-  load: load,
-  save: save,
-  getDb: dbCopy,
-  add: add
+  saveMeme, getMemeById, getAll
 }
