@@ -3,7 +3,6 @@ package memes_api;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.MultiMap;
 import io.vertx.core.Promise;
-import io.vertx.core.Vertx;
 import io.vertx.core.json.DecodeException;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.mongo.MongoClient;
@@ -14,7 +13,7 @@ import io.vertx.ext.web.handler.BodyHandler;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class MainVerticle extends AbstractVerticle {
+public class AppVerticle extends AbstractVerticle {
   private static final Integer PORT = 8080;
   private MongoClient client;
 
@@ -122,11 +121,6 @@ public class MainVerticle extends AbstractVerticle {
       }
     });
 
-  }
-
-  public static void main(String[] args) {
-    Vertx vertx = Vertx.vertx();
-    vertx.deployVerticle(new MainVerticle());
   }
 
   private void prepareDb() {
