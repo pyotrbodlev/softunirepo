@@ -10,8 +10,6 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 public class AppVerticle extends AbstractVerticle {
   private static final Integer PORT = 8080;
@@ -21,12 +19,12 @@ public class AppVerticle extends AbstractVerticle {
   public void start(Promise<Void> startPromise) throws Exception {
     this.prepareDb();
     Router router = Router.router(vertx);
-    router.route("/memes*").handler(BodyHandler.create());
+    router.route("/books*").handler(BodyHandler.create());
 
-    router.get("/memes").handler(this::getAllMemes);
-    router.post("/memes").handler(this::persistMemeHandler);
-    router.put("/memes/:id").handler(this::updateMemeHandler);
-    router.delete("/memes/:id").handler(this::deleteMemeHandler);
+    router.get("/books").handler(this::getAllBooks);
+    router.post("/books").handler(this::persistBooksHandler);
+    router.put("/books/:id").handler(this::updateBooksHandler);
+    router.delete("/books/:id").handler(this::deleteBooksHandler);
 
     vertx.createHttpServer().requestHandler(router).listen(PORT, http -> {
       if (http.succeeded()) {
@@ -38,13 +36,13 @@ public class AppVerticle extends AbstractVerticle {
     });
   }
 
-  private void deleteMemeHandler(RoutingContext context) {
+  private void deleteBooksHandler(RoutingContext context) {
     MultiMap params = context.request().params();
     String id = params.get("id");
 
     JsonObject query = new JsonObject().put("_id", id);
 
-    client.findOneAndDelete("memes", query, res -> {
+    client.findOneAndDelete("books", query, res -> {
       if (res.succeeded()) {
         context.response().setStatusCode(200).end();
       } else {
@@ -54,7 +52,7 @@ public class AppVerticle extends AbstractVerticle {
 
   }
 
-  private void updateMemeHandler(RoutingContext context) {
+  private void updateBooksHandler(RoutingContext context) {
     MultiMap params = context.request().params();
     String id = params.get("id");
     JsonObject newItem = new JsonObject().put("$set", context.getBodyAsJson());
@@ -62,13 +60,13 @@ public class AppVerticle extends AbstractVerticle {
     if (isJSONValid(context.getBody().toString())) {
       JsonObject query = new JsonObject().put("_id", id);
 
-      client.find("memes", query, res -> {
+      client.find("books", query, res -> {
         if (res.failed()) {
           context.response().setStatusCode(404).end();
         } else {
           JsonObject oldItem = res.result().get(0);
 
-          client.updateCollection("memes", oldItem, newItem, (res1) -> {
+          client.updateCollection("books", oldItem, newItem, (res1) -> {
             if (res1.succeeded()) {
               System.out.println("meme updated !");
               context.response().setStatusCode(201).end();
@@ -85,17 +83,14 @@ public class AppVerticle extends AbstractVerticle {
 
   }
 
-  private void persistMemeHandler(RoutingContext context) {
+  private void persistBooksHandler(RoutingContext context) {
     String body = context.getBody().toString();
 
     if (isJSONValid(body)) {
       JsonObject jsonObject = new JsonObject(body);
-      if (!jsonObject.containsKey("creationDate")) {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm:ss");
-        jsonObject.put("creationDate", LocalDate.now().format(dateTimeFormatter));
-      }
 
-      client.save("memes", jsonObject, res -> {
+
+      client.save("books", jsonObject, res -> {
         if (res.succeeded()) {
           context.response().setStatusCode(201).end(res.result());
         } else {
@@ -107,13 +102,13 @@ public class AppVerticle extends AbstractVerticle {
     }
   }
 
-  private void getAllMemes(RoutingContext context) {
+  private void getAllBooks(RoutingContext context) {
     context.response()
       .putHeader("content-type", "application/json");
 
     JsonObject query = new JsonObject();
 
-    client.find("memes", query, res -> {
+    client.find("books", query, res -> {
       if (res.succeeded()) {
         context.response().end(res.result().toString());
       } else {
@@ -126,13 +121,13 @@ public class AppVerticle extends AbstractVerticle {
   private void prepareDb() {
     String uri = "mongodb://localhost:27017";
 
-    String db = "memes";
+    String db = "books";
 
-    JsonObject mongoconfig = new JsonObject()
+    JsonObject mongoConfig = new JsonObject()
       .put("connection_string", uri)
       .put("db_name", db);
 
-    this.client = MongoClient.createShared(vertx, mongoconfig);
+    this.client = MongoClient.createShared(vertx, mongoConfig);
   }
 
   private boolean isJSONValid(String test) {
