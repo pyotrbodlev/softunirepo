@@ -1,0 +1,23 @@
+<form>
+  <div>
+    <label for="title">Enter title: </label>
+    <input type="text" id="title" #title>
+  </div>
+
+  <div>
+    <label for="description">Enter description: </label>
+    <input type="text" id="description" #description>
+  </div>
+
+  <div>
+    <label for="imageUrl">Image URL:</label>
+    <input type="text" id="imageUrl" #imageUrl>
+  </div>
+
+  <div>
+    <label for="moneyNeeded">Money Needed: </label>
+    <input type="number" id="moneyNeeded" #moneyNeeded>
+  </div>
+
+  <button (click)="createCause($event, title.value, description.value, imageUrl.value, moneyNeeded.value)">Create</button>
+</form>

@@ -1,0 +1,7 @@
+<div class="cause-list-item" [attr.cause-id]="cause.id">
+  <h2>{{cause.title}}</h2>
+  <div class="img-container">
+    <img [src]="cause.imageUrl" [alt]="cause.title"/>
+  </div>
+  <button (click)="deleteCause(cause.id)">Delete</button>
+</div>

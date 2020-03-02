@@ -1,0 +1,21 @@
+header{
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin: 20px;
+}
+
+header h1 {
+  font-weight: normal;
+  margin: 0;
+}
+
+.left-side button {
+  margin: 0 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}

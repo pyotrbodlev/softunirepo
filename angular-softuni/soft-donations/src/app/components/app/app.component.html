@@ -1,0 +1,3 @@
+<app-nav [title]="title" (createNewCauseEvent)="handleNewCreate()"></app-nav>
+<app-create-new-cause *ngIf="createNewCause"></app-create-new-cause>
+<app-main class="main-container" *ngIf="!createNewCause"></app-main>

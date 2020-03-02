@@ -1,0 +1,2 @@
+<app-causes class="cause-list-container" (showMoreInfo)="handleShowMoreInfo($event)"></app-causes>
+<app-cause-full-info class="cause-full-info-container" [cause]="cause" *ngIf="cause" (addMoneyEvent)="handleAddMoney($event)"></app-cause-full-info>

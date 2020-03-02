@@ -1,0 +1,15 @@
+<h1>{{cause.title}}</h1>
+<div class="img-container">
+  <img [src]="cause.imageUrl" [alt]="cause.title"/>
+</div>
+<div class="description-container">
+  <p>{{cause.description}}</p>
+  <div class="money-container">
+    <span class="money current" [style.color]="currentMoneyColor">{{cause.currentMoney}}</span> from <span
+    class="money needed">{{cause.moneyNeeded}}</span>
+  </div>
+  <label for="moneyAdd">
+    <input type="number" placeholder="Value" #moneyAdd id="moneyAdd" class="add"/>
+  </label>
+  <button class="add" (click)="addMoney(moneyAdd.value)">Make a donation</button>
+</div>
