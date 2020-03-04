@@ -1,0 +1,9 @@
+<div class="list-root">
+  <div class="loader" *ngIf="!users">
+    <app-loader></app-loader>
+  </div>
+
+  <div *ngFor="let user of users">
+    <a [routerLink]="['/user', user.name]">{{user.name}}</a>
+  </div>
+</div>

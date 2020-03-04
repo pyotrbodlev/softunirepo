@@ -1,0 +1,7 @@
+<div *ngIf="currentUser">
+  <h1>{{currentUser.name}}</h1>
+</div>
+
+<div *ngIf="!currentUser">
+  <app-loader></app-loader>
+</div>
