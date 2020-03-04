@@ -10,6 +10,7 @@ import { CauseFullInfoComponent } from './components/cause-full-info/cause-full-
 import { CauseComponent } from './components/cause/cause.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateNewCauseComponent } from './components/create-new-cause/create-new-cause.component';
+import {CdkTableModule} from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CreateNewCauseComponent } from './components/create-new-cause/create-ne
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    CdkTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

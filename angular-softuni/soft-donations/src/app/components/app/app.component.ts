@@ -12,4 +12,8 @@ export class AppComponent {
   handleNewCreate() {
     this.createNewCause = !this.createNewCause;
   }
+
+  handleCreateNewCause() {
+    this.createNewCause = false;
+  }
 }

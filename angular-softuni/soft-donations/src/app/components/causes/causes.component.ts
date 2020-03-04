@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Cause} from '../../models/cause.model';
 import {CauseService} from '../../services/cause.service';
 
@@ -12,7 +12,6 @@ export class CausesComponent implements OnInit {
   causes: Cause[];
   causeService: CauseService;
   @Output() showMoreInfo: EventEmitter<any> = new EventEmitter<any>();
-
 
   constructor(causeService: CauseService) {
     this.causeService = causeService;

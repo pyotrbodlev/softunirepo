@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
 import {Cause} from '../../models/cause.model';
 import {CauseService} from '../../services/cause.service';
 
@@ -7,11 +7,15 @@ import {CauseService} from '../../services/cause.service';
   templateUrl: './cause.component.html',
   styleUrls: ['./cause.component.css']
 })
-export class CauseComponent {
+export class CauseComponent implements OnDestroy {
   @Input() cause: Cause;
   @Output() deleteCauseEvent: EventEmitter<any> = new EventEmitter<any>();
 
   deleteCause(id) {
     this.deleteCauseEvent.emit(id);
+  }
+
+  ngOnDestroy(): void {
+
   }
 }

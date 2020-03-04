@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {CauseService} from '../../services/cause.service';
 import {Cause} from '../../models/cause.model';
 
@@ -9,6 +9,7 @@ import {Cause} from '../../models/cause.model';
 })
 export class CreateNewCauseComponent implements OnInit {
   private causeService: CauseService;
+  @Output() createCauseEvent: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(causeService: CauseService) {
     this.causeService = causeService;
@@ -19,6 +20,12 @@ export class CreateNewCauseComponent implements OnInit {
 
   createCause(event, title, description, imageUrl, moneyNeeded) {
     event.preventDefault();
-    this.causeService.createCause({title, description, imageUrl, moneyNeeded, currentMoney: 0}).subscribe(console.log);
+    this.causeService.createCause({
+      title,
+      description,
+      imageUrl,
+      moneyNeeded,
+      currentMoney: 0
+    }).subscribe(() => this.createCauseEvent.emit(), (err) => console.error(err));
   }
 }

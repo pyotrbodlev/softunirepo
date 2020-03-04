@@ -7,10 +7,14 @@
   cursor: pointer;
   margin: 10px auto;
   text-align: left;
+  position: relative;
 }
 
 .cause-list-item:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.46);
+}
+.cause-list-item:hover .delete {
+  display: inline-block;
 }
 
 .img-container {
@@ -25,4 +29,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.delete {
+  background-color: darkred;
+  color: white;
+  font-weight: bold;
+  border: 1px solid darkred;
+  cursor: pointer;
+  position: absolute;
+  top: 4%;
+  left: 85%;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: none;
 }

@@ -2,6 +2,7 @@
 
 <ul *ngIf="causes" class="causes">
   <li *ngFor="let cause of causes">
-    <app-cause [cause]="cause" (click)="showCauseFullInfo($event)" (deleteCauseEvent)="handleDelete($event)"></app-cause>
+    <app-cause [cause]="cause" (click)="showCauseFullInfo($event)"
+               (deleteCauseEvent)="handleDelete($event)"></app-cause>
   </li>
 </ul>
