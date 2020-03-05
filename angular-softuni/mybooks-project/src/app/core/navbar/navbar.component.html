@@ -1,0 +1,17 @@
+<nav>
+  <div class="title" routerLink="">
+    <fa-icon [icon]="faHatWizard"></fa-icon>
+    <h2>MyBooks</h2>
+  </div>
+  <div class="controls" *ngIf="!userIsLoggedIn">
+    <button mat-raised-button color="primary" routerLink="/register">Register</button>
+    <button mat-raised-button color="primary" routerLink="/login">Login</button>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item>Help</button>
+    </mat-menu>
+
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </div>
+</nav>
