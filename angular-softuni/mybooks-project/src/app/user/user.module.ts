@@ -9,11 +9,14 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {RouterModule} from '@angular/router';
+import {RegisterComponent} from './register/register.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, RegisterComponent],
   exports: [
-    LoginComponent
+    LoginComponent, RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +28,9 @@ import {RouterModule} from '@angular/router';
     MatButtonModule,
     MatIconModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class UserModule { }

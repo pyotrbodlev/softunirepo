@@ -22,7 +22,9 @@ export class LoginComponent {
   getErrorMessage(field: string) {
     if (this.loginForm.controls[field].hasError('required')) {
       return 'You must enter a value';
-    } else if (this.loginForm.controls[field].hasError('minlength')) {
+    }
+
+    if (this.loginForm.controls[field].hasError('minlength')) {
       return 'Minimum 5 symbols';
     }
 

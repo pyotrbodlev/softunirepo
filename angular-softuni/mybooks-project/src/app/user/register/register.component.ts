@@ -1,15 +1,67 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormControl, FormControlName, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {UserService} from '../../services/user/user.service';
+import {getLocaleTimeFormat} from '@angular/common';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
+  startDate = Date.now();
+  hide1 = true;
+  hide = true;
+  registerForm = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+    confirmPassword: new FormControl(''),
+    birthday: new FormControl('')
+  });
 
-  constructor() { }
+  constructor(private router: Router, private http: HttpClient, private userService: UserService) {
+  }
 
-  ngOnInit(): void {
+  getErrorMessage(field: string) {
+    if (this.registerForm.controls[field].hasError('required')) {
+      return 'You must enter a value';
+    }
+    if (this.registerForm.controls[field].hasError('minlength')) {
+      return 'Minimum 5 symbols';
+    }
+
+    if (this.registerForm.controls[field].hasError('not-same')) {
+      return 'Passwords doesnt match';
+    }
+
+    return '';
+  }
+
+  checkPass() {
+    if (this.registerForm.controls.confirmPassword.value !== this.registerForm.controls.password.value) {
+      this.registerForm.controls.confirmPassword.setErrors({
+        'not-same': true
+      });
+    }
+  }
+
+  handleRegister() {
+    const userData = {
+      username: this.registerForm.value.username,
+      password: this.registerForm.value.password,
+      birthday: new Date(this.registerForm.value.birthday).toLocaleDateString()
+    };
+    this.userService.register(userData)
+      .subscribe({
+        next: resp => this.handleSuccess(resp),
+        error: err => console.error(err)
+      });
+  }
+
+  handleSuccess(resp) {
+    this.router.navigate(['/login']);
   }
 
 }

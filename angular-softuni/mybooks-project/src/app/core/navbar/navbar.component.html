@@ -15,10 +15,11 @@
     </button>
   </div>
   <div class="controls" *ngIf="userIsLoggedIn">
-    <button mat-raised-button color="primary" routerLink="#">Create Book</button>
+    <button mat-raised-button color="primary" routerLink="#">Add Book</button>
     <mat-menu #appMenu="matMenu">
       <button mat-menu-item>Profile</button>
       <button mat-menu-item>Help</button>
+      <button mat-menu-item (click)="logout()">Log Out</button>
     </mat-menu>
 
     <button mat-icon-button [matMenuTriggerFor]="appMenu">

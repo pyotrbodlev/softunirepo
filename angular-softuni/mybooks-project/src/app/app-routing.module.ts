@@ -4,6 +4,7 @@ import {AppComponent} from './app.component';
 import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
 import {WelcomeComponent} from './core/welcome/welcome.component';
+import {BookListComponent} from './book/book-list/book-list.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'books',
+    component: BookListComponent
   }
 ];
 
