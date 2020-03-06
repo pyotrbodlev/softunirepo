@@ -5,4 +5,10 @@
   <hr/>
 
   <p>{{book.descriptionFull.plot}}</p>
+
+  <hr/>
+  <h3>Main characters</h3>
+  <ul>
+    <li *ngFor="let person of book.descriptionFull.mainCharacters">{{person.name}}</li>
+  </ul>
 </div>

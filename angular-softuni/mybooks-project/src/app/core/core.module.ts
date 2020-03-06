@@ -8,11 +8,12 @@ import {MatIconModule} from '@angular/material/icon';
 import { WelcomeComponent } from './welcome/welcome.component';
 import {FontAwesomeModule} from '@devoto13/angular-fontawesome';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [NavbarComponent, WelcomeComponent],
+  declarations: [NavbarComponent, WelcomeComponent, FooterComponent],
   exports: [
-    NavbarComponent
+    NavbarComponent, FooterComponent
   ],
     imports: [
         CommonModule,
