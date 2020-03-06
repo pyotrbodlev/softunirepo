@@ -1,10 +1,11 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {AppComponent} from './app.component';
 import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
 import {WelcomeComponent} from './core/welcome/welcome.component';
 import {BookListComponent} from './book/book-list/book-list.component';
+import {BookListItemComponent} from './book/book-list-item/book-list-item.component';
+import {BookDetailsComponent} from './book/book-details/book-details.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,11 @@ const routes: Routes = [
   },
   {
     path: 'books',
-    component: BookListComponent
+    component: BookListComponent,
+  },
+  {
+    path: 'books/:id',
+    component: BookDetailsComponent
   }
 ];
 

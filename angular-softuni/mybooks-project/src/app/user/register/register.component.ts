@@ -3,7 +3,7 @@ import {FormControl, FormControlName, FormGroup, Validators} from '@angular/form
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
-import {getLocaleTimeFormat} from '@angular/common';
+import {LoaderService} from '../../shared/loader/loader.service';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +21,7 @@ export class RegisterComponent {
     birthday: new FormControl('')
   });
 
-  constructor(private router: Router, private http: HttpClient, private userService: UserService) {
+  constructor(private router: Router, private http: HttpClient, private userService: UserService, private loader: LoaderService) {
   }
 
   getErrorMessage(field: string) {
@@ -48,6 +48,7 @@ export class RegisterComponent {
   }
 
   handleRegister() {
+    this.loader.isLoading = true;
     const userData = {
       username: this.registerForm.value.username,
       password: this.registerForm.value.password,
@@ -61,6 +62,7 @@ export class RegisterComponent {
   }
 
   handleSuccess(resp) {
+    this.loader.isLoading = false;
     this.router.navigate(['/login']);
   }
 

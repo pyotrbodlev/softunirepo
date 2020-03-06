@@ -1,13 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BookListComponent } from './book-list/book-list.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import { BookListItemComponent } from './book-list-item/book-list-item.component';
+import {FontAwesomeModule} from '@devoto13/angular-fontawesome';
+import {RouterModule} from '@angular/router';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 
 
 @NgModule({
-  declarations: [BookListComponent],
+  declarations: [BookListComponent, BookListItemComponent, BookDetailsComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    FontAwesomeModule,
+    RouterModule
+  ], exports: [BookListComponent]
 })
 export class BookModule { }

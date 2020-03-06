@@ -1,1 +1,5 @@
-<p>book-list works!</p>
+<div class="book-list-container" *ngIf="books">
+  <div class="book" *ngFor="let book of books">
+    <app-book-list-item [book]="book" [routerLink]="['/books', book.id]"></app-book-list-item>
+  </div>
+</div>

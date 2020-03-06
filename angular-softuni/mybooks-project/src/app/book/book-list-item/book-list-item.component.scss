@@ -1,0 +1,21 @@
+mat-card {
+  margin: 0 1em;
+}
+
+mat-card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(102, 102, 102, 0.5);
+}
+
+.example-card {
+  max-width: 300px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.likes {
+  position: relative;
+  left: 10px;
+}

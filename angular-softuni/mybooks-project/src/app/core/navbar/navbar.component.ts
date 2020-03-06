@@ -1,7 +1,9 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MatMenuTrigger} from '@angular/material/menu';
 import {faHatWizard} from '@fortawesome/free-solid-svg-icons';
 import {UserService} from '../../services/user/user.service';
+import {LoaderService} from '../../shared/loader/loader.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,17 +14,26 @@ export class NavbarComponent {
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
   faHatWizard = faHatWizard;
 
-  constructor(private userService: UserService) {
+  get isLoading() {
+    return this.loader.isLoading;
+  }
+
+  constructor(private userService: UserService, private loader: LoaderService, private router: Router) {
   }
 
   get userIsLoggedIn() {
     return !!sessionStorage.getItem('authtoken');
   }
 
-  logout() {
-    this.userService.logOut().subscribe((resp) => {
-      console.log(resp);
-      sessionStorage.clear();
-    });
+  handleLogOut() {
+    this.loader.isLoading = true;
+    this.userService.logOut()
+      .subscribe(
+        () => {
+          this.router.navigate(['/']).then(r => {
+            this.loader.isLoading = false;
+            sessionStorage.clear();
+          });
+        });
   }
 }
