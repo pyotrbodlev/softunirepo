@@ -26,7 +26,7 @@ export class BookListItemComponent {
   }
 
   get description() {
-    return this.book.descriptionShort.substring(0, 255) + '...';
+    return this.book.description.substring(0, 255) + '...';
   }
 
   handleLike() {

@@ -8,6 +8,10 @@ import {FontAwesomeModule} from '@devoto13/angular-fontawesome';
 import {RouterModule} from '@angular/router';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookCreateComponent } from './book-create/book-create.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -18,7 +22,12 @@ import { BookCreateComponent } from './book-create/book-create.component';
     MatCardModule,
     MatButtonModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule
   ], exports: [BookListComponent]
 })
 export class BookModule { }

@@ -14,16 +14,14 @@ export class BooksService {
   constructor(private requester: RequesterService, private userService: UserService) {
   }
 
-  loadBooks() {
+  getBooks() {
     return this.requester.get(`${this.url}/appdata/${this.appKey}/books`, {
-      headers: {
-        Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-      }
+      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
     }).pipe(
       map(resp => {
         // @ts-ignore
         return resp.map(b => {
-          const book = new Book(b._id, b.title, b.author, b.descriptionShort, b.descriptionFull, b.likes, b.imageUrl);
+          const book = new Book(b._id, b.title, b.author, b.gender, b.description, b.likes, b.imageUrl);
 
           book.isLiked = this.userService.bookIsLiked(book.id);
 
@@ -35,15 +33,34 @@ export class BooksService {
 
   getBook(id: string) {
     return this.requester.get(`${this.url}/appdata/${this.appKey}/books/${id}`, {
-      headers: {
-        Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-      }
+      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
     }).pipe(
       map(b => {
         // @ts-ignore
-        return new Book(b._id, b.title, b.author, b.descriptionShort, b.descriptionFull, b.likes, b.imageUrl);
+        return new Book(b._id, b.title, b.author, b.gender, b.description, b.likes, b.imageUrl);
       })
     );
+  }
+
+  getAuthors() {
+    return this.requester.get(`${this.url}/appdata/${this.appKey}/authors`, {
+      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
+    }).pipe(
+      map(resp => {
+        // @ts-ignore
+        return resp.map(author => {
+          return {
+            fullName: author.fullName,
+            avatarLink: author.avatarLink
+          };
+        });
+      }));
+  }
+
+  createBook(book) {
+    return this.requester.post(`${this.url}/appdata/${this.appKey}/books`, book, {
+      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
+    });
   }
 
   addLikes(book: Book) {

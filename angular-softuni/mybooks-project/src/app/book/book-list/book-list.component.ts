@@ -25,7 +25,7 @@ export class BookListComponent implements OnInit {
       this.router.navigate(['/']);
     } else {
       this.loader.isLoading = true;
-      this.booksService.loadBooks().subscribe(books => {
+      this.booksService.getBooks().subscribe(books => {
         this.loader.isLoading = false;
         this.books = books;
       });

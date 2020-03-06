@@ -15,8 +15,8 @@ export class RequesterService {
   constructor(private httpClient: HttpClient) {
   }
 
-  get(url: string, options?) {
-    return this.httpClient.get(url, options ? options : {headers: this.headers});
+  get(url: string, headers?) {
+    return this.httpClient.get(url, {headers: headers ? headers : this.headers});
   }
 
   post(url: string, body, headers?) {
