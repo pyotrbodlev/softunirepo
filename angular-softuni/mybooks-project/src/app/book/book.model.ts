@@ -13,7 +13,7 @@ interface IDescription {
   plot: string;
 }
 
-export class BookShortInfo {
+export class Book {
   public id: string;
   public title: string;
   public author: IAuthor;
@@ -21,8 +21,9 @@ export class BookShortInfo {
   public likes: number;
   public isLiked: boolean;
   public imageUrl: string;
+  public descriptionFull: IDescription;
 
-  constructor(id, title, author, descriptionSort, likes, imageUrl) {
+  constructor(id, title, author, descriptionSort, descriptionFull, likes, imageUrl) {
     this.id = id;
     this.title = title;
     this.author = author;
@@ -30,14 +31,6 @@ export class BookShortInfo {
     this.likes = likes;
     this.imageUrl = imageUrl;
     this.isLiked = false;
-  }
-}
-
-export class Book extends BookShortInfo {
-  public descriptionFull: IDescription;
-
-  constructor(id, title, author, descriptionSort, descriptionFull, likes, imageUrl) {
-    super(id, title, author, descriptionSort, likes, imageUrl);
     this.descriptionFull = descriptionFull;
   }
 }

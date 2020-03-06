@@ -4,8 +4,8 @@ import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
 import {WelcomeComponent} from './core/welcome/welcome.component';
 import {BookListComponent} from './book/book-list/book-list.component';
-import {BookListItemComponent} from './book/book-list-item/book-list-item.component';
 import {BookDetailsComponent} from './book/book-details/book-details.component';
+import {BookCreateComponent} from './book/book-create/book-create.component';
 
 const routes: Routes = [
   {
@@ -24,6 +24,11 @@ const routes: Routes = [
   {
     path: 'books',
     component: BookListComponent,
+  },
+  {
+    path: 'books/create',
+    pathMatch: 'full',
+    component: BookCreateComponent
   },
   {
     path: 'books/:id',

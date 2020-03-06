@@ -7,11 +7,12 @@ import { BookListItemComponent } from './book-list-item/book-list-item.component
 import {FontAwesomeModule} from '@devoto13/angular-fontawesome';
 import {RouterModule} from '@angular/router';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { BookCreateComponent } from './book-create/book-create.component';
 
 
 
 @NgModule({
-  declarations: [BookListComponent, BookListItemComponent, BookDetailsComponent],
+  declarations: [BookListComponent, BookListItemComponent, BookDetailsComponent, BookCreateComponent],
   imports: [
     CommonModule,
     MatCardModule,

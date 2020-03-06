@@ -20,7 +20,6 @@ export class BookListComponent implements OnInit {
     private userService: UserService) {
   }
 
-
   ngOnInit(): void {
     if (!sessionStorage.getItem('authtoken')) {
       this.router.navigate(['/']);

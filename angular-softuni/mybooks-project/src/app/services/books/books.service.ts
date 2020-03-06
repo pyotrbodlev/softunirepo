@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {RequesterService} from '../requester/requester.service';
-import {map, switchMap, tap} from 'rxjs/operators';
-import {Book, BookShortInfo} from '../../book/book.model';
+import {map} from 'rxjs/operators';
+import {Book} from '../../book/book.model';
 import {UserService} from '../user/user.service';
 
 @Injectable({
