@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {BookShortInfo} from '../book.model';
+import {Book} from '../book.model';
 import {BooksService} from '../../services/books/books.service';
 import {LoaderService} from '../../shared/loader/loader.service';
+import {UserService} from '../../services/user/user.service';
 
 @Component({
   selector: 'app-book-list',
@@ -10,9 +11,13 @@ import {LoaderService} from '../../shared/loader/loader.service';
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
-  books: BookShortInfo[];
+  books: Book[];
 
-  constructor(private router: Router, private booksService: BooksService, private loader: LoaderService) {
+  constructor(
+    private router: Router,
+    private booksService: BooksService,
+    private loader: LoaderService,
+    private userService: UserService) {
   }
 
 
@@ -25,6 +30,26 @@ export class BookListComponent implements OnInit {
         this.loader.isLoading = false;
         this.books = books;
       });
+    }
+  }
+
+  handleLike(book) {
+    if (sessionStorage.getItem('authtoken')) {
+      this.userService.likeBook(book.id).subscribe(resp => {
+        sessionStorage.setItem('me', JSON.stringify(resp));
+      });
+
+      this.booksService.addLikes(book).subscribe();
+    }
+  }
+
+  handleUnlike(book) {
+    if (sessionStorage.getItem('authtoken')) {
+      this.userService.unlikeBook(book.id).subscribe(resp => {
+        sessionStorage.setItem('me', JSON.stringify(resp));
+      });
+
+      this.booksService.removeLikes(book).subscribe();
     }
   }
 

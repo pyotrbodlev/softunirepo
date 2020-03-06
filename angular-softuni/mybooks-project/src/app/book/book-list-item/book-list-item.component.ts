@@ -1,17 +1,24 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {faHeart} from '@fortawesome/free-solid-svg-icons';
-import {BookShortInfo} from '../book.model';
+import {Book} from '../book.model';
 
 @Component({
   selector: 'app-book-list-item',
   templateUrl: './book-list-item.component.html',
   styleUrls: ['./book-list-item.component.scss']
 })
-export class BookListItemComponent implements OnInit {
+export class BookListItemComponent {
   faHeart = faHeart;
-  @Input() book: BookShortInfo;
+
+  @Input() book: Book;
+  @Output() userLikedBook: EventEmitter<any> = new EventEmitter<any>();
+  @Output() userUnlikeBook: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
+  }
+
+  get iconStyle() {
+    return this.book.isLiked ? {color: 'red'} : {color: 'darkgrey'};
   }
 
   get style() {
@@ -22,7 +29,13 @@ export class BookListItemComponent implements OnInit {
     return this.book.descriptionShort.substring(0, 255) + '...';
   }
 
-  ngOnInit(): void {
+  handleLike() {
+    if (!this.book.isLiked) {
+      this.userLikedBook.emit(this.book);
+    } else {
+      this.userUnlikeBook.emit(this.book);
+    }
+    this.book.isLiked = !this.book.isLiked;
   }
 
 }

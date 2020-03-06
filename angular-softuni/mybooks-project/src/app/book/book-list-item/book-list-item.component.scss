@@ -7,6 +7,10 @@ mat-card:hover {
   box-shadow: 0 0 10px rgba(102, 102, 102, 0.5);
 }
 
+mat-card > div {
+  outline: none;
+}
+
 .example-card {
   max-width: 300px;
 }

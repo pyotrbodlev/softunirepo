@@ -22,4 +22,9 @@ export class RequesterService {
   post(url: string, body, headers?) {
     return this.httpClient.post(url, body, {headers: headers ? headers : this.headers});
   }
+
+  put(url: string, body, headers?) {
+    console.log(url, body, headers);
+    return this.httpClient.put(url, body, {headers: headers ? headers : this.headers});
+  }
 }

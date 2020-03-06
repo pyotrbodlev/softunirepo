@@ -45,6 +45,7 @@ export class LoginComponent {
 
   handleSuccess(resp) {
     this.loader.isLoading = false;
+    sessionStorage.setItem('me', JSON.stringify(resp));
     sessionStorage.setItem('authtoken', resp._kmd.authtoken);
     this.router.navigate(['/']);
   }
