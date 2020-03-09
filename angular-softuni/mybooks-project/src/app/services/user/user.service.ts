@@ -21,13 +21,12 @@ interface IUser {
 export class UserService {
   private readonly appKey = 'kid_S10Q4H5NU';
   private url = `https://baas.kinvey.com`;
-  currentUser: IUser = JSON.parse(sessionStorage.getItem('me'));
 
   constructor(private requester: RequesterService) {
   }
 
-  get currentUserId() {
-    return this.currentUser._id;
+  get currentUser() {
+    return JSON.parse(sessionStorage.getItem('me'));
   }
 
   logIn(userData) {
@@ -49,7 +48,6 @@ export class UserService {
       this.currentUser.likes = [];
     }
     this.currentUser.likes.push(bookId);
-    console.log(this.currentUser);
 
     return this.requester.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, this.currentUser, {
       Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')

@@ -65,7 +65,6 @@ export class BooksService {
 
   addLikes(book: Book) {
     book.likes = Number(book.likes) + 1;
-    console.log(book);
 
     return this.requester.put(`${this.url}/appdata/${this.appKey}/books/${book.id}`, book, {
       Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')

@@ -24,7 +24,6 @@ export class RequesterService {
   }
 
   put(url: string, body, headers?) {
-    console.log(url, body, headers);
     return this.httpClient.put(url, body, {headers: headers ? headers : this.headers});
   }
 }
