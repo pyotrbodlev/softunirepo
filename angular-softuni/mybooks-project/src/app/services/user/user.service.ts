@@ -25,7 +25,7 @@ export class UserService {
   constructor(private requester: RequesterService) {
   }
 
-  get currentUser() {
+  get currentUser(): IUser {
     return JSON.parse(sessionStorage.getItem('me'));
   }
 
@@ -44,30 +44,34 @@ export class UserService {
   }
 
   likeBook(bookId) {
-    if (!this.currentUser.likes) {
-      this.currentUser.likes = [];
-    }
-    this.currentUser.likes.push(bookId);
+    const user = this.currentUser;
 
-    return this.requester.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, this.currentUser, {
+    if (!user.likes) {
+      user.likes = [];
+    }
+    user.likes.push(bookId);
+
+    return this.requester.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, user, {
       Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
     });
   }
 
   unlikeBook(bookId) {
     if (this.currentUser.likes) {
-      this.currentUser.likes = this.currentUser.likes.filter(like => like !== bookId);
+      const user = this.currentUser;
+      user.likes = this.currentUser.likes.filter(like => like !== bookId);
 
-      return this.requester.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, this.currentUser, {
+      return this.requester.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, user, {
         Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
       });
     }
   }
 
   bookIsLiked(bookId) {
-    if (!this.currentUser.likes) {
-      this.currentUser.likes = [];
+    const user = this.currentUser;
+    if (!user.likes) {
+      user.likes = [];
     }
-    return this.currentUser.likes.includes(bookId);
+    return user.likes.includes(bookId);
   }
 }

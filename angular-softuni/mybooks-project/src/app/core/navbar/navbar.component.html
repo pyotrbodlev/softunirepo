@@ -2,6 +2,7 @@
   <div class="title" routerLink="">
     <fa-icon [icon]="faHatWizard"></fa-icon>
     <h2>MyBooks</h2>
+    <h3 *ngIf="userIsLoggedIn">Welcome, {{username}}</h3>
   </div>
   <div class="controls" *ngIf="!userIsLoggedIn">
     <button mat-raised-button color="primary" routerLink="/register">Register</button>

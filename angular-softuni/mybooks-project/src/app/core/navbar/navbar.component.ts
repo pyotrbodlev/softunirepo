@@ -25,6 +25,10 @@ export class NavbarComponent {
     return !!sessionStorage.getItem('authtoken');
   }
 
+  get username() {
+    return this.userService.currentUser.username;
+  }
+
   handleLogOut() {
     this.loader.isLoading = true;
     this.userService.logOut()
