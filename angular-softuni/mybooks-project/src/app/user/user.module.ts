@@ -12,11 +12,12 @@ import {RouterModule} from '@angular/router';
 import {RegisterComponent} from './register/register.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, UserProfileComponent],
   exports: [
-    LoginComponent, RegisterComponent
+    LoginComponent, RegisterComponent,
   ],
   imports: [
     CommonModule,

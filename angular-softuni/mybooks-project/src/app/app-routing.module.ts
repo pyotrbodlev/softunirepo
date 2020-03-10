@@ -6,6 +6,7 @@ import {WelcomeComponent} from './core/welcome/welcome.component';
 import {BookListComponent} from './book/book-list/book-list.component';
 import {BookDetailsComponent} from './book/book-details/book-details.component';
 import {BookCreateComponent} from './book/book-create/book-create.component';
+import {UserProfileComponent} from './user/user-profile/user-profile.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'books/:id',
     component: BookDetailsComponent
+  },
+  {
+    path: 'user/:id',
+    component: UserProfileComponent
   }
 ];
 

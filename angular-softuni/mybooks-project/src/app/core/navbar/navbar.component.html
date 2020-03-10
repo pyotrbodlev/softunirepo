@@ -18,8 +18,8 @@
   <div class="controls" *ngIf="userIsLoggedIn">
     <button mat-raised-button color="primary" routerLink="/books/create">Add Book</button>
     <mat-menu #appMenu="matMenu">
-      <button mat-menu-item>Profile</button>
-      <button mat-menu-item>Help</button>
+      <button mat-menu-item [routerLink]="['/user', userId]">Profile</button>
+      <button mat-menu-item [routerLink]="['/contacts']">Contacts</button>
       <button mat-menu-item (click)="handleLogOut()">Log Out</button>
     </mat-menu>
 

@@ -14,19 +14,23 @@ export class NavbarComponent {
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
   faHatWizard = faHatWizard;
 
-  get isLoading() {
-    return this.loader.isLoading;
-  }
-
   constructor(private userService: UserService, private loader: LoaderService, private router: Router) {
   }
 
-  get userIsLoggedIn() {
+  get isLoading(): boolean {
+    return this.loader.isLoading;
+  }
+
+  get userIsLoggedIn(): boolean {
     return !!sessionStorage.getItem('authtoken');
   }
 
-  get username() {
+  get username(): string {
     return this.userService.currentUser.username;
+  }
+
+  get userId(): string {
+    return this.userService.currentUser._id;
   }
 
   handleLogOut() {

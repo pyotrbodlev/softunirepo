@@ -2,12 +2,16 @@
   <h1>Create Book</h1>
   <mat-form-field appearance="fill">
     <mat-label>Title</mat-label>
-    <input matInput type="text" placeholder="Enter title" formControlName="title">
+    <label>
+      <input matInput type="text" placeholder="Enter title" formControlName="title">
+    </label>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Image URL</mat-label>
-    <input matInput type="text" placeholder="Enter image URL" formControlName="imageUrl">
+    <label>
+      <input matInput type="text" placeholder="Enter image URL" formControlName="imageUrl">
+    </label>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -27,7 +31,9 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Description</mat-label>
-    <textarea matInput rows="20" formControlName="description"></textarea>
+    <label>
+      <textarea matInput rows="20" formControlName="description"></textarea>
+    </label>
   </mat-form-field>
 
   <button mat-raised-button color="primary" (click)="handleCreate()" [disabled]="!createBookForm.valid">Create Book</button>
