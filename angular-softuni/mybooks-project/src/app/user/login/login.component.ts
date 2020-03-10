@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
+import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
@@ -12,12 +12,19 @@ import {LoaderService} from '../../shared/loader/loader.service';
 })
 export class LoginComponent {
   hide = true;
-  loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-  });
+  unauthorised = false;
+  loginForm: FormGroup;
 
-  constructor(private router: Router, private http: HttpClient, private userService: UserService, private loader: LoaderService) {
+  constructor(private router: Router,
+              private http: HttpClient,
+              private userService: UserService,
+              private loader: LoaderService,
+              private fb: FormBuilder) {
+
+    this.loginForm = this.fb.group({
+      username: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(4)]),
+    });
   }
 
   getErrorMessage(field: string) {
@@ -26,7 +33,8 @@ export class LoginComponent {
     }
 
     if (this.loginForm.controls[field].hasError('minlength')) {
-      return 'Minimum 5 symbols';
+      const minLength = this.loginForm.controls[field].errors.minlength.requiredLength;
+      return `Minimum ${minLength} symbols`;
     }
 
     return this.loginForm.controls[field].hasError(field) ? `Not a valid ${field}` : '';
@@ -39,7 +47,7 @@ export class LoginComponent {
         next: resp => {
           this.handleSuccess(resp);
         },
-        error: err => console.error(err)
+        error: err => this.handleError(err)
       });
   }
 
@@ -48,5 +56,21 @@ export class LoginComponent {
     sessionStorage.setItem('me', JSON.stringify(resp));
     sessionStorage.setItem('authtoken', resp._kmd.authtoken);
     this.router.navigate(['/']);
+  }
+
+  handleError(err) {
+    this.loader.isLoading = false;
+
+    if (err.status === 401) {
+      this.unauthorised = true;
+    } else {
+      console.log(err);
+    }
+  }
+
+  showError(status: number) {
+    if (status === 401) {
+      return 'Invalid password or username!';
+    }
   }
 }

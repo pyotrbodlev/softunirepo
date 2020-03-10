@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
 import {LoaderService} from '../../shared/loader/loader.service';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-register',
@@ -12,16 +13,33 @@ import {LoaderService} from '../../shared/loader/loader.service';
 })
 export class RegisterComponent {
   startDate = Date.now();
-  hide1 = true;
-  hide = true;
-  registerForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-    confirmPassword: new FormControl(''),
-    birthday: new FormControl('')
-  });
+  hidePassword = true;
+  hideConfirmPassword = true;
+  usernameIsTaken: boolean;
+  registerForm: FormGroup;
 
-  constructor(private router: Router, private http: HttpClient, private userService: UserService, private loader: LoaderService) {
+  constructor(private router: Router,
+              private http: HttpClient,
+              private userService: UserService,
+              private loader: LoaderService,
+              private fb: FormBuilder) {
+
+    this.registerForm = this.fb.group({
+      username: new FormControl('', [Validators.required, Validators.minLength(4)], this.checkUsername.bind(this)),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      birthday: new FormControl('', [Validators.required])
+    });
+  }
+
+  checkUsername(control: AbstractControl) {
+    return this.userService.asyncValidatorUsername(control.value)
+      .pipe(
+        map(res => {
+          return res ? {usernameIsTaken: true} : null;
+        })
+      );
   }
 
   getErrorMessage(field: string) {
@@ -29,20 +47,26 @@ export class RegisterComponent {
       return 'You must enter a value';
     }
     if (this.registerForm.controls[field].hasError('minlength')) {
-      return 'Minimum 5 symbols';
+      const minLength = this.registerForm.controls[field].errors.minlength.requiredLength;
+      return `Minimum ${minLength} symbols`;
     }
-
-    if (this.registerForm.controls[field].hasError('not-same')) {
+    if (this.registerForm.controls[field].hasError('passwords-doesnt-match')) {
       return 'Passwords doesnt match';
     }
+    if (this.registerForm.controls[field].hasError('email')) {
+      return 'Invalid email';
+    }
+    if (this.registerForm.controls[field].hasError('usernameIsTaken')) {
+      return 'Username is already exist. Please use another username';
+    }
 
-    return '';
+    return this.registerForm.controls[field].hasError(field) ? `Not a valid ${field}` : '';
   }
 
   checkPass() {
     if (this.registerForm.controls.confirmPassword.value !== this.registerForm.controls.password.value) {
       this.registerForm.controls.confirmPassword.setErrors({
-        'not-same': true
+        'passwords-doesnt-match': true
       });
     }
   }
@@ -65,5 +89,4 @@ export class RegisterComponent {
     this.loader.isLoading = false;
     this.router.navigate(['/login']);
   }
-
 }

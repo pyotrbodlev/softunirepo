@@ -12,11 +12,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ReviewComponent } from './review/review.component';
 
 
 
 @NgModule({
-  declarations: [BookListComponent, BookListItemComponent, BookDetailsComponent, BookCreateComponent],
+  declarations: [BookListComponent, BookListItemComponent, BookDetailsComponent, BookCreateComponent, ReviewComponent],
   imports: [
     CommonModule,
     MatCardModule,

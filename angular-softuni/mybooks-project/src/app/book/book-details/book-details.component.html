@@ -1,11 +1,34 @@
 <div class="book-container" *ngIf="book">
+  <img [src]="book.imageUrl" [alt]="book.title">
   <h1>{{book.title}}</h1>
   <h2>{{book.author.fullName}}</h2>
-
   <hr/>
   <p>Gender: {{book.gender}}</p>
   <hr/>
-
+  <hr class="clear"/>
   <p>{{book.description}}</p>
+  <hr/>
+  <div class="reviews">
+    <h2>Reviews:</h2>
+    <div *ngIf="reviews">
+      <div *ngFor="let review of reviews">
+        <app-review [reviewInfo]="review"></app-review>
+      </div>
+    </div>
+
+    <div *ngIf="!reviews">
+      <h3>No reviews yet! You can write first review below:</h3>
+    </div>
+  </div>
+  <hr/>
+  <div class="add-review-container" [formGroup]="reviewForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Review</mat-label>
+      <label>
+        <textarea matInput rows="5" formControlName="reviewField"></textarea>
+      </label>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="addReview()" [disabled]="!reviewForm.valid">Add review</button>
+  </div>
 
 </div>

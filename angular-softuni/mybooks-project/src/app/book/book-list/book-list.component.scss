@@ -1,4 +1,9 @@
 .book-list-container {
   margin: 2em;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.book {
+  margin-bottom: 2em;
 }

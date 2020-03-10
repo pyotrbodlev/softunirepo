@@ -2,17 +2,23 @@
   <h1>Login</h1>
   <mat-form-field appearance="fill">
     <mat-label>Enter your username</mat-label>
-    <input matInput placeholder="username" formControlName="username" required minlength="4">
+    <label>
+      <input matInput placeholder="username" formControlName="username">
+    </label>
     <mat-error *ngIf="this.loginForm.controls.username.invalid">{{getErrorMessage('username')}}</mat-error>
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Enter your password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required minlength="4" >
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+    </label>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
     <mat-error *ngIf="this.loginForm.controls.password.invalid">{{getErrorMessage('password')}}</mat-error>
   </mat-form-field>
+  <mat-error *ngIf="unauthorised">{{showError(401)}}</mat-error>
   <div class="buttons">
     <a mat-stroked-button routerLink="#">Forgot Password</a>
     <button mat-raised-button color="primary" (click)="handleLogin()" [disabled]="!loginForm.valid">Login</button>

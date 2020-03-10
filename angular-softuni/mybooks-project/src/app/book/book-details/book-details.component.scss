@@ -1,0 +1,18 @@
+.book-container {
+  max-width: 60em;
+  margin: 2em auto;
+  position: relative;
+
+  img {
+    max-width: 300px;
+    float: right;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}

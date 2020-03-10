@@ -23,7 +23,7 @@ export class BooksService {
         return resp.map(b => {
           const book = new Book(b._id, b.title, b.author, b.gender, b.description, b.likes, b.imageUrl);
 
-          book.isLiked = this.userService.bookIsLiked(book.id);
+          book.isLiked = this.userService.userLikesBook(book.id);
 
           return book;
         });
