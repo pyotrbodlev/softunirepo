@@ -1,0 +1,53 @@
+.user-info-container {
+  display: flex;
+  padding: 2em;
+
+  .container {
+    border: 1px solid grey;
+    border-radius: 4px;
+    flex-basis: 50%;
+    margin: 1em;
+    overflow: hidden;
+  }
+}
+
+.left {
+  header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+  }
+
+  section {
+    padding: 1em;
+
+    input {
+      display: block;
+      padding: 0.5em;
+      width: 97%;
+      margin: 0.5em 0;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    button {
+      margin-top: 0.5em;
+    }
+  }
+}
+
+input.ng-valid {
+  border: 1px solid #42A948; /* green */
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid #A94442; /* red */
+}
+
+.invalid {
+  color: #A94442;
+}

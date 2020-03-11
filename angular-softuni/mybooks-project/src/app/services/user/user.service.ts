@@ -2,20 +2,7 @@ import {Injectable} from '@angular/core';
 import {RequesterService} from '../requester/requester.service';
 import {count, delay, filter, map, tap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-
-interface IUser {
-  _id: string;
-  username: string;
-  birthday: string;
-  likes: string[];
-  _kmd: {
-    lmt: string,
-    ect: string,
-  };
-  _acl: {
-    creator: string
-  };
-}
+import {IUser} from '../../shared/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +16,12 @@ export class UserService {
 
   get currentUser(): IUser {
     return JSON.parse(sessionStorage.getItem('me'));
+  }
+
+  getUserById(id: string): Observable<IUser> {
+    return this.requester.get<IUser>(`${this.url}/user/${this.appKey}/${id}`, {
+      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
+    });
   }
 
   logIn(userData): Observable<any> {

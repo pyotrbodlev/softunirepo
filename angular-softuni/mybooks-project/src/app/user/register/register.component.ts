@@ -77,6 +77,7 @@ export class RegisterComponent {
     this.loader.isLoading = true;
     const userData = {
       username: this.registerForm.value.username,
+      email: this.registerForm.value.email,
       password: this.registerForm.value.password,
       birthday: new Date(this.registerForm.value.birthday).toLocaleDateString()
     };

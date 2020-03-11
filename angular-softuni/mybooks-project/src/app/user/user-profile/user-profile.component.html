@@ -1,1 +1,32 @@
-<p>user-profile works!</p>
+<div class="user-info-container" *ngIf="userInfo">
+  <div class="left container">
+    <header>
+      <h1>Logged as: <span class="bold">{{userInfo.username}}</span></h1>
+      <button mat-raised-button color="warn">Logout</button>
+    </header>
+    <section>
+      <form [formGroup]="newUserInfoFormGroup">
+        <div class="formField">
+          <label for="email">New email address:</label>
+          <input type="email" id="email" formControlName="email" placeholder="pesho@example.com">
+          <p *ngIf="newUserInfoFormGroup.controls.email.invalid && newUserInfoFormGroup.controls.email.touched">{{getErrorMessage('email')}}</p>
+        </div>
+        <div class="formField">
+          <label for="password">New password:</label>
+          <input type="password" id="password" formControlName="password" placeholder="********">
+          <p *ngIf="newUserInfoFormGroup.controls.password.invalid && newUserInfoFormGroup.controls.password.touched">{{getErrorMessage('password')}}</p>
+        </div>
+        <div class="formField">
+          <label for="confirmPassword">Repeat new password:</label>
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="********">
+          <p *ngIf="newUserInfoFormGroup.controls.confirmPassword.invalid && newUserInfoFormGroup.controls.confirmPassword.touched">{{getErrorMessage('confirmPassword')}}</p>
+        </div>
+        <p *ngIf="newUserInfoFormGroup?.hasError('passwords-doesnt-match')" class="invalid">Passwords doesnt match</p>
+        <button mat-raised-button color="primary" [disabled]="newUserInfoFormGroup.invalid">Confirm changes</button>
+      </form>
+    </section>
+  </div>
+  <div class="right container">
+
+  </div>
+</div>
