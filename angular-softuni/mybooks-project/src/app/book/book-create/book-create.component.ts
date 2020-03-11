@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {BooksService} from '../../services/books/books.service';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-book-create',
@@ -12,10 +12,10 @@ export class BookCreateComponent implements OnInit {
   authors: any;
 
   createBookForm = new FormGroup({
-    title: new FormControl(''),
-    author: new FormControl(null),
-    imageUrl: new FormControl(''),
-    gender: new FormControl(''),
+    title: new FormControl('', [Validators.required]),
+    author: new FormControl(null, [Validators.required]),
+    imageUrl: new FormControl('', [Validators.required, Validators.pattern('http(s?):\\/\\/.+\\.(jpg|jpeg|png)')]),
+    gender: new FormControl('', [Validators.required]),
     description: new FormControl(''),
     likes: new FormControl(0)
   });
@@ -39,6 +39,18 @@ export class BookCreateComponent implements OnInit {
     this.booksService.createBook(this.createBookForm.value).subscribe(resp => {
       this.router.navigate(['/']);
     });
+  }
+
+  getErrorMessage(fieldName) {
+    if (this.createBookForm.controls[fieldName].hasError('pattern')) {
+      return 'Invalid image URL';
+    }
+
+    if (this.createBookForm.controls[fieldName].hasError('required')) {
+      return 'Please enter a value';
+    }
+
+    return '';
   }
 
 }

@@ -5,13 +5,15 @@
     <label>
       <input matInput type="text" placeholder="Enter title" formControlName="title">
     </label>
+    <mat-error *ngIf="createBookForm.controls.title.invalid">{{getErrorMessage('title')}}</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Image URL</mat-label>
     <label>
-      <input matInput type="text" placeholder="Enter image URL" formControlName="imageUrl">
+      <input matInput type="text" placeholder="http://..." formControlName="imageUrl">
     </label>
+    <mat-error *ngIf="createBookForm.controls.imageUrl.invalid">{{getErrorMessage('imageUrl')}}</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -20,6 +22,7 @@
       <mat-option>Clear</mat-option>
       <mat-option *ngFor="let author of authors" [value]="author">{{author.fullName}}</mat-option>
     </mat-select>
+    <mat-error *ngIf="createBookForm.controls.author.invalid">{{getErrorMessage('author')}}</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
@@ -27,6 +30,7 @@
     <mat-select formControlName="gender">
       <mat-option *ngFor="let gender of genders" [value]="gender">{{gender}}</mat-option>
     </mat-select>
+    <mat-error *ngIf="createBookForm.controls.gender.invalid">{{getErrorMessage('gender')}}</mat-error>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
