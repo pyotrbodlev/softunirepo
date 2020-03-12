@@ -66,7 +66,7 @@ export class BookDetailsComponent implements OnInit {
         id: user._id
       },
       review,
-      bookId: this.book.id
+      bookId: this.book._id
     };
 
     this.reviewService.addReview(body).subscribe(resp => {

@@ -4,6 +4,9 @@ import {ActivatedRoute} from '@angular/router';
 import {IUser} from '../../shared/IUser';
 import {LoaderService} from '../../shared/loader/loader.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Book} from '../../book/book.model';
+import {BooksService} from '../../services/books/books.service';
+import {filter, map} from 'rxjs/operators';
 
 function checkPasswords(control: FormGroup) {
   if (control.controls.confirmPassword.touched) {
@@ -23,8 +26,11 @@ export class UserProfileComponent implements OnInit {
   userInfo: IUser;
   newUserInfoFormGroup: FormGroup;
   successMessage: string;
+  likedBooks: Book[];
+  addedBooks: Book[];
 
   constructor(private userService: UserService,
+              private booksService: BooksService,
               private router: ActivatedRoute,
               private loader: LoaderService,
               private fb: FormBuilder) {
@@ -61,6 +67,8 @@ export class UserProfileComponent implements OnInit {
       this.loader.isLoading = false;
       this.userInfo = user;
     });
+    this.getLikedBooks();
+    this.getAddedBooks();
   }
 
   updateUserInfo() {
@@ -82,4 +90,25 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  getLikedBooks() {
+    this.booksService.getBooks()
+      .pipe(
+        map(books => books.filter(book => book.isLiked))
+      )
+      .subscribe(books => {
+        if (books.length > 0) {
+          this.likedBooks = books;
+        }
+      });
+  }
+
+  getAddedBooks() {
+    this.booksService.getBooks().pipe(
+      map(books => books.filter(book => book._acl.creator === this.userService.currentUser._id))
+    ).subscribe(books => {
+      if (books.length > 0) {
+        this.addedBooks = books;
+      }
+    });
+  }
 }

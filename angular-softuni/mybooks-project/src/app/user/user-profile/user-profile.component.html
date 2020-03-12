@@ -28,6 +28,42 @@
     </section>
   </div>
   <div class="right container">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Your favorite books
+          </mat-panel-title>
+          <mat-panel-description>
+            Books you liked
+          </mat-panel-description>
+        </mat-expansion-panel-header>
 
+        <mat-list *ngIf="likedBooks">
+          <mat-list-item *ngFor="let book of likedBooks" [routerLink]="['/books', book._id]">
+            <mat-icon mat-list-icon>thumb_up_alt</mat-icon>
+            <h4 mat-line>{{book.title}}</h4>
+          </mat-list-item>
+        </mat-list>
+        <h3 *ngIf="!likedBooks">You don't have favorite books :(</h3>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Your books
+          </mat-panel-title>
+          <mat-panel-description>
+            Books you loaded
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list *ngIf="addedBooks">
+          <mat-list-item *ngFor="let book of addedBooks" [routerLink]="['/books', book._id]">
+            <mat-icon mat-list-icon>book</mat-icon>
+            <h4 mat-line>{{book.title}}</h4>
+          </mat-list-item>
+        </mat-list>
+        <h3 *ngIf="!addedBooks">You don't have books added. You can add a book from button in navigation menu!</h3>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
 </div>

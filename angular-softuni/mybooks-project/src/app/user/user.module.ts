@@ -13,6 +13,8 @@ import {RegisterComponent} from './register/register.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, UserProfileComponent],
@@ -31,7 +33,9 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     RouterModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatExpansionModule,
+    MatListModule
   ]
 })
 export class UserModule { }

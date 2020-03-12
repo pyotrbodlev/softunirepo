@@ -3,6 +3,7 @@ import {RequesterService} from '../requester/requester.service';
 import {map} from 'rxjs/operators';
 import {Book} from '../../book/book.model';
 import {UserService} from '../user/user.service';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,24 +15,23 @@ export class BooksService {
   constructor(private requester: RequesterService, private userService: UserService) {
   }
 
-  getBooks() {
+  getBooks(): Observable<Book[]> {
     return this.requester.get(`${this.url}/appdata/${this.appKey}/books`, {
       Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
     }).pipe(
       map(resp => {
         // @ts-ignore
         return resp.map(b => {
-          const book = new Book(b._id, b.title, b.author, b.gender, b.description, b.likes, b.imageUrl);
+          const book = new Book(b._id, b.title, b.author, b.gender, b.description, b.likes, b.imageUrl, b._acl);
 
-          book.isLiked = this.userService.userLikesBook(book.id);
-
+          book.isLiked = this.userService.userLikesBook(book._id);
           return book;
         });
       })
     );
   }
 
-  getBook(id: string) {
+  getBook(id: string): Observable<Book> {
     return this.requester.get(`${this.url}/appdata/${this.appKey}/books/${id}`, {
       Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
     }).pipe(
@@ -66,7 +66,7 @@ export class BooksService {
   addLikes(book: Book) {
     book.likes = Number(book.likes) + 1;
 
-    return this.requester.put(`${this.url}/appdata/${this.appKey}/books/${book.id}`, book, {
+    return this.requester.put(`${this.url}/appdata/${this.appKey}/books/${book._id}`, book, {
       Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
     });
   }
@@ -77,7 +77,7 @@ export class BooksService {
       book.likes = 0;
     }
 
-    return this.requester.put(`${this.url}/appdata/${this.appKey}/books/${book.id}`, book, {
+    return this.requester.put(`${this.url}/appdata/${this.appKey}/books/${book._id}`, book, {
       Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
     });
   }

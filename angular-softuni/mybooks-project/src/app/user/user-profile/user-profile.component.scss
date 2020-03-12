@@ -12,12 +12,15 @@
 }
 
 .left {
+  padding: 2em;
   header {
     background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
 
     h1 {
       text-decoration: underline;
@@ -64,4 +67,16 @@ input.ng-invalid.ng-touched {
 .success {
   margin-left: 2em;
   color: #42A948;
+}
+
+.right {
+  padding: 2em;
+}
+
+mat-list-item {
+  cursor: pointer;
+}
+
+mat-list-item:hover {
+  border-left: 5px solid black;
 }

@@ -34,7 +34,7 @@ export class BookListComponent implements OnInit {
 
   handleLike(book) {
     if (sessionStorage.getItem('authtoken')) {
-      this.userService.likeBook(book.id).subscribe(resp => {
+      this.userService.likeBook(book._id).subscribe(resp => {
         sessionStorage.setItem('me', JSON.stringify(resp));
       });
 
@@ -44,7 +44,7 @@ export class BookListComponent implements OnInit {
 
   handleUnlike(book) {
     if (sessionStorage.getItem('authtoken')) {
-      this.userService.unlikeBook(book.id).subscribe(resp => {
+      this.userService.unlikeBook(book._id).subscribe(resp => {
         sessionStorage.setItem('me', JSON.stringify(resp));
       });
 
