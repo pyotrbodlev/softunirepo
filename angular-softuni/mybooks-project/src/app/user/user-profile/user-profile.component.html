@@ -5,11 +5,11 @@
       <button mat-raised-button color="warn">Logout</button>
     </header>
     <section>
-      <form [formGroup]="newUserInfoFormGroup">
+      <form [formGroup]="newUserInfoFormGroup" (ngSubmit)="updateUserInfo()">
         <div class="formField">
           <label for="email">New email address:</label>
           <input type="email" id="email" formControlName="email" placeholder="pesho@example.com">
-          <p *ngIf="newUserInfoFormGroup.controls.email.invalid && newUserInfoFormGroup.controls.email.touched">{{getErrorMessage('email')}}</p>
+          <p *ngIf="newUserInfoFormGroup.controls.email.invalid && newUserInfoFormGroup.controls.email.touched" class="invalid">{{getErrorMessage('email')}}</p>
         </div>
         <div class="formField">
           <label for="password">New password:</label>
@@ -23,6 +23,7 @@
         </div>
         <p *ngIf="newUserInfoFormGroup?.hasError('passwords-doesnt-match')" class="invalid">Passwords doesnt match</p>
         <button mat-raised-button color="primary" [disabled]="newUserInfoFormGroup.invalid">Confirm changes</button>
+        <span *ngIf="successMessage" class="success">{{successMessage}}</span>
       </form>
     </section>
   </div>

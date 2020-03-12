@@ -5,5 +5,5 @@ export interface IUser {
   _acl: { creator: string };
   likes: string[];
   email: string;
-  _kmd: { lmt: string, ect: string };
+  _kmd: { lmt: string, ect: string, authtoken: string };
 }

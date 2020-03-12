@@ -82,4 +82,10 @@ export class UserService {
       map(usersCount => usersCount > 0)
     );
   }
+
+  updateUserInfo(newData): Observable<IUser> {
+    return this.requester.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, newData, {
+      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
+    });
+  }
 }

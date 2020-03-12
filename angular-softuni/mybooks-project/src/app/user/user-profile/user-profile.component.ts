@@ -1,18 +1,18 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from '../../services/user/user.service';
 import {ActivatedRoute} from '@angular/router';
 import {IUser} from '../../shared/IUser';
 import {LoaderService} from '../../shared/loader/loader.service';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 
-function checkPasswords(control: AbstractControl) {
-  if (control.value.password !== control.value.confirmPassword){
-    return {'passwords-doesnt-match': true};
+function checkPasswords(control: FormGroup) {
+  if (control.controls.confirmPassword.touched) {
+    if (control.value.password !== control.value.confirmPassword) {
+      return {'passwords-doesnt-match': true};
+    }
   }
-
   return null;
 }
-
 
 @Component({
   selector: 'app-user-profile',
@@ -22,6 +22,7 @@ function checkPasswords(control: AbstractControl) {
 export class UserProfileComponent implements OnInit {
   userInfo: IUser;
   newUserInfoFormGroup: FormGroup;
+  successMessage: string;
 
   constructor(private userService: UserService,
               private router: ActivatedRoute,
@@ -59,6 +60,25 @@ export class UserProfileComponent implements OnInit {
     this.userService.getUserById(userId).subscribe(user => {
       this.loader.isLoading = false;
       this.userInfo = user;
+    });
+  }
+
+  updateUserInfo() {
+    this.loader.isLoading = true;
+    const newUserData = {
+      email: this.newUserInfoFormGroup.controls.email.value,
+      password: this.newUserInfoFormGroup.controls.email.value
+    };
+
+    this.userService.updateUserInfo(newUserData).subscribe({
+      next: resp => {
+        this.loader.isLoading = false;
+        sessionStorage.setItem('me', JSON.stringify(resp));
+        sessionStorage.setItem('authtoken', resp._kmd.authtoken);
+        this.newUserInfoFormGroup.reset();
+        this.successMessage = 'You successfully changed your info!';
+      },
+      error: err => console.log(err)
     });
   }
 

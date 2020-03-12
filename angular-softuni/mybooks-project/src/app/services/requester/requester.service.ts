@@ -23,7 +23,7 @@ export class RequesterService {
     return this.httpClient.post(url, body, {headers: headers ? headers : this.headers});
   }
 
-  put(url: string, body, headers?) {
-    return this.httpClient.put(url, body, {headers: headers ? headers : this.headers});
+  put<T>(url: string, body, headers?) {
+    return this.httpClient.put<T>(url, body, {headers: headers ? headers : this.headers});
   }
 }
