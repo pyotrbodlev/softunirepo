@@ -57,6 +57,12 @@ export class BooksService {
       }));
   }
 
+  addAuthor(author) {
+    return this.requester.post(`${this.url}/appdata/${this.appKey}/authors`, author, {
+      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
+    });
+  }
+
   createBook(book) {
     return this.requester.post(`${this.url}/appdata/${this.appKey}/books`, book, {
       Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')

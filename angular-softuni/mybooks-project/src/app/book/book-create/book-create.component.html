@@ -16,14 +16,30 @@
     <mat-error *ngIf="createBookForm.controls.imageUrl.invalid">{{getErrorMessage('imageUrl')}}</mat-error>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" *ngIf="selectAuthor">
     <mat-label>Author</mat-label>
     <mat-select formControlName="author">
-      <mat-option>Clear</mat-option>
+      <mat-option><span class="clear">Clear</span></mat-option>
       <mat-option *ngFor="let author of authors" [value]="author">{{author.fullName}}</mat-option>
+      <mat-option value="new" (onSelectionChange)="addNewForm()"><span class="new-author">New Author</span></mat-option>
     </mat-select>
     <mat-error *ngIf="createBookForm.controls.author.invalid">{{getErrorMessage('author')}}</mat-error>
   </mat-form-field>
+
+  <div *ngIf="!selectAuthor" formGroupName="author">
+    <mat-form-field appearance="fill">
+      <mat-label>Author's name</mat-label>
+      <label>
+        <input matInput type="text" placeholder="Enter author's name" formControlName="fullName">
+      </label>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Avatar URL</mat-label>
+      <label>
+        <input matInput type="text" placeholder="Enter avatar link" formControlName="avatarLink">
+      </label>
+    </mat-form-field>
+  </div>
 
   <mat-form-field appearance="fill">
     <mat-label>Gender</mat-label>
@@ -40,5 +56,6 @@
     </label>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="handleCreate()" [disabled]="!createBookForm.valid">Create Book</button>
+  <button mat-raised-button color="primary" (click)="handleCreate()" [disabled]="!createBookForm.valid">Create Book
+  </button>
 </div>

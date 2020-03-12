@@ -10,6 +10,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class BookCreateComponent implements OnInit {
   authors: any;
+  selectAuthor = true;
 
   createBookForm = new FormGroup({
     title: new FormControl('', [Validators.required]),
@@ -36,6 +37,11 @@ export class BookCreateComponent implements OnInit {
   }
 
   handleCreate() {
+    if (!this.selectAuthor) {
+      const newAuthor = this.createBookForm.controls.author.value;
+      this.booksService.addAuthor(newAuthor).subscribe(console.log);
+    }
+
     this.booksService.createBook(this.createBookForm.value).subscribe(resp => {
       this.router.navigate(['/']);
     });
@@ -51,6 +57,14 @@ export class BookCreateComponent implements OnInit {
     }
 
     return '';
+  }
+
+  addNewForm() {
+    this.selectAuthor = false;
+    this.createBookForm.controls.author = new FormGroup({
+      fullName: new FormControl(''),
+      avatarLink: new FormControl('')
+    });
   }
 
 }
