@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {RequesterService} from '../requester/requester.service';
 import {Observable} from 'rxjs';
 import {IUser} from '../../shared/IUser';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class UserService {
   private readonly appKey = 'kid_S10Q4H5NU';
   private url = `https://baas.kinvey.com`;
 
-  constructor(private requester: RequesterService) {
+  constructor(private http: HttpClient) {
   }
 
   get currentUser(): IUser {
@@ -18,23 +18,19 @@ export class UserService {
   }
 
   getUserById(id: string): Observable<IUser> {
-    return this.requester.get<IUser>(`${this.url}/user/${this.appKey}/${id}`, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    });
+    return this.http.get<IUser>(`${this.url}/user/${this.appKey}/${id}`);
   }
 
   logIn(userData): Observable<any> {
-    return this.requester.post(`${this.url}/user/${this.appKey}/login`, userData);
+    return this.http.post(`${this.url}/user/${this.appKey}/login`, userData);
   }
 
   logOut(): Observable<any> {
-    return this.requester.post(`${this.url}/user/${this.appKey}/_logout`, {}, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    });
+    return this.http.post(`${this.url}/user/${this.appKey}/_logout`, {});
   }
 
   register(userData): Observable<any> {
-    return this.requester.post(`${this.url}/user/${this.appKey}`, userData);
+    return this.http.post(`${this.url}/user/${this.appKey}`, userData);
   }
 
   likeBook(bookId): Observable<any> {
@@ -45,9 +41,7 @@ export class UserService {
     }
     user.likes.push(bookId);
 
-    return this.requester.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, user, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    });
+    return this.http.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, user);
   }
 
   unlikeBook(bookId): Observable<any> {
@@ -55,9 +49,7 @@ export class UserService {
       const user = this.currentUser;
       user.likes = this.currentUser.likes.filter(like => like !== bookId);
 
-      return this.requester.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, user, {
-        Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-      });
+      return this.http.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, user);
     }
   }
 
@@ -70,12 +62,10 @@ export class UserService {
   }
 
   asyncValidatorUsername(username): Observable<boolean> {
-    return this.requester.post<boolean>(`${this.url}/rpc/${this.appKey}/check-username-exists`, {username});
+    return this.http.post<boolean>(`${this.url}/rpc/${this.appKey}/check-username-exists`, {username});
   }
 
   updateUserInfo(newData): Observable<IUser> {
-    return this.requester.put(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, newData, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    });
+    return this.http.put<IUser>(`${this.url}/user/${this.appKey}/${this.currentUser._id}`, newData);
   }
 }

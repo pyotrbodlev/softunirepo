@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {RequesterService} from '../requester/requester.service';
-import {filter, map} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
 
 interface IReview {
   user: {
@@ -29,13 +29,11 @@ class Review implements IReview {
 })
 export class ReviewService {
 
-  constructor(private requester: RequesterService) {
+  constructor(private http: HttpClient) {
   }
 
   loadReviews(bookId) {
-    return this.requester.get(`https://baas.kinvey.com/appdata/kid_S10Q4H5NU/reviews`, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    })
+    return this.http.get(`https://baas.kinvey.com/appdata/kid_S10Q4H5NU/reviews`)
       .pipe(
         map(resp => {
           // @ts-ignore
@@ -51,8 +49,6 @@ export class ReviewService {
   }
 
   addReview(body) {
-    return this.requester.post(`https://baas.kinvey.com/appdata/kid_S10Q4H5NU/reviews`, body, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    });
+    return this.http.post(`https://baas.kinvey.com/appdata/kid_S10Q4H5NU/reviews`, body);
   }
 }

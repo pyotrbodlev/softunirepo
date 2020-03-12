@@ -7,9 +7,10 @@ import {UserModule} from './user/user.module';
 import {CoreModule} from './core/core.module';
 import {AppRoutingModule} from './app-routing.module';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BookModule} from './book/book.module';
 import {SharedModule} from './shared/shared.module';
+import {AppInterceptor} from './app.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,13 @@ import {SharedModule} from './shared/shared.module';
     BookModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AppInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {RequesterService} from '../requester/requester.service';
 import {map} from 'rxjs/operators';
 import {Book} from '../../book/book.model';
 import {UserService} from '../user/user.service';
 import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +12,11 @@ export class BooksService {
   private readonly appKey = 'kid_S10Q4H5NU';
   private url = `https://baas.kinvey.com`;
 
-  constructor(private requester: RequesterService, private userService: UserService) {
+  constructor(private http: HttpClient, private userService: UserService) {
   }
 
   getBooks(): Observable<Book[]> {
-    return this.requester.get(`${this.url}/appdata/${this.appKey}/books`, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    }).pipe(
+    return this.http.get(`${this.url}/appdata/${this.appKey}/books`).pipe(
       map(resp => {
         // @ts-ignore
         return resp.map(b => {
@@ -32,9 +30,7 @@ export class BooksService {
   }
 
   getBook(id: string): Observable<Book> {
-    return this.requester.get(`${this.url}/appdata/${this.appKey}/books/${id}`, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    }).pipe(
+    return this.http.get(`${this.url}/appdata/${this.appKey}/books/${id}`).pipe(
       map(b => {
         // @ts-ignore
         return new Book(b._id, b.title, b.author, b.gender, b.description, b.likes, b.imageUrl);
@@ -43,9 +39,7 @@ export class BooksService {
   }
 
   getAuthors() {
-    return this.requester.get(`${this.url}/appdata/${this.appKey}/authors`, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    }).pipe(
+    return this.http.get(`${this.url}/appdata/${this.appKey}/authors`).pipe(
       map(resp => {
         // @ts-ignore
         return resp.map(author => {
@@ -58,23 +52,17 @@ export class BooksService {
   }
 
   addAuthor(author) {
-    return this.requester.post(`${this.url}/appdata/${this.appKey}/authors`, author, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    });
+    return this.http.post(`${this.url}/appdata/${this.appKey}/authors`, author);
   }
 
   createBook(book) {
-    return this.requester.post(`${this.url}/appdata/${this.appKey}/books`, book, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    });
+    return this.http.post(`${this.url}/appdata/${this.appKey}/books`, book);
   }
 
   addLikes(book: Book) {
     book.likes = Number(book.likes) + 1;
 
-    return this.requester.put(`${this.url}/appdata/${this.appKey}/books/${book._id}`, book, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    });
+    return this.http.put(`${this.url}/appdata/${this.appKey}/books/${book._id}`, book);
   }
 
   removeLikes(book: Book) {
@@ -83,8 +71,6 @@ export class BooksService {
       book.likes = 0;
     }
 
-    return this.requester.put(`${this.url}/appdata/${this.appKey}/books/${book._id}`, book, {
-      Authorization: 'Kinvey ' + sessionStorage.getItem('authtoken')
-    });
+    return this.http.put(`${this.url}/appdata/${this.appKey}/books/${book._id}`, book);
   }
 }
