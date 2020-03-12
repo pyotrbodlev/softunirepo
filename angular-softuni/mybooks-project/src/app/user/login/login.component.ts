@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FormGroup, FormControl, Validators, FormBuilder} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
@@ -64,7 +64,7 @@ export class LoginComponent {
     if (err.status === 401) {
       this.unauthorised = true;
     } else {
-      console.log(err);
+      console.error(err);
     }
   }
 

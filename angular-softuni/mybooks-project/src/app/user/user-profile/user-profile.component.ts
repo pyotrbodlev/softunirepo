@@ -6,7 +6,7 @@ import {LoaderService} from '../../shared/loader/loader.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Book} from '../../book/book.model';
 import {BooksService} from '../../services/books/books.service';
-import {filter, map, shareReplay} from 'rxjs/operators';
+import {map, shareReplay} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
 function checkPasswords(control: FormGroup) {
@@ -97,7 +97,7 @@ export class UserProfileComponent implements OnInit {
         this.newUserInfoFormGroup.reset();
         this.successMessage = 'You successfully changed your info!';
       },
-      error: err => console.log(err)
+      error: err => console.error(err)
     });
   }
 }

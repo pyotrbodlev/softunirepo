@@ -36,11 +36,11 @@ export class BookCreateComponent implements OnInit {
   handleCreate() {
     if (!this.selectAuthor) {
       const newAuthor = this.createBookForm.controls.author.value;
-      this.booksService.addAuthor(newAuthor).subscribe(console.log);
+      this.booksService.addAuthor(newAuthor).subscribe();
     }
 
-    this.booksService.createBook(this.createBookForm.value).subscribe(resp => {
-      this.router.navigate(['/']);
+    this.booksService.createBook(this.createBookForm.value).subscribe(() => {
+      this.router.navigate(['/']).then(console.log);
     });
   }
 

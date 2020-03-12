@@ -13,7 +13,7 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     if (!!sessionStorage.getItem('authtoken')) {
-      this.router.navigate(['/books']);
+      this.router.navigate(['/books']).then(console.log);
     }
   }
 

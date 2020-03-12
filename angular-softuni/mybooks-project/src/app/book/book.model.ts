@@ -3,11 +3,6 @@ interface IAuthor {
   avatarLink: string;
 }
 
-interface ICharacter {
-  name: string;
-  age: number;
-}
-
 export class Book {
   // tslint:disable-next-line:variable-name
   public _id: string;

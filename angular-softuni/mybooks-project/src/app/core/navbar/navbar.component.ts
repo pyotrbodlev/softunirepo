@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {MatMenuTrigger} from '@angular/material/menu';
 import {faHatWizard} from '@fortawesome/free-solid-svg-icons';
 import {UserService} from '../../services/user/user.service';
 import {LoaderService} from '../../shared/loader/loader.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -38,7 +38,7 @@ export class NavbarComponent {
     this.userService.logOut()
       .subscribe(
         () => {
-          this.router.navigate(['/']).then(r => {
+          this.router.navigate(['/']).then(() => {
             this.loader.isLoading = false;
             sessionStorage.clear();
           });
