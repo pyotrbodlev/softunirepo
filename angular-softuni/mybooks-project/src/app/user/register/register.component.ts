@@ -39,7 +39,8 @@ export class RegisterComponent {
     return this.userService.asyncValidatorUsername(control.value)
       .pipe(
         map(res => {
-          return res ? {usernameIsTaken: true} : null;
+          // @ts-ignore
+          return res.usernameExists ? {usernameIsTaken: true} : null;
         })
       );
   }

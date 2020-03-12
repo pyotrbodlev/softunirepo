@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {RequesterService} from '../requester/requester.service';
-import {count, delay, filter, map, tap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 import {IUser} from '../../shared/IUser';
 
@@ -71,16 +70,7 @@ export class UserService {
   }
 
   asyncValidatorUsername(username): Observable<boolean> {
-    return this.requester.get(`${this.url}/user/${this.appKey}/`, {
-      Authorization: 'Basic a2lkX1MxMFE0SDVOVTozZWM4YTM4MjAyYTk0NTQ5ODJkMWE4NGI5OTZkNWRkMQ=='
-    }).pipe(
-      count(resp => {
-        // @ts-ignore
-        const filtered = resp.filter(user => user.username === username);
-        return filtered.length;
-      }),
-      map(usersCount => usersCount > 0)
-    );
+    return this.requester.post<boolean>(`${this.url}/rpc/${this.appKey}/check-username-exists`, {username});
   }
 
   updateUserInfo(newData): Observable<IUser> {

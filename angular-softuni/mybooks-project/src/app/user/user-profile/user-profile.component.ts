@@ -6,7 +6,8 @@ import {LoaderService} from '../../shared/loader/loader.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Book} from '../../book/book.model';
 import {BooksService} from '../../services/books/books.service';
-import {filter, map} from 'rxjs/operators';
+import {filter, map, shareReplay} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 function checkPasswords(control: FormGroup) {
   if (control.controls.confirmPassword.touched) {
@@ -26,8 +27,8 @@ export class UserProfileComponent implements OnInit {
   userInfo: IUser;
   newUserInfoFormGroup: FormGroup;
   successMessage: string;
-  likedBooks: Book[];
-  addedBooks: Book[];
+  likedBooks: Observable<Book[]>;
+  addedBooks: Observable<Book[]>;
 
   constructor(private userService: UserService,
               private booksService: BooksService,
@@ -63,12 +64,22 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
     this.loader.isLoading = true;
     const userId = this.router.snapshot.params.id;
+
     this.userService.getUserById(userId).subscribe(user => {
       this.loader.isLoading = false;
       this.userInfo = user;
     });
-    this.getLikedBooks();
-    this.getAddedBooks();
+
+    this.likedBooks = this.booksService.getBooks().pipe(
+      map(books => books.filter(book => book.isLiked)),
+      map(books => books.length > 0 ? books : undefined),
+      shareReplay(1)
+    );
+    this.addedBooks = this.booksService.getBooks().pipe(
+      map(books => books.filter(book => book._acl.creator === this.userService.currentUser._id)),
+      map(books => books.length > 0 ? books : undefined),
+      shareReplay(1)
+    );
   }
 
   updateUserInfo() {
@@ -87,28 +98,6 @@ export class UserProfileComponent implements OnInit {
         this.successMessage = 'You successfully changed your info!';
       },
       error: err => console.log(err)
-    });
-  }
-
-  getLikedBooks() {
-    this.booksService.getBooks()
-      .pipe(
-        map(books => books.filter(book => book.isLiked))
-      )
-      .subscribe(books => {
-        if (books.length > 0) {
-          this.likedBooks = books;
-        }
-      });
-  }
-
-  getAddedBooks() {
-    this.booksService.getBooks().pipe(
-      map(books => books.filter(book => book._acl.creator === this.userService.currentUser._id))
-    ).subscribe(books => {
-      if (books.length > 0) {
-        this.addedBooks = books;
-      }
     });
   }
 }

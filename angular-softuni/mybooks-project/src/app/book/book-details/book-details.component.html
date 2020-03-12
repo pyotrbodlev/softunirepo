@@ -10,13 +10,13 @@
   <hr/>
   <div class="reviews">
     <h2>Reviews:</h2>
-    <div *ngIf="reviews">
-      <div *ngFor="let review of reviews">
+    <div *ngIf="reviews$">
+      <div *ngFor="let review of reviews$ | async">
         <app-review [reviewInfo]="review"></app-review>
       </div>
     </div>
 
-    <div *ngIf="!reviews">
+    <div *ngIf="!(reviews$ | async)">
       <h3>No reviews yet! You can write first review below:</h3>
     </div>
   </div>

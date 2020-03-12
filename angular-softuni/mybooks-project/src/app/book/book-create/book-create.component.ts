@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {BooksService} from '../../services/books/books.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-book-create',
@@ -9,7 +10,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./book-create.component.scss']
 })
 export class BookCreateComponent implements OnInit {
-  authors: any;
+  authors$: Observable<any>;
   selectAuthor = true;
 
   createBookForm = new FormGroup({
@@ -33,7 +34,7 @@ export class BookCreateComponent implements OnInit {
       this.router.navigate(['/']);
     }
 
-    this.booksService.getAuthors().subscribe(authors => this.authors = authors);
+    this.authors$ = this.booksService.getAuthors();
   }
 
   handleCreate() {

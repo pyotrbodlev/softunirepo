@@ -20,7 +20,7 @@
     <mat-label>Author</mat-label>
     <mat-select formControlName="author">
       <mat-option><span class="clear">Clear</span></mat-option>
-      <mat-option *ngFor="let author of authors" [value]="author">{{author.fullName}}</mat-option>
+      <mat-option *ngFor="let author of authors$ | async" [value]="author">{{author.fullName}}</mat-option>
       <mat-option value="new" (onSelectionChange)="addNewForm()"><span class="new-author">New Author</span></mat-option>
     </mat-select>
     <mat-error *ngIf="createBookForm.controls.author.invalid">{{getErrorMessage('author')}}</mat-error>

@@ -19,8 +19,8 @@ export class RequesterService {
     return this.httpClient.get<T>(url, {headers: headers ? headers : this.headers});
   }
 
-  post(url: string, body, headers?) {
-    return this.httpClient.post(url, body, {headers: headers ? headers : this.headers});
+  post<T>(url: string, body, headers?) {
+    return this.httpClient.post<T>(url, body, {headers: headers ? headers : this.headers});
   }
 
   put<T>(url: string, body, headers?) {
