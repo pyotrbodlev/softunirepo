@@ -39,6 +39,7 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.router.snapshot.params.id;
+    console.log(id);
     this.loader.isLoading = true;
 
     this.booksService.getBook(id).subscribe(book => {

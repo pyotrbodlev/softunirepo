@@ -21,15 +21,11 @@ export class BookListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!sessionStorage.getItem('authtoken')) {
-      this.router.navigate(['/']);
-    } else {
-      this.loader.isLoading = true;
-      this.booksService.getBooks().subscribe(books => {
-        this.loader.isLoading = false;
-        this.books = books;
-      });
-    }
+    this.loader.isLoading = true;
+    this.booksService.getBooks().subscribe(books => {
+      this.loader.isLoading = false;
+      this.books = books;
+    });
   }
 
   handleLike(book) {

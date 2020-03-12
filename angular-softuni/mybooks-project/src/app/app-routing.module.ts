@@ -7,12 +7,13 @@ import {BookListComponent} from './book/book-list/book-list.component';
 import {BookDetailsComponent} from './book/book-details/book-details.component';
 import {BookCreateComponent} from './book/book-create/book-create.component';
 import {UserProfileComponent} from './user/user-profile/user-profile.component';
+import {AuthenticateGuard} from './authenticate.guard';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: WelcomeComponent
+    component: WelcomeComponent,
   },
   {
     path: 'register',
@@ -25,19 +26,23 @@ const routes: Routes = [
   {
     path: 'books',
     component: BookListComponent,
+    canActivate: [AuthenticateGuard]
   },
   {
     path: 'books/create',
     pathMatch: 'full',
-    component: BookCreateComponent
+    component: BookCreateComponent,
+    canActivate: [AuthenticateGuard]
   },
   {
     path: 'books/:id',
-    component: BookDetailsComponent
+    component: BookDetailsComponent,
+    canActivate: [AuthenticateGuard]
   },
   {
     path: 'user/:id',
-    component: UserProfileComponent
+    component: UserProfileComponent,
+    canActivate: [AuthenticateGuard]
   }
 ];
 

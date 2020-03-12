@@ -30,10 +30,6 @@ export class BookCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (!sessionStorage.getItem('authtoken')) {
-      this.router.navigate(['/']);
-    }
-
     this.authors$ = this.booksService.getAuthors();
   }
 
