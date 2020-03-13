@@ -5,7 +5,6 @@ import {BooksService} from '../../services/books/books.service';
 import {LoaderService} from '../../shared/loader/loader.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ReviewService} from '../../services/review/review.service';
-import {map, shareReplay} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
 interface IReview {
@@ -52,10 +51,7 @@ export class BookDetailsComponent implements OnInit {
   loadReviews() {
     const bookId = this.router.snapshot.params.id;
 
-    this.reviews$ = this.reviewService.loadReviews(bookId).pipe(
-      map(reviews => reviews.length > 0 ? reviews : null),
-      shareReplay(1)
-    );
+    this.reviews$ = this.reviewService.loadReviews(bookId);
   }
 
   addReview() {

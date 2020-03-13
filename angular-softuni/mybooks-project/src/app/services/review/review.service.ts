@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {map} from 'rxjs/operators';
+import {map, shareReplay} from 'rxjs/operators';
 import {HttpClient} from '@angular/common/http';
 
 interface IReview {
@@ -44,7 +44,9 @@ export class ReviewService {
         map(resp => {
           // @ts-ignore
           return resp.map(reviewInfo => new Review(reviewInfo.user, reviewInfo.review));
-        })
+        }),
+        map(reviews => reviews.length > 0 ? reviews : null),
+        shareReplay(1)
       );
   }
 

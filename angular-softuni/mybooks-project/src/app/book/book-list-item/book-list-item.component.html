@@ -1,14 +1,14 @@
 <mat-card class="example-card">
   <div [routerLink]="['/books', book._id]">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image" [style]="style"></div>
+      <div mat-card-avatar class="example-header-image" [style]="backgroundImg"></div>
       <mat-card-title>{{book.title}}</mat-card-title>
       <mat-card-subtitle>{{book.author.fullName}}</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image [src]="book.imageUrl" alt="Photo of {{book.title}}">
     <mat-card-content>
       <p>
-        {{description}}
+        {{this.book.description | shortify}}
       </p>
     </mat-card-content>
   </div>

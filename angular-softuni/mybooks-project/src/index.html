@@ -10,6 +10,16 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body class="mat-typography">
-  <app-root></app-root>
+<app-root></app-root>
 </body>
+<script>
+  window.onload = () => {
+    let currentHeight = document.getElementById('wrapper').clientHeight;
+    let isSmallContent = currentHeight < 811;
+
+    if (isSmallContent) {
+      document.getElementById('wrapper').style.minHeight = '84vh';
+    }
+  }
+</script>
 </html>

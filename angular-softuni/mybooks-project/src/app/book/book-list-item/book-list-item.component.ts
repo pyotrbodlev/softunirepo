@@ -21,12 +21,8 @@ export class BookListItemComponent {
     return this.book.isLiked ? {color: 'red'} : {color: 'darkgrey'};
   }
 
-  get style() {
+  get backgroundImg() {
     return {'background-image': `url(${this.book.author.avatarLink})`};
-  }
-
-  get description() {
-    return this.book.description.substring(0, 255) + '...';
   }
 
   handleLike() {
