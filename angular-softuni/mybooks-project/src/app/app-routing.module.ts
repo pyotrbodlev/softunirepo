@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 import {RegisterComponent} from './user/register/register.component';
 import {LoginComponent} from './user/login/login.component';
 import {WelcomeComponent} from './core/welcome/welcome.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: WelcomeComponent,
+    component: WelcomeComponent
   },
   {
     path: 'register',
