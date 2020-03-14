@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {BooksService} from '../../services/books/books.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
+import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
 
 @Component({
   selector: 'app-book-create',
@@ -22,7 +23,7 @@ export class BookCreateComponent implements OnInit {
     likes: new FormControl(0)
   });
 
-  constructor(private router: Router, private booksService: BooksService) {
+  constructor(private router: Router, private booksService: BooksService, private snackBar: InfoSnackbarService) {
   }
 
   get genders() {
@@ -40,7 +41,11 @@ export class BookCreateComponent implements OnInit {
     }
 
     this.booksService.createBook(this.createBookForm.value).subscribe(() => {
-      this.router.navigate(['/']).then(console.log);
+      this.snackBar.openSnackBar('You successfully created a book!', 'Success');
+
+      this.router.navigate(['/']).catch(() => {
+        this.snackBar.openSnackBar('Something went wrong', 'Error');
+      });
     });
   }
 

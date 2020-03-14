@@ -11,6 +11,14 @@
   </mat-form-field>
 
   <mat-form-field appearance="fill">
+    <mat-label>Image URL</mat-label>
+    <label>
+      <input matInput type="text" placeholder="http://..." formControlName="avatarUrl">
+    </label>
+    <mat-error *ngIf="newUserInfoFormGroup.controls.avatarUrl.invalid">{{getErrorMessage('avatarUrl')}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
     <mat-label>Enter your new password</mat-label>
     <label>
       <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">

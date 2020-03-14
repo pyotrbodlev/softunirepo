@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
 import {LoaderService} from '../../shared/loader/loader.service';
 import {map} from 'rxjs/operators';
+import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
 
 @Component({
   selector: 'app-register',
@@ -22,13 +23,15 @@ export class RegisterComponent {
               private http: HttpClient,
               private userService: UserService,
               private loader: LoaderService,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private snackBar: InfoSnackbarService) {
 
     this.registerForm = this.fb.group({
       username: new FormControl('',
         [Validators.required, Validators.minLength(4)],
         [this.checkUsername.bind(this)]),
       email: new FormControl('', [Validators.required, Validators.email]),
+      avatarUrl: new FormControl('', [Validators.pattern('http(s?):\\/\\/.+\\.(jpg|jpeg|png)')]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)]),
       birthday: new FormControl('', [Validators.required])
@@ -62,6 +65,9 @@ export class RegisterComponent {
     if (this.registerForm.controls[field].hasError('usernameIsTaken')) {
       return 'Username is already exist. Please use another username';
     }
+    if (this.registerForm.controls[field].hasError('pattern')) {
+      return 'Invalid image URL';
+    }
 
     return this.registerForm.controls[field].hasError(field) ? `Not a valid ${field}` : '';
   }
@@ -85,13 +91,17 @@ export class RegisterComponent {
     };
     this.userService.register(userData)
       .subscribe({
-        next: resp => this.handleSuccess(resp),
+        next: () => this.handleSuccess(),
         error: err => console.error(err)
       });
   }
 
-  handleSuccess(resp) {
+  handleSuccess() {
     this.loader.isLoading = false;
-    this.router.navigate(['/login']);
+    this.snackBar.openSnackBar('You successfully registered!', 'Success');
+
+    this.router.navigate(['/login']).catch(() => {
+      this.snackBar.openSnackBar('Something went wrong', 'Error');
+    });
   }
 }

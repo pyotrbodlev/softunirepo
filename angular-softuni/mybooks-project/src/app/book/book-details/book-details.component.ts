@@ -6,6 +6,7 @@ import {LoaderService} from '../../shared/loader/loader.service';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ReviewService} from '../../services/review/review.service';
 import {Observable} from 'rxjs';
+import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
 
 interface IReview {
   user: {
@@ -29,7 +30,8 @@ export class BookDetailsComponent implements OnInit {
               private booksService: BooksService,
               private loader: LoaderService,
               private fb: FormBuilder,
-              private reviewService: ReviewService) {
+              private reviewService: ReviewService,
+              private snackBar: InfoSnackbarService) {
 
     this.reviewForm = fb.group({
       reviewField: new FormControl('', [Validators.required])
@@ -70,6 +72,7 @@ export class BookDetailsComponent implements OnInit {
     this.reviewService.addReview(body).subscribe(resp => {
       // @ts-ignore
       if (resp._id) {
+        this.snackBar.openSnackBar('You added a review', 'Success');
         this.reviewForm.reset();
         this.loadReviews();
       }

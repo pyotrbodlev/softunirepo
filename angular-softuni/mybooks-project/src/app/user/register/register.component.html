@@ -8,6 +8,15 @@
     <mat-icon *ngIf="registerForm.controls.username.valid" matSuffix class="valid">check_circle_outline</mat-icon>
     <mat-error *ngIf="this.registerForm.controls.username.invalid">{{getErrorMessage('username')}}</mat-error>
   </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Image URL</mat-label>
+    <label>
+      <input matInput type="text" placeholder="http://... (Not required)" formControlName="avatarUrl">
+    </label>
+    <mat-error *ngIf="registerForm.controls.avatarUrl.invalid">{{getErrorMessage('avatarUrl')}}</mat-error>
+  </mat-form-field>
+
   <mat-form-field appearance="fill">
     <mat-label>Enter your email address</mat-label>
     <label>
@@ -16,6 +25,7 @@
     <mat-icon *ngIf="registerForm.controls.email.valid" matSuffix class="valid">check_circle_outline</mat-icon>
     <mat-error *ngIf="this.registerForm.controls.email.invalid">{{getErrorMessage('email')}}</mat-error>
   </mat-form-field>
+
   <mat-form-field appearance="fill">
     <mat-label>Enter your password</mat-label>
     <label>
@@ -27,6 +37,7 @@
     </button>
     <mat-error *ngIf="this.registerForm.controls.password.invalid">{{getErrorMessage('password')}}</mat-error>
   </mat-form-field>
+
   <mat-form-field appearance="fill">
     <mat-label>Re-Enter your password</mat-label>
     <label>
@@ -39,6 +50,7 @@
     <mat-error
       *ngIf="this.registerForm.controls.confirmPassword.invalid">{{getErrorMessage('confirmPassword')}}</mat-error>
   </mat-form-field>
+
   <mat-form-field appearance="fill">
     <mat-label>Choose a date</mat-label>
     <label>
@@ -48,6 +60,7 @@
     <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
     <mat-error *ngIf="this.registerForm.controls.birthday.invalid">{{getErrorMessage('birthday')}}</mat-error>
   </mat-form-field>
+
   <button mat-raised-button color="primary" (click)="handleRegister()" [disabled]="!registerForm.valid">Register
   </button>
 </form>

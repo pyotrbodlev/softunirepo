@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {PizzaPartyComponent} from "./info-snackbar/snack-bar-component-info";
+import {SnackBarInfoComponent} from "./info-snackbar/snack-bar-component-info";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class InfoSnackbarService {
   }
 
   openSnackBar(message, type) {
-    this._snackBar.openFromComponent(PizzaPartyComponent, {
+    this._snackBar.openFromComponent(SnackBarInfoComponent, {
       duration: this.durationInSeconds * 1000,
       data: {
         message,

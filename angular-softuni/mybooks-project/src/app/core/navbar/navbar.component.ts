@@ -4,6 +4,7 @@ import {faHatWizard} from '@fortawesome/free-solid-svg-icons';
 import {UserService} from '../../services/user/user.service';
 import {LoaderService} from '../../shared/loader/loader.service';
 import {Router} from '@angular/router';
+import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,7 @@ export class NavbarComponent {
   @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
   faHatWizard = faHatWizard;
 
-  constructor(private userService: UserService, private loader: LoaderService, private router: Router) {
+  constructor(private userService: UserService, private loader: LoaderService, private router: Router, private snackBar: InfoSnackbarService) {
   }
 
   get isLoading(): boolean {
@@ -38,9 +39,10 @@ export class NavbarComponent {
     this.userService.logOut()
       .subscribe(
         () => {
-          this.router.navigate(['/']).then(() => {
-            this.loader.isLoading = false;
-            sessionStorage.clear();
+          this.loader.isLoading = false;
+          sessionStorage.clear();
+          this.router.navigate(['/']).catch(() => {
+            this.snackBar.openSnackBar('Something went wrong', 'Error');
           });
         });
   }

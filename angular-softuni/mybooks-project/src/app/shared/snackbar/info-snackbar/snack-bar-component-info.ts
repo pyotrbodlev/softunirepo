@@ -1,11 +1,11 @@
-import {Component, Inject, Input} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {MAT_SNACK_BAR_DATA} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'snack-bar-component-info',
   templateUrl: 'snack-bar-component-info.html'
 })
-export class PizzaPartyComponent {
+export class SnackBarInfoComponent {
   message: string;
   color: string;
 

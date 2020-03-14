@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
 import {LoaderService} from '../../shared/loader/loader.service';
+import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,8 @@ export class LoginComponent {
               private http: HttpClient,
               private userService: UserService,
               private loader: LoaderService,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private snackBar: InfoSnackbarService) {
 
     this.loginForm = this.fb.group({
       username: new FormControl('', [Validators.required, Validators.minLength(4)]),
@@ -55,7 +57,9 @@ export class LoginComponent {
     this.loader.isLoading = false;
     sessionStorage.setItem('me', JSON.stringify(resp));
     sessionStorage.setItem('authtoken', resp._kmd.authtoken);
-    this.router.navigate(['/']);
+    this.router.navigate(['/']).catch(() => {
+      this.snackBar.openSnackBar('Something went wrong', 'Error');
+    });
   }
 
   handleError(err) {

@@ -4,6 +4,7 @@ import {Book} from '../book.model';
 import {BooksService} from '../../services/books/books.service';
 import {LoaderService} from '../../shared/loader/loader.service';
 import {UserService} from '../../services/user/user.service';
+import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
 
 @Component({
   selector: 'app-book-list',
@@ -17,7 +18,8 @@ export class BookListComponent implements OnInit {
     private router: Router,
     private booksService: BooksService,
     private loader: LoaderService,
-    private userService: UserService) {
+    private userService: UserService,
+    private snackBar: InfoSnackbarService) {
   }
 
   ngOnInit(): void {
@@ -30,8 +32,14 @@ export class BookListComponent implements OnInit {
 
   handleLike(book) {
     if (sessionStorage.getItem('authtoken')) {
-      this.userService.likeBook(book._id).subscribe(resp => {
-        sessionStorage.setItem('me', JSON.stringify(resp));
+      this.userService.likeBook(book._id).subscribe({
+        next: resp => {
+          sessionStorage.setItem('me', JSON.stringify(resp));
+          this.snackBar.openSnackBar('You liked it! :)', 'Success');
+        },
+        error: () => {
+          this.snackBar.openSnackBar('Something went wrong', 'Error');
+        }
       });
 
       this.booksService.addLikes(book).subscribe();
@@ -40,8 +48,14 @@ export class BookListComponent implements OnInit {
 
   handleUnlike(book) {
     if (sessionStorage.getItem('authtoken')) {
-      this.userService.unlikeBook(book._id).subscribe(resp => {
-        sessionStorage.setItem('me', JSON.stringify(resp));
+      this.userService.unlikeBook(book._id).subscribe({
+        next: resp => {
+          sessionStorage.setItem('me', JSON.stringify(resp));
+          this.snackBar.openSnackBar('You unliked it :(', 'Success');
+        },
+        error: () => {
+          this.snackBar.openSnackBar('Something went wrong', 'Error');
+        }
       });
 
       this.booksService.removeLikes(book).subscribe();
