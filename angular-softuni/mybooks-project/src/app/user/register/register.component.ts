@@ -80,7 +80,8 @@ export class RegisterComponent {
       username: this.registerForm.value.username,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
-      birthday: new Date(this.registerForm.value.birthday).toLocaleDateString()
+      birthday: new Date(this.registerForm.value.birthday).toLocaleDateString(),
+      avatarUrl: this.registerForm.value.avatarUrl
     };
     this.userService.register(userData)
       .subscribe({

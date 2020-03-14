@@ -27,6 +27,7 @@ export class UserProfileComponent implements OnInit {
   userInfo: IUser;
   newUserInfoFormGroup: FormGroup;
   successMessage: string;
+  defaultAvatarUrl = 'https://i1.wp.com/quaan.one/wp-content/uploads/2018/08/default-avatar.jpg?ssl=1';
   likedBooks: Observable<Book[]>;
   addedBooks: Observable<Book[]>;
 

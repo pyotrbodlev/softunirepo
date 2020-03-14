@@ -1,86 +1,87 @@
+.container {
+  flex-basis: 50%;
+}
+
 .user-info-container {
   display: flex;
-  padding: 0 2em;
-
-  .container {
-    border: 1px solid rgba(128, 128, 128, 0.51);
-    border-radius: 4px;
-    flex-basis: 50%;
-    margin: 1em;
-    overflow: hidden;
-  }
+  max-width: 75em;
+  min-height: 40em;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.32);
+  border-radius: 5px;
 }
 
 .left {
   padding: 2em;
-  header {
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em;
-    border-radius: 3px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+  border-right: 1px solid rgba(61, 76, 83, 0.32);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
-    h1 {
-      text-decoration: underline;
-      font-style: italic;
+  header {
+    display: flex;
+
+    .img-container {
+      max-width: 150px;
+      max-height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 2em;
+
+      img {
+        display: block;
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+      }
     }
 
-    .bold {
-      font-weight: bold;
+    div {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div h2 {
+      font-size: 3em;
+    }
+
+    div h2:before {
+      content: '@';
     }
   }
 
   section {
-    padding: 1em;
+    display: flex;
+    justify-content: space-evenly;
 
-    input {
-      display: block;
-      padding: 0.5em;
-      width: 97%;
-      margin: 0.5em 0;
-    }
-
-    label {
-      font-weight: 600;
-    }
-
-    button {
-      margin-top: 0.5em;
+    div {
+      text-align: center;
+      font-size: 2em;
     }
   }
-}
 
-input.ng-valid {
-  border: 1px solid #42A948; /* green */
-}
-
-input.ng-invalid.ng-touched {
-  border: 1px solid #A94442; /* red */
-}
-
-.invalid {
-  color: #A94442;
-}
-
-.success {
-  margin-left: 2em;
-  color: #42A948;
+  footer {
+    text-align: center;
+  }
 }
 
 .right {
   padding: 2em;
-}
 
-mat-list-item {
-  outline: none;
-}
-
-.buttons {
-  display: flex;
-
-  button {
-    margin: 0 1em;
+  mat-list-item {
+    outline: none;
   }
+
+  .buttons {
+    display: flex;
+
+    button {
+      margin: 0 1em;
+    }
+  }
+
 }

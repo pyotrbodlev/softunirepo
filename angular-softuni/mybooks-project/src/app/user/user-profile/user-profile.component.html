@@ -1,31 +1,27 @@
 <div class="user-info-container" *ngIf="userInfo">
   <div class="left container">
     <header>
-      <h1>Logged as: <span class="bold">{{userInfo.username}}</span></h1>
-      <button mat-raised-button color="warn">Logout</button>
+      <div class="img-container">
+        <img [src]="userInfo.avatarUrl || defaultAvatarUrl" alt="avatar">
+      </div>
+      <div class="bold">
+        <h2>{{userInfo.username}}</h2>
+        <p>{{userInfo.birthday}}</p>
+      </div>
     </header>
     <section>
-      <form [formGroup]="newUserInfoFormGroup" (ngSubmit)="updateUserInfo()">
-        <div class="formField">
-          <label for="email">New email address:</label>
-          <input type="email" id="email" formControlName="email" placeholder="pesho@example.com">
-          <p *ngIf="newUserInfoFormGroup.controls.email.invalid && newUserInfoFormGroup.controls.email.touched" class="invalid">{{getErrorMessage('email')}}</p>
-        </div>
-        <div class="formField">
-          <label for="password">New password:</label>
-          <input type="password" id="password" formControlName="password" placeholder="********">
-          <p *ngIf="newUserInfoFormGroup.controls.password.invalid && newUserInfoFormGroup.controls.password.touched">{{getErrorMessage('password')}}</p>
-        </div>
-        <div class="formField">
-          <label for="confirmPassword">Repeat new password:</label>
-          <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="********">
-          <p *ngIf="newUserInfoFormGroup.controls.confirmPassword.invalid && newUserInfoFormGroup.controls.confirmPassword.touched">{{getErrorMessage('confirmPassword')}}</p>
-        </div>
-        <p *ngIf="newUserInfoFormGroup?.hasError('passwords-doesnt-match')" class="invalid">Passwords doesnt match</p>
-        <button mat-raised-button color="primary" [disabled]="newUserInfoFormGroup.invalid">Confirm changes</button>
-        <span *ngIf="successMessage" class="success">{{successMessage}}</span>
-      </form>
+      <div class="likes counter">
+        <h2>Likes:</h2>
+        <div>{{(likedBooks | async)?.length || 0}}</div>
+      </div>
+      <div class="added counter">
+        <h2>Added:</h2>
+        <div>{{(addedBooks | async)?.length || 0}}</div>
+      </div>
     </section>
+    <footer>
+      <button mat-raised-button color="accent">Edit profile</button>
+    </footer>
   </div>
   <div class="right container">
     <mat-accordion>
@@ -41,7 +37,7 @@
 
         <mat-list *ngIf="likedBooks">
           <mat-list-item *ngFor="let book of likedBooks | async">
-            <mat-icon mat-list-icon>thumb_up_alt</mat-icon>
+            <mat-icon mat-list-icon>stars</mat-icon>
             <h4 mat-line>{{book.title}}</h4>
           </mat-list-item>
         </mat-list>
@@ -66,7 +62,8 @@
             </div>
           </mat-list-item>
         </mat-list>
-        <h3 *ngIf="!(addedBooks | async)">You don't have books added. You can add a book from button in navigation menu!</h3>
+        <h3 *ngIf="!(addedBooks | async)">You don't have books added. You can add a book from button in navigation
+          menu!</h3>
       </mat-expansion-panel>
     </mat-accordion>
   </div>
