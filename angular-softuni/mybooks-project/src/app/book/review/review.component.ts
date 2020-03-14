@@ -1,14 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-
-interface IReview {
-  user: {
-    username: string,
-    _id: string,
-    avatarUrl: string,
-  };
-  review: string;
-  _kmd: {ect: string};
-}
+import {IReview} from "./review.model";
 
 @Component({
   selector: 'app-review',

@@ -7,16 +7,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ReviewService} from '../../services/review/review.service';
 import {Observable} from 'rxjs';
 import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
-
-interface IReview {
-  user: {
-    username: string,
-    avatarUrl: string;
-    _id: string
-  };
-  _kmd: {ect: string}
-  review: string;
-}
+import {IReview} from "../review/review.model";
 
 @Component({
   selector: 'app-book-details',
