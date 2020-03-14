@@ -4,20 +4,27 @@
 
 .user-info-container {
   display: flex;
+  align-items: center;
   max-width: 75em;
-  min-height: 45em;
   margin: 0 auto;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.32);
   border-radius: 5px;
+}
+
+.container {
+  background-color: white;
+  overflow: hidden;
 }
 
 .left {
   padding: 2em;
-  border-right: 1px solid rgba(61, 76, 83, 0.32);
+  min-height: 45em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  z-index: 1;
+  position: relative;
 
   header {
     display: flex;
@@ -69,8 +76,24 @@
   }
 }
 
+.left:after {
+  content: "";
+  background: url("https://styles.redditmedia.com/t5_2zmr2/styles/bannerBackgroundImage_dsjf7hg9e5i01.jpg");
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 .right {
   padding: 2em;
+  height: 40em;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.16);
 
   mat-list-item {
     outline: none;
