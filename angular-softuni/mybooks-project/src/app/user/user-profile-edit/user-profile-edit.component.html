@@ -1,0 +1,47 @@
+<form class="edit-profile-container" [formGroup]="newUserInfoFormGroup" (ngSubmit)="updateUserInfo()">
+  <h1>Edit profile</h1>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your new email address:</mat-label>
+    <label>
+      <input matInput placeholder="email" formControlName="email">
+    </label>
+    <mat-error *ngIf="newUserInfoFormGroup.controls.email.invalid && newUserInfoFormGroup.controls.email.touched">
+      {{getErrorMessage('email')}}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your new password</mat-label>
+    <label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+    </label>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error *ngIf="newUserInfoFormGroup.controls.password.invalid && newUserInfoFormGroup.controls.password.touched">
+      {{getErrorMessage('password')}}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Confirm your new password</mat-label>
+    <label>
+      <input matInput [type]="hideConfirm ? 'password' : 'text'" formControlName="confirmPassword">
+    </label>
+    <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hideConfirm">
+      <mat-icon>{{hideConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error
+      *ngIf="newUserInfoFormGroup.controls.confirmPassword.invalid && newUserInfoFormGroup.controls.confirmPassword.touched">
+      {{getErrorMessage('confirmPassword')}}
+    </mat-error>
+  </mat-form-field>
+
+  <h2 style="color: #c5333b">{{getErrorMessage('passwords')}}</h2>
+
+  <div class="buttons">
+    <button mat-raised-button color="primary" [disabled]="!newUserInfoFormGroup.valid">Confirm changes</button>
+  </div>
+</form>

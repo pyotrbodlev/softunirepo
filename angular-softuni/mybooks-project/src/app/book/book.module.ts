@@ -14,6 +14,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ReviewComponent} from './review/review.component';
 import {ShortifyPipe} from '../shortify.pipe';
+import {SharedModule} from "../shared/shared.module";
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import {ShortifyPipe} from '../shortify.pipe';
     MatSelectModule,
     ReactiveFormsModule,
     FormsModule,
+    SharedModule
   ], exports: [BookListComponent]
 })
 export class BookModule { }

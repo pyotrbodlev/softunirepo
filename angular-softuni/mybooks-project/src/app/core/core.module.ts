@@ -9,6 +9,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import {FontAwesomeModule} from '@devoto13/angular-fontawesome';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {FooterComponent} from './footer/footer.component';
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   declarations: [NavbarComponent, WelcomeComponent, FooterComponent],
@@ -22,7 +23,8 @@ import {FooterComponent} from './footer/footer.component';
     MatMenuModule,
     MatIconModule,
     FontAwesomeModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    SharedModule
   ]
 })
 export class CoreModule {

@@ -20,7 +20,7 @@
       </div>
     </section>
     <footer>
-      <button mat-raised-button color="accent">Edit profile</button>
+      <button mat-raised-button color="accent" [routerLink]="['/user', userInfo._id, 'edit']">Edit profile</button>
     </footer>
   </div>
   <div class="right container">

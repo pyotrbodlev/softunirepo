@@ -9,15 +9,6 @@ import {BooksService} from '../../services/books/books.service';
 import {map, shareReplay} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
-function checkPasswords(control: FormGroup) {
-  if (control.controls.confirmPassword.touched) {
-    if (control.value.password !== control.value.confirmPassword) {
-      return {'passwords-doesnt-match': true};
-    }
-  }
-  return null;
-}
-
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
@@ -25,8 +16,6 @@ function checkPasswords(control: FormGroup) {
 })
 export class UserProfileComponent implements OnInit {
   userInfo: IUser;
-  newUserInfoFormGroup: FormGroup;
-  successMessage: string;
   defaultAvatarUrl = 'https://i1.wp.com/quaan.one/wp-content/uploads/2018/08/default-avatar.jpg?ssl=1';
   likedBooks: Observable<Book[]>;
   addedBooks: Observable<Book[]>;
@@ -34,32 +23,7 @@ export class UserProfileComponent implements OnInit {
   constructor(private userService: UserService,
               private booksService: BooksService,
               private router: ActivatedRoute,
-              private loader: LoaderService,
-              private fb: FormBuilder) {
-
-    this.newUserInfoFormGroup = fb.group({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)])
-    }, {validators: checkPasswords});
-  }
-
-  getErrorMessage(fieldName: string) {
-    if (this.newUserInfoFormGroup.controls[fieldName].hasError('required')) {
-      return 'You must enter a value';
-    }
-    if (this.newUserInfoFormGroup.controls[fieldName].hasError('passwords-doesnt-match')) {
-      return 'Passwords doesnt match';
-    }
-    if (this.newUserInfoFormGroup.controls[fieldName].hasError('email')) {
-      return 'Invalid email';
-    }
-    if (this.newUserInfoFormGroup.controls[fieldName].hasError('minlength')) {
-      const minLength = this.newUserInfoFormGroup.controls[fieldName].errors.minlength.requiredLength;
-      return `Minimum ${minLength} symbols`;
-    }
-
-    return this.newUserInfoFormGroup.controls[fieldName].hasError(fieldName) ? `Not a valid ${fieldName}` : '';
+              private loader: LoaderService) {
   }
 
   ngOnInit(): void {
@@ -81,24 +45,5 @@ export class UserProfileComponent implements OnInit {
       map(books => books.length > 0 ? books : undefined),
       shareReplay(1)
     );
-  }
-
-  updateUserInfo() {
-    this.loader.isLoading = true;
-    const newUserData = {
-      email: this.newUserInfoFormGroup.controls.email.value,
-      password: this.newUserInfoFormGroup.controls.email.value
-    };
-
-    this.userService.updateUserInfo(newUserData).subscribe({
-      next: resp => {
-        this.loader.isLoading = false;
-        sessionStorage.setItem('me', JSON.stringify(resp));
-        sessionStorage.setItem('authtoken', resp._kmd.authtoken);
-        this.newUserInfoFormGroup.reset();
-        this.successMessage = 'You successfully changed your info!';
-      },
-      error: err => console.error(err)
-    });
   }
 }

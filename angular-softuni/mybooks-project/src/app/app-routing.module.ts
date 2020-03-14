@@ -8,6 +8,7 @@ import {BookDetailsComponent} from './book/book-details/book-details.component';
 import {BookCreateComponent} from './book/book-create/book-create.component';
 import {UserProfileComponent} from './user/user-profile/user-profile.component';
 import {AuthenticateGuard} from './authenticate.guard';
+import {UserProfileEditComponent} from "./user/user-profile-edit/user-profile-edit.component";
 
 const routes: Routes = [
   {
@@ -42,6 +43,11 @@ const routes: Routes = [
   {
     path: 'user/:id',
     component: UserProfileComponent,
+    canActivate: [AuthenticateGuard]
+  },
+  {
+    path: 'user/:id/edit',
+    component: UserProfileEditComponent,
     canActivate: [AuthenticateGuard]
   }
 ];

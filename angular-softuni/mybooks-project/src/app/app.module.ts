@@ -25,7 +25,7 @@ import {AppInterceptor} from './app.interceptor';
     FontAwesomeModule,
     HttpClientModule,
     BookModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [
     {
