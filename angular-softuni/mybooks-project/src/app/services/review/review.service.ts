@@ -16,11 +16,16 @@ class Review implements IReview {
     _id: string
   };
 
+  public _kmd: {
+    ect: string
+  };
+
   public review: string;
 
-  constructor(user, review) {
+  constructor(user, review, _kmd) {
     this.user = user;
     this.review = review;
+    this._kmd = _kmd;
   }
 }
 
@@ -43,7 +48,7 @@ export class ReviewService {
         }),
         map(resp => {
           // @ts-ignore
-          return resp.map(reviewInfo => new Review(reviewInfo.user, reviewInfo.review));
+          return resp.map(reviewInfo => new Review(reviewInfo.user, reviewInfo.review, reviewInfo._kmd));
         }),
         map(reviews => reviews.length > 0 ? reviews : null),
         shareReplay(1)

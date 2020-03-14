@@ -11,8 +11,10 @@ import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
 interface IReview {
   user: {
     username: string,
+    avatarUrl: string;
     _id: string
   };
+  _kmd: {ect: string}
   review: string;
 }
 
@@ -63,7 +65,8 @@ export class BookDetailsComponent implements OnInit {
     const body = {
       user: {
         username: user.username,
-        id: user._id
+        _id: user._id,
+        avatarUrl: user.avatarUrl
       },
       review,
       bookId: this.book._id

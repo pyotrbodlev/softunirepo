@@ -13,28 +13,28 @@ import {SharedModule} from './shared/shared.module';
 import {AppInterceptor} from './app.interceptor';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    UserModule,
-    CoreModule,
-    AppRoutingModule,
-    FontAwesomeModule,
-    HttpClientModule,
-    BookModule,
-    SharedModule,
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AppInterceptor,
-      multi: true
-    }
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        UserModule,
+        CoreModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        HttpClientModule,
+        BookModule,
+        SharedModule,
+    ],
+    providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AppInterceptor,
+            multi: true
+        }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

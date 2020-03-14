@@ -15,10 +15,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ReviewComponent} from './review/review.component';
 import {ShortifyPipe} from '../shortify.pipe';
 import {SharedModule} from "../shared/shared.module";
+import {ToLocalDatePipe} from "../to-local-date.pipe";
 
 
 @NgModule({
-  declarations: [BookListComponent, BookListItemComponent, BookDetailsComponent, BookCreateComponent, ReviewComponent, ShortifyPipe],
+  declarations: [BookListComponent, BookListItemComponent, BookDetailsComponent, BookCreateComponent, ReviewComponent, ShortifyPipe, ToLocalDatePipe],
   imports: [
     CommonModule,
     MatCardModule,

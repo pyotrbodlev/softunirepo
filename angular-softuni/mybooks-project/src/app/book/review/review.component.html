@@ -1,4 +1,8 @@
 <div class="review-container">
-  <h2>{{reviewInfo.user.username}}</h2>
+  <img [src]="reviewInfo.user.avatarUrl || defaultAvatarUrl" alt="...">
+  <header>
+    <h2>{{reviewInfo.user.username}}</h2>
+    <p class="dateTime">{{reviewInfo._kmd.ect | toLocalDate}}</p>
+  </header>
   <p>{{reviewInfo.review}}</p>
 </div>
