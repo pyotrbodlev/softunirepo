@@ -3,7 +3,6 @@ import {UserService} from '../../services/user/user.service';
 import {ActivatedRoute} from '@angular/router';
 import {IUser} from '../../shared/IUser';
 import {LoaderService} from '../../shared/loader/loader.service';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Book} from '../../book/book.model';
 import {BooksService} from '../../services/books/books.service';
 import {map, shareReplay} from 'rxjs/operators';
