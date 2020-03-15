@@ -8,6 +8,7 @@ import {Book} from '../../book/book.model';
 import {BooksService} from '../../services/books/books.service';
 import {map, shareReplay} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
 
 @Component({
   selector: 'app-user-profile',
@@ -23,7 +24,8 @@ export class UserProfileComponent implements OnInit {
   constructor(private userService: UserService,
               private booksService: BooksService,
               private router: ActivatedRoute,
-              private loader: LoaderService) {
+              private loader: LoaderService,
+              private snackBar: InfoSnackbarService) {
   }
 
   ngOnInit(): void {
@@ -35,6 +37,10 @@ export class UserProfileComponent implements OnInit {
       this.userInfo = user;
     });
 
+    this.loadBooks();
+  }
+
+  loadBooks() {
     this.likedBooks = this.booksService.getBooks().pipe(
       map(books => books.filter(book => book.isLiked)),
       map(books => books.length > 0 ? books : undefined),
@@ -45,5 +51,26 @@ export class UserProfileComponent implements OnInit {
       map(books => books.length > 0 ? books : undefined),
       shareReplay(1)
     );
+  }
+
+  handleDeleteBook(book: Book) {
+    this.loader.isLoading = true;
+
+    this.booksService.deleteBook(book._id).subscribe({
+      next: () => this.handleSuccess(book.title),
+      error: () => this.handleError()
+    });
+  }
+
+  handleSuccess(bookTitle) {
+    this.loader.isLoading = false;
+    this.loadBooks();
+    this.snackBar.openSnackBar(`${bookTitle} was successfully deleted.`, 'Success');
+  }
+
+  handleError() {
+    this.loader.isLoading = false;
+    this.loadBooks();
+    this.snackBar.openSnackBar(`Something went wrong!`, 'Error');
   }
 }

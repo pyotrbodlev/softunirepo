@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {Book} from '../../book/book.model';
 import {UserService} from '../user/user.service';
 import {Observable} from 'rxjs';
@@ -72,5 +72,17 @@ export class BooksService {
     }
 
     return this.http.put(`${this.url}/appdata/${this.appKey}/books/${book._id}`, book);
+  }
+
+  deleteBook(bookId: string) {
+    return this.http.delete(`${this.url}/appdata/${this.appKey}/books/${bookId}`)
+      .pipe(
+        tap(() => this.removeReviews(bookId).subscribe(console.log)),
+        tap(() => this.userService.unlikeBook(bookId).subscribe(console.log))
+      )
+  }
+
+  removeReviews(bookId: string) {
+    return this.http.delete(`${this.url}/appdata/${this.appKey}/reviews/?query=${JSON.stringify({bookId})}`);
   }
 }
