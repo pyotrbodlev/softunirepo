@@ -13,7 +13,6 @@ import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
 })
 export class LoginComponent {
   hide = true;
-  unauthorised = false;
   loginForm: FormGroup;
 
   constructor(private router: Router,
@@ -46,9 +45,7 @@ export class LoginComponent {
     this.loader.isLoading = true;
     this.userService.logIn(this.loginForm.value)
       .subscribe({
-        next: resp => {
-          this.handleSuccess(resp);
-        },
+        next: resp => this.handleSuccess(resp),
         error: err => this.handleError(err)
       });
   }
@@ -66,15 +63,9 @@ export class LoginComponent {
     this.loader.isLoading = false;
 
     if (err.status === 401) {
-      this.unauthorised = true;
+      this.snackBar.openSnackBar('Invalid username or password', 'Error');
     } else {
       console.error(err);
-    }
-  }
-
-  showError(status: number) {
-    if (status === 401) {
-      return 'Invalid password or username!';
     }
   }
 }

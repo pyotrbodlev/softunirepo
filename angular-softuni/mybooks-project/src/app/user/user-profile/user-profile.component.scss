@@ -52,13 +52,18 @@
       align-items: center;
     }
 
-    div h2 {
+    .username {
       font-size: 3em;
     }
 
-    div h2:before {
+    .username:before {
       content: '@';
     }
+
+    .email {
+      font-style: italic;
+    }
+
   }
 
   section {

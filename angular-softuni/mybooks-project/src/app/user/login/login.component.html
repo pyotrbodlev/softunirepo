@@ -18,7 +18,6 @@
     </button>
     <mat-error *ngIf="this.loginForm.controls.password.invalid">{{getErrorMessage('password')}}</mat-error>
   </mat-form-field>
-  <mat-error *ngIf="unauthorised">{{showError(401)}}</mat-error>
   <div class="buttons">
     <a mat-stroked-button routerLink="#">Forgot Password</a>
     <button mat-raised-button color="primary" (click)="handleLogin()" [disabled]="!loginForm.valid">Login</button>

@@ -17,7 +17,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
 import { UserProfileEditComponent } from './user-profile-edit/user-profile-edit.component';
 import {SharedModule} from "../shared/shared.module";
-import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, UserProfileComponent, UserProfileEditComponent],

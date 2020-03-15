@@ -4,8 +4,8 @@ import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {UserService} from '../../services/user/user.service';
 import {LoaderService} from '../../shared/loader/loader.service';
-import {map} from 'rxjs/operators';
 import {InfoSnackbarService} from "../../shared/snackbar/info-snackbar.service";
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-register',
@@ -92,7 +92,7 @@ export class RegisterComponent {
     this.userService.register(userData)
       .subscribe({
         next: () => this.handleSuccess(),
-        error: err => console.error(err)
+        error: () => this.handleError()
       });
   }
 
@@ -100,8 +100,11 @@ export class RegisterComponent {
     this.loader.isLoading = false;
     this.snackBar.openSnackBar('You successfully registered!', 'Success');
 
-    this.router.navigate(['/login']).catch(() => {
-      this.snackBar.openSnackBar('Something went wrong', 'Error');
-    });
+    this.router.navigate(['/login']).catch(() => this.handleError());
+  }
+
+  handleError() {
+    this.loader.isLoading = false;
+    this.snackBar.openSnackBar('Something went wrong', 'Error');
   }
 }

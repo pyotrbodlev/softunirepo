@@ -5,8 +5,9 @@
         <img [src]="userInfo.avatarUrl || defaultAvatarUrl" alt="avatar">
       </div>
       <div class="bold">
-        <h2>{{userInfo.username}}</h2>
-        <p>{{userInfo.birthday}}</p>
+        <h2 class="username">{{userInfo.username}}</h2>
+        <h3 class="email">{{userInfo.email}}</h3>
+        <h4 class="date">{{userInfo.birthday}}</h4>
       </div>
     </header>
     <section>

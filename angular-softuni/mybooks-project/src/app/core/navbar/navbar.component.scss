@@ -19,7 +19,7 @@ nav {
   // Get a contrast color for a hue by adding `-contrast` to any other key.
   border-color: mat-color($primary, '100-contrast');
   box-shadow: 0 0 7px black;
-  padding: 1.5em;
+  padding: 1.5em 4em;
   display: flex;
   justify-content: space-between;
 
