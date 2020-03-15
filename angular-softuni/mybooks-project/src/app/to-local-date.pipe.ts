@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ToLocalDatePipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): unknown {
-    return new Date(value).toDateString();
+  transform(value: string, pattern?: string): unknown {
+    return new Date(value).toLocaleString();
   }
 
 }
