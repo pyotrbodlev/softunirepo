@@ -1,0 +1,54 @@
+@import 'node_modules/@angular/material/theming';
+
+@include mat-core();
+
+$primary: mat-palette($mat-indigo);
+$accent: mat-palette($mat-pink, A200, A100, A400);
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+nav {
+  // Get the default hue for a palette.
+  color: white;
+  // Get a specific hue for a palette.
+  // See https://material.io/archive/guidelines/style/color.html#color-color-palette for hues.
+  background-color: mat-color($primary, 800);
+  // Get a relative color for a hue ('lighter' or 'darker')
+  outline-color: mat-color($accent, lighter);
+  // Get a contrast color for a hue by adding `-contrast` to any other key.
+  border-color: mat-color($primary, '100-contrast');
+  box-shadow: 0 0 7px black;
+  padding: 1.5em 4em;
+  display: flex;
+  justify-content: space-between;
+
+  .title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .controls {
+    display: flex;
+    flex-basis: 13%;
+    justify-content: space-evenly;
+  }
+
+  fa-icon {
+    font-size: 2em;
+  }
+
+  h2 {
+    margin: 0 0 0 20px;
+  }
+
+  h3 {
+    margin: 0 0 0 40px;
+  }
+}
+
+mat-progress-bar {
+  position: absolute;
+}
