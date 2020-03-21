@@ -37,7 +37,11 @@ const handleAttachAccessoryGet = async (req, res) => {
         const cube = await CubeModel.findById(cubicId).lean();
         const accessories = await AccessoryModel.find().lean();
 
-        res.render(__projectname + '/views/attachAccessory.hbs', { cube, accessories });
+        let filtered = accessories.filter(a => {
+            return !cube.accessories.map(i => i.toString()).includes(a._id.toString());            
+        });
+
+        res.render(__projectname + '/views/attachAccessory.hbs', { cube, accessories: filtered });
     } catch (e) {
         console.error(e);
     }
@@ -53,11 +57,11 @@ const handleAttachAccessoryPost = (req, res) => {
     const { accessory: accessoryId } = req.body;
 
     CubeModel.findById(cubicId).then(cube => {
-            cube.accessories.push(accessoryId);
-            cube.save().then(() => res.redirect('/'));
-        }).catch(err => {
-            console.error(err);
-        });
+        cube.accessories.push(accessoryId);
+        cube.save().then(() => res.redirect('/'));
+    }).catch(err => {
+        console.error(err);
+    });
 }
 
 module.exports = { handleCreateAccessoryGet, handleCreateAccessoryPost, handleAttachAccessoryGet, handleAttachAccessoryPost };

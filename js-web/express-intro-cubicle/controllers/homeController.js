@@ -18,14 +18,14 @@ const handleHomePage = (req, res) => {
         if (!query.difficultyLevel) {
             query.difficultyLevel = {};
         }
-        query.difficultyLevel.$gt = f;
+        query.difficultyLevel.$gte = f;
     }
 
     if (t) {
         if (!query.difficultyLevel) {
             query.difficultyLevel = {};
         }
-        query.difficultyLevel.$lt = t;
+        query.difficultyLevel.$lte = t;
     }
     
     CubeModel.find(query).lean().then(cubes => {
