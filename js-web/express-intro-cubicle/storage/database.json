@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "name": "pepo",
+        "description": "123123",
+        "imageUrl": "qweqwe",
+        "difficultyLevel": "5"
+    },
+    {
+        "id": 2,
+        "name": "qweqwe",
+        "description": "qweqweqwe",
+        "imageUrl": "qwe",
+        "difficultyLevel": "6"
+    },
+    {
+        "name": "ivancho",
+        "description": "qweqweqweqweqweq",
+        "imageUrl": "qweqwe",
+        "difficultyLevel": "6",
+        "id": 3
+    },
+    {
+        "name": "adseeeeeeee",
+        "description": "eeeeeeeeeeeeeeeeee",
+        "imageUrl": "e",
+        "difficultyLevel": "3",
+        "id": 4
+    },
+    {
+        "name": "4444",
+        "description": "4444",
+        "imageUrl": "444",
+        "difficultyLevel": "4",
+        "id": 5
+    }
+]
