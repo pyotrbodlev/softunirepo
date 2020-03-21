@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { ObjectId } = mongoose.Schema.Types;
 
 const cubeSchema = new mongoose.Schema(
     {
@@ -6,7 +7,7 @@ const cubeSchema = new mongoose.Schema(
         imageUrl: String,
         description: String,
         difficultyLevel: Number,
-        accessories: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Accessory' }]
+        accessories: [{ type: ObjectId, ref: 'Accessory' }]
     }
 );
 
