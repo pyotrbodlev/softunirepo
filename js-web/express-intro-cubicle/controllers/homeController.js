@@ -2,9 +2,6 @@ const express = require('express');
 const CubeModel = require('../models/cubeModel');
 
 /**
- * Check if the given `lang`s are acceptable,
- * otherwise you should respond with 406 "Not Acceptable".
- *
  * @param {express.Request} req
  * @param {express.Response} res
  * @public
@@ -16,9 +13,6 @@ const handleHomePage = (req, res) => {
 };
 
 /**
- * Check if the given `lang`s are acceptable,
- * otherwise you should respond with 406 "Not Acceptable".
- *
  * @param {express.Request} req
  * @param {express.Response} res
  * @public
